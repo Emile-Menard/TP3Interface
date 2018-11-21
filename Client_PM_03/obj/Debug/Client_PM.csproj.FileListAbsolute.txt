@@ -1,0 +1,41 @@
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\Client_PM.exe.config
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\Client_PM.exe
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\Client_PM.pdb
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\Newtonsoft.Json.dll
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\PhotoManagerWebServices.dll
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\Newtonsoft.Json.xml
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\PhotoManagerWebServices.pdb
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\PhotoManagerWebServices.xml
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.csprojAssemblyReference.cache
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.DLG_Account.resources
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.DLG_Login.resources
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.MainForm.resources
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.Properties.Resources.resources
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.csproj.GenerateResource.cache
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.csproj.CoreCompileInputs.cache
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.csproj.CopyComplete
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.exe
+C:\Users\201747269\Downloads\PM Mise à jour\PM Mise à jour\Client_PM_03\Client_PM_03\obj\Debug\Client_PM.pdb
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\Client_PM.exe.config
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\Client_PM.exe
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\Client_PM.pdb
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\Newtonsoft.Json.dll
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\PhotoManagerWebServices.dll
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\Newtonsoft.Json.xml
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\PhotoManagerWebServices.pdb
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\PhotoManagerWebServices.xml
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.Form1.resources
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.Form2.resources
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.Form3.resources
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.Form4.resources
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.PagePrincipale.resources
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.Properties.Resources.resources
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.csproj.GenerateResource.cache
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.csproj.CoreCompileInputs.cache
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.csproj.CopyComplete
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.exe
+C:\Users\201449762\Desktop\Client_PM_03(Dominic)\Client_PM_03\obj\Debug\Client_PM.pdb
