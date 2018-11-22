@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Client_PM
 {
-    public partial class Form4 : Form
+    public partial class PageListeNoire : Form
     {
-        public Form4()
+        public PageListeNoire()
         {
             InitializeComponent();
         }

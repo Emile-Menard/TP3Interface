@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Client_PM
 {
-    public partial class Form3 : Form
+    public partial class PageCarousel : Form
     {
-        public Form3()
+        public PageCarousel()
         {
             InitializeComponent();
         }

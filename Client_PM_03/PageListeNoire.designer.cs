@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Client_PM
 {
-    partial class Form4
+    partial class PageListeNoire
     {
         /// <summary>
         /// Required designer variable.

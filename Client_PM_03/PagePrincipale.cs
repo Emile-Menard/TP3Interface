@@ -16,5 +16,15 @@ namespace Client_PM
         {
             InitializeComponent();
         }
+
+        private void TLSTRIP_Connexion_Click(object sender, EventArgs e)
+        {
+            PageConnexion pgConnexion = new PageConnexion();
+            if (pgConnexion.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+        }
     }
 }

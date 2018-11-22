@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Client_PM
 {
-    partial class Form3
+    partial class PageCarousel
     {
         /// <summary>
         /// Required designer variable.

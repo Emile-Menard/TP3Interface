@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Client_PM
 {
-    partial class Form1
+    partial class PageConnexion
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,90 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBXName_Connexion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.TBXPassword_Connexion = new System.Windows.Forms.TextBox();
+            this.BTN_Login = new System.Windows.Forms.Button();
+            this.BTN_Cancel = new System.Windows.Forms.Button();
+            this.CBOX_RememberMe = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TBXName_Connexion
             // 
-            this.textBox1.Location = new System.Drawing.Point(32, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 0;
+            this.TBXName_Connexion.Location = new System.Drawing.Point(48, 63);
+            this.TBXName_Connexion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TBXName_Connexion.Name = "TBXName_Connexion";
+            this.TBXName_Connexion.Size = new System.Drawing.Size(313, 26);
+            this.TBXName_Connexion.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 25);
+            this.label1.Location = new System.Drawing.Point(44, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nom d\'utilisateur";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 82);
+            this.label2.Location = new System.Drawing.Point(44, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(105, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mot de passe";
             // 
-            // textBox2
+            // TBXPassword_Connexion
             // 
-            this.textBox2.Location = new System.Drawing.Point(32, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 20);
-            this.textBox2.TabIndex = 2;
+            this.TBXPassword_Connexion.Location = new System.Drawing.Point(48, 151);
+            this.TBXPassword_Connexion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TBXPassword_Connexion.Name = "TBXPassword_Connexion";
+            this.TBXPassword_Connexion.Size = new System.Drawing.Size(313, 26);
+            this.TBXPassword_Connexion.TabIndex = 2;
             // 
-            // button1
+            // BTN_Login
             // 
-            this.button1.Location = new System.Drawing.Point(86, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Accepter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTN_Login.Location = new System.Drawing.Point(129, 237);
+            this.BTN_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_Login.Name = "BTN_Login";
+            this.BTN_Login.Size = new System.Drawing.Size(112, 35);
+            this.BTN_Login.TabIndex = 4;
+            this.BTN_Login.Text = "Accepter";
+            this.BTN_Login.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BTN_Cancel
             // 
-            this.button2.Location = new System.Drawing.Point(167, 154);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTN_Cancel.Location = new System.Drawing.Point(250, 237);
+            this.BTN_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_Cancel.Name = "BTN_Cancel";
+            this.BTN_Cancel.Size = new System.Drawing.Size(112, 35);
+            this.BTN_Cancel.TabIndex = 5;
+            this.BTN_Cancel.Text = "Annuler";
+            this.BTN_Cancel.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // CBOX_RememberMe
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(32, 125);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(115, 17);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Se souvenir de moi";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.CBOX_RememberMe.AutoSize = true;
+            this.CBOX_RememberMe.Location = new System.Drawing.Point(48, 196);
+            this.CBOX_RememberMe.Name = "CBOX_RememberMe";
+            this.CBOX_RememberMe.Size = new System.Drawing.Size(169, 24);
+            this.CBOX_RememberMe.TabIndex = 6;
+            this.CBOX_RememberMe.Text = "Se souvenir de moi";
+            this.CBOX_RememberMe.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 201);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(417, 309);
+            this.Controls.Add(this.CBOX_RememberMe);
+            this.Controls.Add(this.BTN_Cancel);
+            this.Controls.Add(this.BTN_Login);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TBXPassword_Connexion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBXName_Connexion);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Enregistrement ";
+            this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -120,13 +126,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBXName_Connexion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox TBXPassword_Connexion;
+        private System.Windows.Forms.Button BTN_Login;
+        private System.Windows.Forms.Button BTN_Cancel;
+        private System.Windows.Forms.CheckBox CBOX_RememberMe;
     }
 }
 

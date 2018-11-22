@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Client_PM
 {
-    partial class Form2
+    partial class PageCreation
     {
         /// <summary>
         /// Required designer variable.
