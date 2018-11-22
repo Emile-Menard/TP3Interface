@@ -70,11 +70,13 @@
             this.TBXPassword_Connexion.Location = new System.Drawing.Point(48, 151);
             this.TBXPassword_Connexion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TBXPassword_Connexion.Name = "TBXPassword_Connexion";
+            this.TBXPassword_Connexion.PasswordChar = '*';
             this.TBXPassword_Connexion.Size = new System.Drawing.Size(313, 26);
             this.TBXPassword_Connexion.TabIndex = 2;
             // 
             // BTN_Login
             // 
+            this.BTN_Login.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Login.Location = new System.Drawing.Point(129, 237);
             this.BTN_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Login.Name = "BTN_Login";
@@ -85,6 +87,7 @@
             // 
             // BTN_Cancel
             // 
+            this.BTN_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTN_Cancel.Location = new System.Drawing.Point(250, 237);
             this.BTN_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Cancel.Name = "BTN_Cancel";
@@ -103,10 +106,12 @@
             this.CBOX_RememberMe.Text = "Se souvenir de moi";
             this.CBOX_RememberMe.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // PageConnexion
             // 
+            this.AcceptButton = this.BTN_Login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BTN_Cancel;
             this.ClientSize = new System.Drawing.Size(417, 309);
             this.Controls.Add(this.CBOX_RememberMe);
             this.Controls.Add(this.BTN_Cancel);
@@ -116,7 +121,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBXName_Connexion);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "PageConnexion";
             this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
