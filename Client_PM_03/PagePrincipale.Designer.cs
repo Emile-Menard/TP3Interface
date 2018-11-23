@@ -57,7 +57,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flashButton4 = new PhotoManagerClient.FlashButton();
             this.flashButton3 = new PhotoManagerClient.FlashButton();
-            this.FBTN_Ajouter = new PhotoManagerClient.FlashButton();
+            this.FBTN_Ajouter_MotCle = new PhotoManagerClient.FlashButton();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -68,16 +68,16 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.photosBrowser1 = new PhotoManagerClient.PhotosBrowser();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.flashButton7 = new PhotoManagerClient.FlashButton();
-            this.flashButton6 = new PhotoManagerClient.FlashButton();
-            this.flashButton5 = new PhotoManagerClient.FlashButton();
+            this.FBTN_Modifier = new PhotoManagerClient.FlashButton();
+            this.FBTN_Ajouter = new PhotoManagerClient.FlashButton();
+            this.FTBN_Effacer = new PhotoManagerClient.FlashButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.flashButton1 = new PhotoManagerClient.FlashButton();
+            this.FBTN_MiseEnPage = new PhotoManagerClient.FlashButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -286,7 +286,7 @@
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.flashButton4);
             this.groupBox2.Controls.Add(this.flashButton3);
-            this.groupBox2.Controls.Add(this.FBTN_Ajouter);
+            this.groupBox2.Controls.Add(this.FBTN_Ajouter_MotCle);
             this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.textBox1);
@@ -344,23 +344,22 @@
             this.flashButton3.Text = "flashButton3";
             this.flashButton3.UseVisualStyleBackColor = true;
             // 
-            // FBTN_Ajouter
+            // FBTN_Ajouter_MotCle
             // 
-            this.FBTN_Ajouter.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
-            this.FBTN_Ajouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_Ajouter.ClickedImage = null;
-            this.FBTN_Ajouter.DisabledImage = null;
-            this.FBTN_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Ajouter.Image")));
-            this.FBTN_Ajouter.Location = new System.Drawing.Point(276, 100);
-            this.FBTN_Ajouter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FBTN_Ajouter.Name = "FBTN_Ajouter";
-            this.FBTN_Ajouter.NeutralImage = null;
-            this.FBTN_Ajouter.OverImage = null;
-            this.FBTN_Ajouter.Size = new System.Drawing.Size(48, 49);
-            this.FBTN_Ajouter.TabIndex = 9;
-            this.FBTN_Ajouter.Text = "flashButton2";
-            this.FBTN_Ajouter.UseVisualStyleBackColor = true;
-            this.FBTN_Ajouter.Click += new System.EventHandler(this.FBTN_Ajouter_Click);
+            this.FBTN_Ajouter_MotCle.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
+            this.FBTN_Ajouter_MotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Ajouter_MotCle.ClickedImage = null;
+            this.FBTN_Ajouter_MotCle.DisabledImage = null;
+            this.FBTN_Ajouter_MotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Ajouter_MotCle.Image")));
+            this.FBTN_Ajouter_MotCle.Location = new System.Drawing.Point(276, 100);
+            this.FBTN_Ajouter_MotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_Ajouter_MotCle.Name = "FBTN_Ajouter_MotCle";
+            this.FBTN_Ajouter_MotCle.NeutralImage = null;
+            this.FBTN_Ajouter_MotCle.OverImage = null;
+            this.FBTN_Ajouter_MotCle.Size = new System.Drawing.Size(48, 49);
+            this.FBTN_Ajouter_MotCle.TabIndex = 9;
+            this.FBTN_Ajouter_MotCle.Text = "flashButton2";
+            this.FBTN_Ajouter_MotCle.UseVisualStyleBackColor = true;
             // 
             // listBox1
             // 
@@ -446,6 +445,7 @@
             // 
             // photosBrowser1
             // 
+            this.photosBrowser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.photosBrowser1.Location = new System.Drawing.Point(609, 42);
             this.photosBrowser1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.photosBrowser1.Name = "photosBrowser1";
@@ -456,9 +456,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.flashButton7);
-            this.groupBox4.Controls.Add(this.flashButton6);
-            this.groupBox4.Controls.Add(this.flashButton5);
+            this.groupBox4.Controls.Add(this.FBTN_Modifier);
+            this.groupBox4.Controls.Add(this.FBTN_Ajouter);
+            this.groupBox4.Controls.Add(this.FTBN_Effacer);
             this.groupBox4.Location = new System.Drawing.Point(261, 771);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
@@ -468,57 +468,59 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Photo";
             // 
-            // flashButton7
+            // FBTN_Modifier
             // 
-            this.flashButton7.BackgroundImage = global::Client_PM.Properties.Resources.Editer;
-            this.flashButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton7.ClickedImage = null;
-            this.flashButton7.DisabledImage = null;
-            this.flashButton7.Image = ((System.Drawing.Image)(resources.GetObject("flashButton7.Image")));
-            this.flashButton7.Location = new System.Drawing.Point(64, 26);
-            this.flashButton7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.flashButton7.Name = "flashButton7";
-            this.flashButton7.NeutralImage = null;
-            this.flashButton7.OverImage = null;
-            this.flashButton7.Size = new System.Drawing.Size(48, 49);
-            this.flashButton7.TabIndex = 10;
-            this.flashButton7.Text = "flashButton7";
-            this.flashButton7.UseVisualStyleBackColor = true;
+            this.FBTN_Modifier.BackgroundImage = global::Client_PM.Properties.Resources.Editer;
+            this.FBTN_Modifier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Modifier.ClickedImage = null;
+            this.FBTN_Modifier.DisabledImage = null;
+            this.FBTN_Modifier.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Modifier.Image")));
+            this.FBTN_Modifier.Location = new System.Drawing.Point(79, 32);
+            this.FBTN_Modifier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_Modifier.Name = "FBTN_Modifier";
+            this.FBTN_Modifier.NeutralImage = null;
+            this.FBTN_Modifier.OverImage = null;
+            this.FBTN_Modifier.Size = new System.Drawing.Size(48, 49);
+            this.FBTN_Modifier.TabIndex = 10;
+            this.FBTN_Modifier.Text = "Éditer la photo sélectionnée";
+            this.FBTN_Modifier.UseVisualStyleBackColor = true;
+            this.FBTN_Modifier.Click += new System.EventHandler(this.FBTN_Modifier_Click);
             // 
-            // flashButton6
+            // FBTN_Ajouter
             // 
-            this.flashButton6.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
-            this.flashButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton6.ClickedImage = null;
-            this.flashButton6.DisabledImage = null;
-            this.flashButton6.Image = ((System.Drawing.Image)(resources.GetObject("flashButton6.Image")));
-            this.flashButton6.Location = new System.Drawing.Point(8, 26);
-            this.flashButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.flashButton6.Name = "flashButton6";
-            this.flashButton6.NeutralImage = null;
-            this.flashButton6.OverImage = null;
-            this.flashButton6.Size = new System.Drawing.Size(48, 49);
-            this.flashButton6.TabIndex = 9;
-            this.flashButton6.Text = "flashButton6";
-            this.flashButton6.UseVisualStyleBackColor = true;
-            this.flashButton6.Click += new System.EventHandler(this.FBTN_Ajouter_Click);
+            this.FBTN_Ajouter.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
+            this.FBTN_Ajouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Ajouter.ClickedImage = null;
+            this.FBTN_Ajouter.DisabledImage = null;
+            this.FBTN_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Ajouter.Image")));
+            this.FBTN_Ajouter.Location = new System.Drawing.Point(23, 32);
+            this.FBTN_Ajouter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_Ajouter.Name = "FBTN_Ajouter";
+            this.FBTN_Ajouter.NeutralImage = null;
+            this.FBTN_Ajouter.OverImage = null;
+            this.FBTN_Ajouter.Size = new System.Drawing.Size(48, 49);
+            this.FBTN_Ajouter.TabIndex = 9;
+            this.FBTN_Ajouter.Text = "Ajouter une photo";
+            this.FBTN_Ajouter.UseVisualStyleBackColor = true;
+            this.FBTN_Ajouter.Click += new System.EventHandler(this.FBTN_Ajouter_Click);
             // 
-            // flashButton5
+            // FTBN_Effacer
             // 
-            this.flashButton5.BackgroundImage = global::Client_PM.Properties.Resources.Delete;
-            this.flashButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton5.ClickedImage = null;
-            this.flashButton5.DisabledImage = null;
-            this.flashButton5.Image = ((System.Drawing.Image)(resources.GetObject("flashButton5.Image")));
-            this.flashButton5.Location = new System.Drawing.Point(120, 26);
-            this.flashButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.flashButton5.Name = "flashButton5";
-            this.flashButton5.NeutralImage = null;
-            this.flashButton5.OverImage = null;
-            this.flashButton5.Size = new System.Drawing.Size(48, 49);
-            this.flashButton5.TabIndex = 8;
-            this.flashButton5.Text = "flashButton5";
-            this.flashButton5.UseVisualStyleBackColor = true;
+            this.FTBN_Effacer.BackgroundImage = global::Client_PM.Properties.Resources.Delete;
+            this.FTBN_Effacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FTBN_Effacer.ClickedImage = null;
+            this.FTBN_Effacer.DisabledImage = null;
+            this.FTBN_Effacer.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Effacer.Image")));
+            this.FTBN_Effacer.Location = new System.Drawing.Point(135, 32);
+            this.FTBN_Effacer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FTBN_Effacer.Name = "FTBN_Effacer";
+            this.FTBN_Effacer.NeutralImage = null;
+            this.FTBN_Effacer.OverImage = null;
+            this.FTBN_Effacer.Size = new System.Drawing.Size(48, 49);
+            this.FTBN_Effacer.TabIndex = 8;
+            this.FTBN_Effacer.Text = "Retirer la photo sélectionnée";
+            this.FTBN_Effacer.UseVisualStyleBackColor = true;
+            this.FTBN_Effacer.Click += new System.EventHandler(this.FTBN_Effacer_Click);
             // 
             // groupBox5
             // 
@@ -586,22 +588,23 @@
             this.listBox2.Size = new System.Drawing.Size(178, 244);
             this.listBox2.TabIndex = 0;
             // 
-            // flashButton1
+            // FBTN_MiseEnPage
             // 
-            this.flashButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flashButton1.BackgroundImage")));
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton1.ClickedImage = null;
-            this.flashButton1.DisabledImage = null;
-            this.flashButton1.Image = ((System.Drawing.Image)(resources.GetObject("flashButton1.Image")));
-            this.flashButton1.Location = new System.Drawing.Point(40, 29);
-            this.flashButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.NeutralImage = null;
-            this.flashButton1.OverImage = null;
-            this.flashButton1.Size = new System.Drawing.Size(54, 55);
-            this.flashButton1.TabIndex = 7;
-            this.flashButton1.Text = "flashButton1";
-            this.flashButton1.UseVisualStyleBackColor = true;
+            this.FBTN_MiseEnPage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.BackgroundImage")));
+            this.FBTN_MiseEnPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_MiseEnPage.ClickedImage = null;
+            this.FBTN_MiseEnPage.DisabledImage = null;
+            this.FBTN_MiseEnPage.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.Image")));
+            this.FBTN_MiseEnPage.Location = new System.Drawing.Point(40, 29);
+            this.FBTN_MiseEnPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_MiseEnPage.Name = "FBTN_MiseEnPage";
+            this.FBTN_MiseEnPage.NeutralImage = null;
+            this.FBTN_MiseEnPage.OverImage = null;
+            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(54, 55);
+            this.FBTN_MiseEnPage.TabIndex = 7;
+            this.FBTN_MiseEnPage.Text = "Changer la mise-en-page";
+            this.FBTN_MiseEnPage.UseVisualStyleBackColor = true;
+            this.FBTN_MiseEnPage.Click += new System.EventHandler(this.FBTN_MiseEnPage_Click);
             // 
             // groupBox6
             // 
@@ -656,12 +659,12 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.flashButton1);
+            this.groupBox8.Controls.Add(this.FBTN_MiseEnPage);
             this.groupBox8.Location = new System.Drawing.Point(472, 774);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox8.Size = new System.Drawing.Size(128, 100);
+            this.groupBox8.Size = new System.Drawing.Size(128, 104);
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Mise-en-page";
@@ -723,7 +726,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private PhotoManagerClient.FlashButton flashButton1;
+        private PhotoManagerClient.FlashButton FBTN_MiseEnPage;
         private System.Windows.Forms.ToolStripMenuItem listeNoireToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem retraitToolStripMenuItem;
@@ -738,13 +741,13 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private PhotoManagerClient.PhotosBrowser photosBrowser1;
-        private PhotoManagerClient.FlashButton FBTN_Ajouter;
+        private PhotoManagerClient.FlashButton FBTN_Ajouter_MotCle;
         private System.Windows.Forms.GroupBox groupBox4;
         private PhotoManagerClient.FlashButton flashButton3;
         private PhotoManagerClient.FlashButton flashButton4;
-        private PhotoManagerClient.FlashButton flashButton7;
-        private PhotoManagerClient.FlashButton flashButton6;
-        private PhotoManagerClient.FlashButton flashButton5;
+        private PhotoManagerClient.FlashButton FBTN_Modifier;
+        private PhotoManagerClient.FlashButton FBTN_Ajouter;
+        private PhotoManagerClient.FlashButton FTBN_Effacer;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

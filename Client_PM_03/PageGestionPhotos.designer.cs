@@ -41,11 +41,12 @@
             this.CBX_Partager = new System.Windows.Forms.CheckBox();
             this.BTN_Annuler = new System.Windows.Forms.Button();
             this.BTN_Ajouter = new System.Windows.Forms.Button();
-            this.FTBN_Rotation = new PhotoManagerClient.FlashButton();
-            this.imageBox1 = new PhotoManagerClient.ImageBox();
             this.LBX_MotsCles = new System.Windows.Forms.ListBox();
+            this.FBTN_EffacerMotCle = new PhotoManagerClient.FlashButton();
             this.FBTN_AjouterMotCle = new PhotoManagerClient.FlashButton();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
+            this.FTBN_Rotation = new PhotoManagerClient.FlashButton();
+            this.IB_Image = new PhotoManagerClient.ImageBox();
+            ((System.ComponentModel.ISupportInitialize)(this.IB_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // TBX_Titre
@@ -120,7 +121,7 @@
             // CBX_Partager
             // 
             this.CBX_Partager.AutoSize = true;
-            this.CBX_Partager.Location = new System.Drawing.Point(288, 397);
+            this.CBX_Partager.Location = new System.Drawing.Point(288, 377);
             this.CBX_Partager.Name = "CBX_Partager";
             this.CBX_Partager.Size = new System.Drawing.Size(96, 24);
             this.CBX_Partager.TabIndex = 9;
@@ -148,41 +149,7 @@
             this.BTN_Ajouter.TabIndex = 12;
             this.BTN_Ajouter.Text = "Ajouter";
             this.BTN_Ajouter.UseVisualStyleBackColor = true;
-            // 
-            // FTBN_Rotation
-            // 
-            this.FTBN_Rotation.BackgroundImage = global::Client_PM.Properties.Resources.ArrowRotation;
-            this.FTBN_Rotation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FTBN_Rotation.ClickedImage = null;
-            this.FTBN_Rotation.DisabledImage = null;
-            this.FTBN_Rotation.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Rotation.Image")));
-            this.FTBN_Rotation.Location = new System.Drawing.Point(352, 441);
-            this.FTBN_Rotation.Name = "FTBN_Rotation";
-            this.FTBN_Rotation.NeutralImage = null;
-            this.FTBN_Rotation.OverImage = null;
-            this.FTBN_Rotation.Size = new System.Drawing.Size(32, 31);
-            this.FTBN_Rotation.TabIndex = 10;
-            this.FTBN_Rotation.Text = "flashButton1";
-            this.FTBN_Rotation.UseVisualStyleBackColor = true;
-            // 
-            // imageBox1
-            // 
-            this.imageBox1.AllowDrop = true;
-            this.imageBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.imageBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox1.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
-    "th context menu.";
-            this.imageBox1.ImportImageText = "Import image from file...";
-            this.imageBox1.Location = new System.Drawing.Point(426, 12);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.OpenFileDialogTitle = "Please choose image an file";
-            this.imageBox1.PasteMenuText = "Paste image from clipboard";
-            this.imageBox1.Size = new System.Drawing.Size(542, 529);
-            this.imageBox1.TabIndex = 0;
-            this.imageBox1.TabStop = false;
+            this.BTN_Ajouter.Click += new System.EventHandler(this.BTN_Ajouter_Click);
             // 
             // LBX_MotsCles
             // 
@@ -190,9 +157,27 @@
             this.LBX_MotsCles.ItemHeight = 20;
             this.LBX_MotsCles.Location = new System.Drawing.Point(101, 267);
             this.LBX_MotsCles.Name = "LBX_MotsCles";
-            this.LBX_MotsCles.Size = new System.Drawing.Size(283, 104);
+            this.LBX_MotsCles.Size = new System.Drawing.Size(250, 104);
             this.LBX_MotsCles.TabIndex = 13;
             this.LBX_MotsCles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LBX_MotsCles_KeyPress);
+            // 
+            // FBTN_EffacerMotCle
+            // 
+            this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.Delete;
+            this.FBTN_EffacerMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_EffacerMotCle.ClickedImage = null;
+            this.FBTN_EffacerMotCle.DisabledImage = null;
+            this.FBTN_EffacerMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EffacerMotCle.Image")));
+            this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(358, 267);
+            this.FBTN_EffacerMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_EffacerMotCle.Name = "FBTN_EffacerMotCle";
+            this.FBTN_EffacerMotCle.NeutralImage = null;
+            this.FBTN_EffacerMotCle.OverImage = null;
+            this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(26, 26);
+            this.FBTN_EffacerMotCle.TabIndex = 15;
+            this.FBTN_EffacerMotCle.Text = "flashButton3";
+            this.FBTN_EffacerMotCle.UseVisualStyleBackColor = true;
+            this.FBTN_EffacerMotCle.Click += new System.EventHandler(this.FBTN_EffacerMotCle_Click);
             // 
             // FBTN_AjouterMotCle
             // 
@@ -212,13 +197,51 @@
             this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
             this.FBTN_AjouterMotCle.Click += new System.EventHandler(this.FBTN_AjouterMotCle_Click);
             // 
+            // FTBN_Rotation
+            // 
+            this.FTBN_Rotation.BackgroundImage = global::Client_PM.Properties.Resources.ArrowRotation;
+            this.FTBN_Rotation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FTBN_Rotation.ClickedImage = null;
+            this.FTBN_Rotation.DisabledImage = null;
+            this.FTBN_Rotation.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Rotation.Image")));
+            this.FTBN_Rotation.Location = new System.Drawing.Point(358, 407);
+            this.FTBN_Rotation.Name = "FTBN_Rotation";
+            this.FTBN_Rotation.NeutralImage = null;
+            this.FTBN_Rotation.OverImage = null;
+            this.FTBN_Rotation.Size = new System.Drawing.Size(26, 26);
+            this.FTBN_Rotation.TabIndex = 10;
+            this.FTBN_Rotation.Text = "flashButton1";
+            this.FTBN_Rotation.UseVisualStyleBackColor = true;
+            this.FTBN_Rotation.Click += new System.EventHandler(this.FTBN_Rotation_Click);
+            // 
+            // IB_Image
+            // 
+            this.IB_Image.AllowDrop = true;
+            this.IB_Image.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.IB_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.IB_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IB_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+    "th context menu.";
+            this.IB_Image.ImportImageText = "Import image from file...";
+            this.IB_Image.Location = new System.Drawing.Point(426, 12);
+            this.IB_Image.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.IB_Image.Name = "IB_Image";
+            this.IB_Image.OpenFileDialogTitle = "Please choose image an file";
+            this.IB_Image.PasteMenuText = "Paste image from clipboard";
+            this.IB_Image.Size = new System.Drawing.Size(539, 529);
+            this.IB_Image.TabIndex = 0;
+            this.IB_Image.TabStop = false;
+            // 
             // PageGestionPhotos
             // 
             this.AcceptButton = this.BTN_Ajouter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Annuler;
-            this.ClientSize = new System.Drawing.Size(984, 553);
+            this.ClientSize = new System.Drawing.Size(981, 553);
+            this.Controls.Add(this.FBTN_EffacerMotCle);
             this.Controls.Add(this.FBTN_AjouterMotCle);
             this.Controls.Add(this.LBX_MotsCles);
             this.Controls.Add(this.BTN_Ajouter);
@@ -233,11 +256,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Titre);
-            this.Controls.Add(this.imageBox1);
+            this.Controls.Add(this.IB_Image);
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "PageGestionPhotos";
-            this.Text = "Prototype_gestion_photos";
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
+            this.Text = "Ajouter une photo";
+            this.Load += new System.EventHandler(this.PageGestionPhotos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.IB_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,7 +269,7 @@
 
         #endregion
 
-        private PhotoManagerClient.ImageBox imageBox1;
+        private PhotoManagerClient.ImageBox IB_Image;
         private System.Windows.Forms.TextBox TBX_Titre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -260,5 +284,6 @@
         private System.Windows.Forms.Button BTN_Ajouter;
         private System.Windows.Forms.ListBox LBX_MotsCles;
         private PhotoManagerClient.FlashButton FBTN_AjouterMotCle;
+        private PhotoManagerClient.FlashButton FBTN_EffacerMotCle;
     }
 }
