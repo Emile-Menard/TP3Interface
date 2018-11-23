@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PhotoManagerClient;
 
 namespace Client_PM
 {
     public partial class PagePrincipale : Form
     {
         //Bool qui permet de savoir si on est connecté pour permettre certaines opérations
-       // bool mConnected;
-        //PhotoManagerClient.User mUser;
+        bool mConnected;
+        User mUser;
         public PagePrincipale()
         {
             InitializeComponent();
-            //mConnected = false;
-            //mUser = new PhotoManagerClient.User();
+            mConnected = false;
+            mUser = new PhotoManagerClient.User();
         }
 
         //----------------------------------------------------------------------------------
@@ -33,9 +34,9 @@ namespace Client_PM
             PageConnexion pgConnexion = new PageConnexion();
             if (pgConnexion.ShowDialog() == DialogResult.OK)
             {
-                //to do retourner le user
-                //mConnected = true;
-                //FBTN_Ajouter.Enabled = true;
+                mUser = pgConnexion.Logged_User;
+                mConnected = true;
+                FBTN_Ajouter.Enabled = true;
             }
 
         }
@@ -48,28 +49,30 @@ namespace Client_PM
 
         private void AjouterPhoto(object sender, EventArgs e)
         {
-            PageGestionPhotos pgPhoto = new PageGestionPhotos(/*mUser*/);
-            if (pgPhoto.ShowDialog() == DialogResult.OK)
+            if (mConnected)
             {
-                //to do
-                //update photobrowser
-                MessageBox.Show("Photo ajoutée avec succès!");
+                PageGestionPhotos pgPhoto = new PageGestionPhotos(mUser);
+                if (pgPhoto.ShowDialog() == DialogResult.OK)
+                {
+                    //to do
+                    //update photobrowser
+                    MessageBox.Show("Photo ajoutée avec succès!");
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
+            
         }
 
         private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // if (mConnected)
-            //{
-                AjouterPhoto(sender, e);
-           // }
+             AjouterPhoto(sender, e);
         }
         private void FBTN_Ajouter_Click(object sender, EventArgs e)
         {
-            //if (mConnected)
-            //{
-                AjouterPhoto(sender, e);
-            //}
+             AjouterPhoto(sender, e);
         }
     }
 }

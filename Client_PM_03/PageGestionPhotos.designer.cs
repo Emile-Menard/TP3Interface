@@ -43,6 +43,8 @@
             this.BTN_Ajouter = new System.Windows.Forms.Button();
             this.FTBN_Rotation = new PhotoManagerClient.FlashButton();
             this.imageBox1 = new PhotoManagerClient.ImageBox();
+            this.LBX_MotsCles = new System.Windows.Forms.ListBox();
+            this.FBTN_AjouterMotCle = new PhotoManagerClient.FlashButton();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +84,7 @@
             // RTB_Description
             // 
             this.RTB_Description.AcceptsTab = true;
-            this.RTB_Description.Location = new System.Drawing.Point(101, 78);
+            this.RTB_Description.Location = new System.Drawing.Point(101, 77);
             this.RTB_Description.Name = "RTB_Description";
             this.RTB_Description.Size = new System.Drawing.Size(283, 151);
             this.RTB_Description.TabIndex = 5;
@@ -101,16 +103,15 @@
             // 
             this.TBX_MotsCles.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TBX_MotsCles.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.TBX_MotsCles.Location = new System.Drawing.Point(101, 236);
+            this.TBX_MotsCles.Location = new System.Drawing.Point(101, 235);
             this.TBX_MotsCles.Name = "TBX_MotsCles";
-            this.TBX_MotsCles.Size = new System.Drawing.Size(284, 26);
+            this.TBX_MotsCles.Size = new System.Drawing.Size(250, 26);
             this.TBX_MotsCles.TabIndex = 7;
-            this.TBX_MotsCles.TextChanged += new System.EventHandler(this.TBX_MotsCles_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 239);
+            this.label4.Location = new System.Drawing.Point(12, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 8;
@@ -119,7 +120,7 @@
             // CBX_Partager
             // 
             this.CBX_Partager.AutoSize = true;
-            this.CBX_Partager.Location = new System.Drawing.Point(290, 268);
+            this.CBX_Partager.Location = new System.Drawing.Point(288, 397);
             this.CBX_Partager.Name = "CBX_Partager";
             this.CBX_Partager.Size = new System.Drawing.Size(96, 24);
             this.CBX_Partager.TabIndex = 9;
@@ -130,7 +131,7 @@
             // 
             this.BTN_Annuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Annuler.Location = new System.Drawing.Point(208, 538);
+            this.BTN_Annuler.Location = new System.Drawing.Point(208, 487);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(176, 53);
             this.BTN_Annuler.TabIndex = 11;
@@ -141,7 +142,7 @@
             // 
             this.BTN_Ajouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ajouter.Location = new System.Drawing.Point(10, 538);
+            this.BTN_Ajouter.Location = new System.Drawing.Point(10, 487);
             this.BTN_Ajouter.Name = "BTN_Ajouter";
             this.BTN_Ajouter.Size = new System.Drawing.Size(176, 53);
             this.BTN_Ajouter.TabIndex = 12;
@@ -155,7 +156,7 @@
             this.FTBN_Rotation.ClickedImage = null;
             this.FTBN_Rotation.DisabledImage = null;
             this.FTBN_Rotation.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Rotation.Image")));
-            this.FTBN_Rotation.Location = new System.Drawing.Point(353, 298);
+            this.FTBN_Rotation.Location = new System.Drawing.Point(352, 441);
             this.FTBN_Rotation.Name = "FTBN_Rotation";
             this.FTBN_Rotation.NeutralImage = null;
             this.FTBN_Rotation.OverImage = null;
@@ -179,9 +180,37 @@
             this.imageBox1.Name = "imageBox1";
             this.imageBox1.OpenFileDialogTitle = "Please choose image an file";
             this.imageBox1.PasteMenuText = "Paste image from clipboard";
-            this.imageBox1.Size = new System.Drawing.Size(633, 580);
+            this.imageBox1.Size = new System.Drawing.Size(542, 529);
             this.imageBox1.TabIndex = 0;
             this.imageBox1.TabStop = false;
+            // 
+            // LBX_MotsCles
+            // 
+            this.LBX_MotsCles.FormattingEnabled = true;
+            this.LBX_MotsCles.ItemHeight = 20;
+            this.LBX_MotsCles.Location = new System.Drawing.Point(101, 267);
+            this.LBX_MotsCles.Name = "LBX_MotsCles";
+            this.LBX_MotsCles.Size = new System.Drawing.Size(283, 104);
+            this.LBX_MotsCles.TabIndex = 13;
+            this.LBX_MotsCles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LBX_MotsCles_KeyPress);
+            // 
+            // FBTN_AjouterMotCle
+            // 
+            this.FBTN_AjouterMotCle.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
+            this.FBTN_AjouterMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_AjouterMotCle.ClickedImage = null;
+            this.FBTN_AjouterMotCle.DisabledImage = null;
+            this.FBTN_AjouterMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AjouterMotCle.Image")));
+            this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(358, 237);
+            this.FBTN_AjouterMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_AjouterMotCle.Name = "FBTN_AjouterMotCle";
+            this.FBTN_AjouterMotCle.NeutralImage = null;
+            this.FBTN_AjouterMotCle.OverImage = null;
+            this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(26, 22);
+            this.FBTN_AjouterMotCle.TabIndex = 14;
+            this.FBTN_AjouterMotCle.Text = "flashButton2";
+            this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
+            this.FBTN_AjouterMotCle.Click += new System.EventHandler(this.FBTN_AjouterMotCle_Click);
             // 
             // PageGestionPhotos
             // 
@@ -189,7 +218,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Annuler;
-            this.ClientSize = new System.Drawing.Size(1075, 604);
+            this.ClientSize = new System.Drawing.Size(984, 553);
+            this.Controls.Add(this.FBTN_AjouterMotCle);
+            this.Controls.Add(this.LBX_MotsCles);
             this.Controls.Add(this.BTN_Ajouter);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(this.FTBN_Rotation);
@@ -203,7 +234,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Titre);
             this.Controls.Add(this.imageBox1);
-            this.MinimumSize = new System.Drawing.Size(900, 530);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "PageGestionPhotos";
             this.Text = "Prototype_gestion_photos";
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
@@ -227,5 +258,7 @@
         private PhotoManagerClient.FlashButton FTBN_Rotation;
         private System.Windows.Forms.Button BTN_Annuler;
         private System.Windows.Forms.Button BTN_Ajouter;
+        private System.Windows.Forms.ListBox LBX_MotsCles;
+        private PhotoManagerClient.FlashButton FBTN_AjouterMotCle;
     }
 }

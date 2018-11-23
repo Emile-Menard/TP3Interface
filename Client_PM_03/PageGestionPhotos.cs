@@ -14,35 +14,63 @@ namespace Client_PM
     public partial class PageGestionPhotos : Form
     {
         User mUser;
-        List<Photo> mPhotos;
         AutoCompleteStringCollection mMotsCles;
-        public PageGestionPhotos(User user = null)
+        PhotoFilter mPhotoFilter;
+        public PageGestionPhotos(User user)
         {
             InitializeComponent();
             mUser = user;
-            mPhotos = DBPhotosWebServices.GetAllPhotos();
             mMotsCles = new AutoCompleteStringCollection();
+            mPhotoFilter = new PhotoFilter(mUser.Id);
+            mPhotoFilter.SetUserFilter(false, true, 0);
             Init_MotsCles();
         }
 
         private void Init_MotsCles()
         {
-            //List<string> motsCles;
-            foreach (Photo photo in mPhotos)
+            
+            mPhotoFilter.GetPhotos();
+            foreach (string keyword in mPhotoFilter.KeywordsList)
             {
-                //To do bâtir une liste de keyword
-                //motsCles = String.split(photo.Keywords);
-                //mMotsCles.Add(photo.Keywords);
+                mMotsCles.Add(keyword);
             }
             TBX_MotsCles.AutoCompleteCustomSource = mMotsCles;
         }
 
-        private void TBX_MotsCles_TextChanged(object sender, EventArgs e)
+        private void AjouterMotCle()
         {
-
-
+            if(TBX_MotsCles.Text != "")
+            {
+                LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
+                TBX_MotsCles.Clear();
+            }
+           
         }
 
-        
+        private void RetirerMotCle()
+        {
+            LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
+        }
+
+        //private void TBX_MotsCles_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if(e.KeyChar == (char)Keys.Enter)
+        //    {
+        //        AjouterMotCle();
+        //    }
+        //}
+
+        private void FBTN_AjouterMotCle_Click(object sender, EventArgs e)
+        {
+            AjouterMotCle();
+        }
+
+        private void LBX_MotsCles_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                RetirerMotCle();
+            }
+        }
     }
 }
