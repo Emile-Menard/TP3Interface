@@ -76,6 +76,12 @@
     <Compile Include="PageCarousel.designer.cs">
       <DependentUpon>PageCarousel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageGestionUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageGestionUser.designer.cs">
+      <DependentUpon>PageGestionUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageListeNoire.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,7 @@
     <Compile Include="PageInfoPhotos.designer.cs">
       <DependentUpon>PageInfoPhotos.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaticMethods.cs" />
     <EmbeddedResource Include="PageConnexion.resx">
       <DependentUpon>PageConnexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageCarousel.resx">
       <DependentUpon>PageCarousel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageGestionUser.resx">
+      <DependentUpon>PageGestionUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageListeNoire.resx">
       <DependentUpon>PageListeNoire.cs</DependentUpon>

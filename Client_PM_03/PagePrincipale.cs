@@ -11,17 +11,15 @@ using PhotoManagerClient;
 
 namespace Client_PM
 {
+
     public partial class PagePrincipale : Form
     {
         //Bool qui permet de savoir si on est connecté pour permettre certaines opérations
-        bool mConnected;
-        User mUser;
+        User LoggedUser = null;
         PhotoBrowserPlacement mPhotoBrowserPlacement;
         public PagePrincipale()
         {
             InitializeComponent();
-            mConnected = false;
-            mUser = new PhotoManagerClient.User();
             mPhotoBrowserPlacement = PhotoBrowserPlacement.Left;
         }
 
@@ -36,9 +34,9 @@ namespace Client_PM
             PageConnexion pgConnexion = new PageConnexion();
             if (pgConnexion.ShowDialog() == DialogResult.OK)
             {
-                mUser = pgConnexion.Logged_User;
-                mConnected = true;
+                LoggedUser = pgConnexion.Logged_User;
                 FBTN_Ajouter_MotCle.Enabled = true;
+                ToggleUserStripOptions();
             }
 
         }
@@ -51,9 +49,9 @@ namespace Client_PM
 
         private void AjouterPhoto(object sender, EventArgs e)
         {
-            if (mConnected)
+            if (LoggedUser.Exists())
             {
-                PageGestionPhotos pgPhoto = new PageGestionPhotos(mUser);
+                PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser);
                 if (pgPhoto.ShowDialog() == DialogResult.OK)
                 {
                     photosBrowser1.AddPhoto(pgPhoto.mPhoto);
@@ -69,9 +67,9 @@ namespace Client_PM
 
         private void ModifierPhoto()
         {
-            if (mConnected)
+            if (LoggedUser != null)
             {
-                PageGestionPhotos pgPhoto = new PageGestionPhotos(mUser, photosBrowser1.SelectedPhoto);
+                PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser1.SelectedPhoto);
                 if (pgPhoto.ShowDialog() == DialogResult.OK)
                 {
                     photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
@@ -86,10 +84,10 @@ namespace Client_PM
 
         private void EffacerPhoto()
         {
-            if (mConnected)
+            if (LoggedUser.Exists())
             {
                 //Si la photo appartient à l'utilisateur courant
-                if (mUser.Id == photosBrowser1.SelectedPhoto.OwnerId)
+                if (LoggedUser.Id == photosBrowser1.SelectedPhoto.OwnerId)
                 {
                     var confirmer = MessageBox.Show("Êtes-vous certain de vouloir effacer cette photo?", "Confirmation", MessageBoxButtons.YesNo);
                     if (confirmer == DialogResult.Yes)
@@ -171,6 +169,55 @@ namespace Client_PM
             RotationMiseEnPage();
         }
 
-        
+
+
+        private void ToggleUserStripOptions()
+        {
+            TLSTRIP_Editer.Enabled = LoggedUser.Exists();
+            TLSTRIP_Cree.Enabled = !LoggedUser.Exists();
+            TLSTRIP_Deconnexion.Enabled = LoggedUser.Exists();
+            TLSTRIP_Connexion.Enabled = !LoggedUser.Exists();
+        }
+
+        private void TLSTRIP_Editer_Click(object sender, EventArgs e)
+        {
+            PageGestionUser pgEditerCompte = new PageGestionUser();
+            pgEditerCompte.User = LoggedUser;
+            if (pgEditerCompte.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void TLSTRIP_Cree_Click(object sender, EventArgs e)
+        {
+            PageGestionUser pgCreation = new PageGestionUser();
+            if (pgCreation.ShowDialog() == DialogResult.OK)
+            {
+               LoggedUser = pgCreation.User;
+                ToggleUserStripOptions();
+            }
+        }
+
+        private void TLSTRIP_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PagePrincipale_Load(object sender, EventArgs e)
+        {
+            ToggleUserStripOptions();
+        }
+
+        private void TLSTRIP_Deconnexion_Click(object sender, EventArgs e)
+        {
+            LoggedUser = null;
+            ToggleUserStripOptions();
+        }
+
+        private void PagePrincipale_Load_1(object sender, EventArgs e)
+        {
+            ToggleUserStripOptions();
+        }
     }
 }
