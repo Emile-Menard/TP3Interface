@@ -70,7 +70,10 @@ namespace Client_PM
                 PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser);
                 if (pgPhoto.ShowDialog() == DialogResult.OK)
                 {
-                    photosBrowser1.AddPhoto(pgPhoto.mPhoto);
+                    
+                    //pgPhoto.mPhoto.
+                    //photosBrowser1.AddPhoto(pgPhoto.mPhoto);
+                    Update_Photo_Browser();
                     MessageBox.Show("Photo ajoutée avec succès!");
                 }
             }
