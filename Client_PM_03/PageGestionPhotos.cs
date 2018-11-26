@@ -102,8 +102,8 @@ namespace Client_PM
         private bool Valider_IB_Image(ref string message)
         {
             message = "Il n'y a aucune photo";
-            //return IB_Image.Image != null;
-            return true;
+            return IB_Image.Image != null;
+            
         }
 
         //----------------------------------------------------------------------------------
@@ -155,6 +155,8 @@ namespace Client_PM
             mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
             mPhoto.Shared = CBX_Partager.Checked;
             mPhoto.SetImage(IB_Image.Image);
+            mPhoto.OwnerId = mUser.Id;
+            mPhoto = DBPhotosWebServices.CreatePhoto(mPhoto);
         }
 
         private void PhotoToDialog()
