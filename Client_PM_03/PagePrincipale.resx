@@ -121,23 +121,21 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="FBTN_MiseEnPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="flashButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAAkdJREFUWEfFlz/P+VAUxxsRIQZ/EgPCIlYJIeLPwGawSERi4xVIRGLyCkwGsbGK
-        GBgkXoGFyeAVWEQkRonh/Hrr9Hl6ey+t/to8n+QrnHP6vae91XsrwB+ju4H1eg2NRgMCgQAIgkDJ5/NB
-        rVaD+XyO1frRbKDT6TADaqnVauHR2rxtYLlccs2/0Xg8RjeawWAA3W5X+s5tgFxOnqFSTqcT3G43N6dU
-        NptF1xflcpnKMQ2k02nKQJbX65XO6H6/Y+Uvj8cDZrMZRKNR7rHhcBgrxTNW5zEuUa/X2QJR2+0WK7Q5
-        HA5cD3JiBCYnRUXIXa5OhkIhzH5PKpVi/Mh95fF46DjW00FRwWAQM8bhTSdz35DCfr9PB0WZhcPhYLwp
-        kSJ1kEzH/3K73eB6vcJms2H8Ke12OyrgcrnQwjilUony/Kher0cFhsMh2hjjcrlQfprK5/NU4Hw+o5Vx
-        lH6fFIvFQFAvLmZwOp2gWCwCOblCocAol8tBpVKB5/MJgs1mM72Bb/j7BqyYAh6r1QrsdjskEgmMvLDk
-        JuShHKNarWJUjJv9N+RBdkrKMciSLGPJg0hNPB6nxphOp5gRG5A+FEkiMx7FMsfjkfFXIv2ycjFS+zab
-        Tcy8+BlJXWjGcszbE6j5iZi9IUkmk4zfaDTC7C9US2Zsyfb7PddDvTmVYa5JJpPhGujZlEYiEe6xJP4O
-        dlJEzNyWk4XnE9wGCGa8mEwmE3R7z9sGZIy8mrXbbTxaG80GZD69nPr9fmnaFosFVutHdwPWAPAP+kqy
-        xHn/CjoAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
+        YII=
 </value>
   </data>
-  <data name="FBTN_MiseEnPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="flashButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="FBTN_Ajouter_MotCle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
@@ -165,21 +163,23 @@
         YII=
 </value>
   </data>
-  <data name="flashButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FBTN_MiseEnPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
-        YII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAkdJREFUWEfFlz/P+VAUxxsRIQZ/EgPCIlYJIeLPwGawSERi4xVIRGLyCkwGsbGK
+        GBgkXoGFyeAVWEQkRonh/Hrr9Hl6ey+t/to8n+QrnHP6vae91XsrwB+ju4H1eg2NRgMCgQAIgkDJ5/NB
+        rVaD+XyO1frRbKDT6TADaqnVauHR2rxtYLlccs2/0Xg8RjeawWAA3W5X+s5tgFxOnqFSTqcT3G43N6dU
+        NptF1xflcpnKMQ2k02nKQJbX65XO6H6/Y+Uvj8cDZrMZRKNR7rHhcBgrxTNW5zEuUa/X2QJR2+0WK7Q5
+        HA5cD3JiBCYnRUXIXa5OhkIhzH5PKpVi/Mh95fF46DjW00FRwWAQM8bhTSdz35DCfr9PB0WZhcPhYLwp
+        kSJ1kEzH/3K73eB6vcJms2H8Ke12OyrgcrnQwjilUony/Kher0cFhsMh2hjjcrlQfprK5/NU4Hw+o5Vx
+        lH6fFIvFQFAvLmZwOp2gWCwCOblCocAol8tBpVKB5/MJgs1mM72Bb/j7BqyYAh6r1QrsdjskEgmMvLDk
+        JuShHKNarWJUjJv9N+RBdkrKMciSLGPJg0hNPB6nxphOp5gRG5A+FEkiMx7FMsfjkfFXIv2ycjFS+zab
+        Tcy8+BlJXWjGcszbE6j5iZi9IUkmk4zfaDTC7C9US2Zsyfb7PddDvTmVYa5JJpPhGujZlEYiEe6xJP4O
+        dlJEzNyWk4XnE9wGCGa8mEwmE3R7z9sGZIy8mrXbbTxaG80GZD69nPr9fmnaFosFVutHdwPWAPAP+kqy
+        xHn/CjoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="flashButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="FBTN_Ajouter_MotCle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FBTN_MiseEnPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
