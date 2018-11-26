@@ -17,12 +17,14 @@ namespace Client_PM
         //Bool qui permet de savoir si on est connecté pour permettre certaines opérations
         User LoggedUser = null;
         PhotoBrowserPlacement mPhotoBrowserPlacement;
+        PhotoFilter mPhotoFilter;
         //List<int> mBlackListedUsers;
         //List<Photo> mPhotos;
         public PagePrincipale()
         {
             InitializeComponent();
             mPhotoBrowserPlacement = PhotoBrowserPlacement.Left;
+            Update_MotsCles();
             // mPhotos = DBPhotosWebServices.GetAllPhotos().Where(p => mBlackListedUsers.IndexOf(p.OwnerId) == -1).ToList();
 
         }
@@ -39,9 +41,11 @@ namespace Client_PM
             if (pgConnexion.ShowDialog() == DialogResult.OK)
             {
                 LoggedUser = pgConnexion.Logged_User;
-                FBTN_Ajouter_MotCle.Enabled = true;
+                FBTN_AjouterMotCle.Enabled = true;
                 ToggleUserStripOptions();
                 Update_Photo_Browser();
+                mPhotoFilter = new PhotoFilter(LoggedUser.Id);
+                Update_MotsCles();
             }
 
         }
@@ -71,6 +75,7 @@ namespace Client_PM
                 if (pgPhoto.ShowDialog() == DialogResult.OK)
                 {
                     Update_Photo_Browser();
+                    Update_MotsCles();
                     photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
                     MessageBox.Show("Photo ajoutée avec succès!");
                 }
@@ -93,6 +98,8 @@ namespace Client_PM
                     if (pgPhoto.ShowDialog() == DialogResult.OK)
                     {
                         Update_Photo_Browser();
+                        Update_MotsCles();
+                        
                         photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
                         MessageBox.Show("Photo modifiée avec succès!");
                     }
@@ -120,6 +127,7 @@ namespace Client_PM
                     {
                         DBPhotosWebServices.DeletePhoto(photosBrowser1.SelectedPhoto);
                         photosBrowser1.DeleteSelectedPhoto();
+                        Update_MotsCles();
                     }
                 }
                 else
@@ -132,6 +140,45 @@ namespace Client_PM
                 MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
             }
             
+        }
+
+        //----------------------------------------------------------------------------------
+        //
+        //Mots-Clés
+        //
+        //----------------------------------------------------------------------------------
+        private void Update_MotsCles()
+        {
+            
+            AutoCompleteStringCollection motsCles = new AutoCompleteStringCollection();
+        
+            foreach (string keyword in mPhotoFilter.KeywordsList)
+            {
+                motsCles.Add(keyword);
+            }
+
+            TBX_MotsCles.AutoCompleteCustomSource = motsCles;
+        }
+
+        private void FBTN_Ajouter_MotCle_Click(object sender, EventArgs e)
+        {
+            if (TBX_MotsCles.Text != "")
+            {
+                LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
+                TBX_MotsCles.Clear();
+                mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, LBX_MotsCles.Items.ToString());
+            }
+        }
+
+        private void FBTN_EffacerMotCle_Click(object sender, EventArgs e)
+        {
+            LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
+            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, LBX_MotsCles.Items.ToString());
+        }
+
+        private void CBX_MotsCles_CheckedChanged(object sender, EventArgs e)
+        {
+            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, LBX_MotsCles.Items.ToString());
         }
 
         //----------------------------------------------------------------------------------
@@ -257,7 +304,7 @@ namespace Client_PM
         {
             if (Properties.Settings.Default.RememberMe)
             {
-                var RememberMe = Properties.Settings.Default.RememberMe;
+               var RememberMe = Properties.Settings.Default.RememberMe;
                if(RememberMe)
                 {
                     User user = DBPhotosWebServices.Login(Properties.Settings.Default.Username, Properties.Settings.Default.Password);
@@ -268,6 +315,6 @@ namespace Client_PM
             }
         }
 
-
+        
     }
 }
