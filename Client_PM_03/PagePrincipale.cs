@@ -11,6 +11,8 @@ using PhotoManagerClient;
 
 namespace Client_PM
 {
+
+    //test
     public partial class PagePrincipale : Form
     {
         //Bool qui permet de savoir si on est connecté pour permettre certaines opérations
