@@ -236,7 +236,33 @@ namespace Client_PM
 
         private void PagePrincipale_Load_1(object sender, EventArgs e)
         {
+            Load_Settings();
             ToggleUserStripOptions();
+            if(LoggedUser.Exists())
+            {
+                Update_Photo_Browser();
+            }
+
+        }
+
+        private void Load_Settings()
+        {
+            if (Properties.Settings.Default.RememberMe)
+            {
+                var RememberMe = Properties.Settings.Default.RememberMe;
+               if(RememberMe)
+                {
+                    User user = DBPhotosWebServices.Login(Properties.Settings.Default.Username, Properties.Settings.Default.Password);
+                    if (user.Exists()) {
+                       LoggedUser = user;
+                    }
+                }
+            }
+        }
+
+        private void photosBrowser1_SelectedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
