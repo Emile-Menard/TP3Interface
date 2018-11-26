@@ -102,7 +102,8 @@ namespace Client_PM
         private bool Valider_IB_Image(ref string message)
         {
             message = "Il n'y a aucune photo";
-            return IB_Image.Image != null;
+            //return IB_Image.Image != null;
+            return true;
         }
 
         //----------------------------------------------------------------------------------

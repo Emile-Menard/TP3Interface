@@ -17,10 +17,14 @@ namespace Client_PM
         //Bool qui permet de savoir si on est connecté pour permettre certaines opérations
         User LoggedUser = null;
         PhotoBrowserPlacement mPhotoBrowserPlacement;
+        //List<int> mBlackListedUsers;
+        //List<Photo> mPhotos;
         public PagePrincipale()
         {
             InitializeComponent();
             mPhotoBrowserPlacement = PhotoBrowserPlacement.Left;
+            // mPhotos = DBPhotosWebServices.GetAllPhotos().Where(p => mBlackListedUsers.IndexOf(p.OwnerId) == -1).ToList();
+
         }
 
         //----------------------------------------------------------------------------------
@@ -37,8 +41,20 @@ namespace Client_PM
                 LoggedUser = pgConnexion.Logged_User;
                 FBTN_Ajouter_MotCle.Enabled = true;
                 ToggleUserStripOptions();
+                Update_Photo_Browser();
             }
 
+        }
+        //----------------------------------------------------------------------------------
+        //
+        //Photo browser
+        //
+        //----------------------------------------------------------------------------------
+        private void Update_Photo_Browser()
+        {
+            WaitSplash.Show(this, "Téléchargement des photos");
+            photosBrowser1.LoadPhotos(DBPhotosWebServices.GetAllPhotos());
+            WaitSplash.Hide();
         }
 
         //----------------------------------------------------------------------------------
