@@ -102,7 +102,7 @@ namespace Client_PM
         private bool Valider_IB_Image(ref string message)
         {
             message = "Il n'y a aucune photo";
-            return IB_Image.Image != null;
+            return IB_Image.BackgroundImage != null;
             
         }
 
@@ -154,7 +154,7 @@ namespace Client_PM
             mPhoto.Description = RTB_Description.Text;
             mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
             mPhoto.Shared = CBX_Partager.Checked;
-            mPhoto.SetImage(IB_Image.Image);
+            mPhoto.SetImage(IB_Image.BackgroundImage);
             mPhoto.OwnerId = mUser.Id;
             mPhoto = DBPhotosWebServices.CreatePhoto(mPhoto);
         }
@@ -166,7 +166,7 @@ namespace Client_PM
             RTB_Description.Text = mPhoto.Description;
             LBX_MotsCles.Items.AddRange(mPhoto.Keywords.Split(' ').ToArray());
             CBX_Partager.Checked = mPhoto.Shared;
-            IB_Image.Image = mPhoto.GetOriginalImage();
+            IB_Image.BackgroundImage = mPhoto.GetOriginalImage();
         }
 
         //----------------------------------------------------------------------------------
@@ -219,6 +219,6 @@ namespace Client_PM
             DialogToPhoto();
         }
 
-        
+
     }
 }
