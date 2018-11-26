@@ -150,32 +150,38 @@ namespace Client_PM
 
         private void DialogToPhotoCreate()
         {
-            mPhoto.Title = TBX_Titre.Text;
-            mPhoto.CreationDate = DTP_Date.Value;
-            mPhoto.Description = RTB_Description.Text;
-            if(LBX_MotsCles.Items.Count > 0)
+            if(IB_Image.BackgroundImage != null && TBX_Titre.Text != "")
             {
-                mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+                mPhoto.Title = TBX_Titre.Text;
+                mPhoto.CreationDate = DTP_Date.Value;
+                mPhoto.Description = RTB_Description.Text;
+                if (LBX_MotsCles.Items.Count > 0)
+                {
+                    mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+                }
+                mPhoto.Shared = CBX_Partager.Checked;
+                mPhoto.SetImage(IB_Image.BackgroundImage);
+                mPhoto.OwnerId = mUser.Id;
+                mPhoto = DBPhotosWebServices.CreatePhoto(mPhoto);
             }
-            mPhoto.Shared = CBX_Partager.Checked;
-            mPhoto.SetImage(IB_Image.BackgroundImage);
-            mPhoto.OwnerId = mUser.Id;
-            mPhoto = DBPhotosWebServices.CreatePhoto(mPhoto);
         }
 
         private void DialogToPhotoUpdate()
         {
-            mPhoto.Title = TBX_Titre.Text;
-            mPhoto.CreationDate = DTP_Date.Value;
-            mPhoto.Description = RTB_Description.Text;
-            if (LBX_MotsCles.Items.Count > 0)
+            if (IB_Image.BackgroundImage != null && TBX_Titre.Text != "")
             {
-                mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+                mPhoto.Title = TBX_Titre.Text;
+                mPhoto.CreationDate = DTP_Date.Value;
+                mPhoto.Description = RTB_Description.Text;
+                if (LBX_MotsCles.Items.Count > 0)
+                {
+                    mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+                }
+                mPhoto.Shared = CBX_Partager.Checked;
+                mPhoto.SetImage(IB_Image.BackgroundImage);
+                mPhoto.OwnerId = mUser.Id;
+                mPhoto = DBPhotosWebServices.UpdatePhoto(mPhoto);
             }
-            mPhoto.Shared = CBX_Partager.Checked;
-            mPhoto.SetImage(IB_Image.BackgroundImage);
-            mPhoto.OwnerId = mUser.Id;
-            mPhoto = DBPhotosWebServices.UpdatePhoto(mPhoto);
         }
 
         private void PhotoToDialog()
@@ -201,14 +207,6 @@ namespace Client_PM
             mValidationProvider.AddControlToValidate(TBX_Titre, Valider_TBX_Titre);
             mValidationProvider.AddControlToValidate(IB_Image, Valider_IB_Image);
         }
-
-        //private void TBX_MotsCles_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if(e.KeyChar == (char)Keys.Enter)
-        //    {
-        //        AjouterMotCle();
-        //    }
-        //}
 
         private void FBTN_AjouterMotCle_Click(object sender, EventArgs e)
         {

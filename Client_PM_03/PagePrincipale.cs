@@ -70,9 +70,8 @@ namespace Client_PM
                 PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser);
                 if (pgPhoto.ShowDialog() == DialogResult.OK)
                 {
-                    
-                    
                     Update_Photo_Browser();
+                    photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
                     MessageBox.Show("Photo ajoutée avec succès!");
                 }
             }
@@ -87,12 +86,20 @@ namespace Client_PM
         {
             if (LoggedUser != null)
             {
-                PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser1.SelectedPhoto);
-                if (pgPhoto.ShowDialog() == DialogResult.OK)
+                //Si la photo appartient à l'utilisateur courant
+                if (LoggedUser.Id == photosBrowser1.SelectedPhoto.OwnerId)
                 {
-                    Update_Photo_Browser();
-                    photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
-                    MessageBox.Show("Photo modifiée avec succès!");
+                    PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser1.SelectedPhoto);
+                    if (pgPhoto.ShowDialog() == DialogResult.OK)
+                    {
+                        Update_Photo_Browser();
+                        photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
+                        MessageBox.Show("Photo modifiée avec succès!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vous ne pouvez pas effacer cette photo! (elle appartient à quelqu'un d'autre)");
                 }
             }
             else
