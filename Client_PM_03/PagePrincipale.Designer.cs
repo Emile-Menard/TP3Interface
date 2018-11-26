@@ -635,7 +635,6 @@
             this.photosBrowser1.SelectedPhoto = null;
             this.photosBrowser1.Size = new System.Drawing.Size(691, 541);
             this.photosBrowser1.TabIndex = 8;
-            this.photosBrowser1.SelectedChanged += new PhotoManagerClient.PhotosBrowser.SelectedChangedHandler(this.photosBrowser1_SelectedChanged);
             // 
             // PagePrincipale
             // 

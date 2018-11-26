@@ -14,6 +14,7 @@ namespace Client_PM
 {
     public partial class PageGestionPhotos : Form
     {
+        const string MODE_MODIFIER = "Modifier";
         public User mUser;
         public Photo mPhoto;
         private  AutoCompleteStringCollection mMotsCles;
@@ -50,7 +51,7 @@ namespace Client_PM
             mUser = user;
             mPhoto = photo;
             this.Text = "Modifier une photo";
-            BTN_Ajouter.Text = "Modifier";
+            BTN_Ajouter.Text = MODE_MODIFIER;
             PhotoToDialog();
         }
 
@@ -147,16 +148,34 @@ namespace Client_PM
         //
         //----------------------------------------------------------------------------------
 
-        private void DialogToPhoto()
+        private void DialogToPhotoCreate()
         {
             mPhoto.Title = TBX_Titre.Text;
             mPhoto.CreationDate = DTP_Date.Value;
             mPhoto.Description = RTB_Description.Text;
-            mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+            if(LBX_MotsCles.Items.Count > 0)
+            {
+                mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+            }
             mPhoto.Shared = CBX_Partager.Checked;
             mPhoto.SetImage(IB_Image.BackgroundImage);
             mPhoto.OwnerId = mUser.Id;
             mPhoto = DBPhotosWebServices.CreatePhoto(mPhoto);
+        }
+
+        private void DialogToPhotoUpdate()
+        {
+            mPhoto.Title = TBX_Titre.Text;
+            mPhoto.CreationDate = DTP_Date.Value;
+            mPhoto.Description = RTB_Description.Text;
+            if (LBX_MotsCles.Items.Count > 0)
+            {
+                mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+            }
+            mPhoto.Shared = CBX_Partager.Checked;
+            mPhoto.SetImage(IB_Image.BackgroundImage);
+            mPhoto.OwnerId = mUser.Id;
+            mPhoto = DBPhotosWebServices.UpdatePhoto(mPhoto);
         }
 
         private void PhotoToDialog()
@@ -164,7 +183,10 @@ namespace Client_PM
             TBX_Titre.Text = mPhoto.Title;
             DTP_Date.Value =  mPhoto.CreationDate;
             RTB_Description.Text = mPhoto.Description;
-            LBX_MotsCles.Items.AddRange(mPhoto.Keywords.Split(' ').ToArray());
+            if(mPhoto.Keywords == "")
+            {
+                LBX_MotsCles.Items.AddRange(mPhoto.Keywords.Split(' ').ToArray());
+            }
             CBX_Partager.Checked = mPhoto.Shared;
             IB_Image.BackgroundImage = mPhoto.GetOriginalImage();
         }
@@ -216,7 +238,15 @@ namespace Client_PM
 
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
-            DialogToPhoto();
+            if(BTN_Ajouter.Text == MODE_MODIFIER)
+            {
+                DialogToPhotoUpdate();
+            }
+            else
+            {
+                DialogToPhotoCreate();
+            }
+           
         }
 
 

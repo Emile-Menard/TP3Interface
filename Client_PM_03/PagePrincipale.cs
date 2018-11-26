@@ -71,8 +71,7 @@ namespace Client_PM
                 if (pgPhoto.ShowDialog() == DialogResult.OK)
                 {
                     
-                    //pgPhoto.mPhoto.
-                    //photosBrowser1.AddPhoto(pgPhoto.mPhoto);
+                    
                     Update_Photo_Browser();
                     MessageBox.Show("Photo ajoutée avec succès!");
                 }
@@ -91,6 +90,7 @@ namespace Client_PM
                 PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser1.SelectedPhoto);
                 if (pgPhoto.ShowDialog() == DialogResult.OK)
                 {
+                    Update_Photo_Browser();
                     photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
                     MessageBox.Show("Photo modifiée avec succès!");
                 }
@@ -111,6 +111,7 @@ namespace Client_PM
                     var confirmer = MessageBox.Show("Êtes-vous certain de vouloir effacer cette photo?", "Confirmation", MessageBoxButtons.YesNo);
                     if (confirmer == DialogResult.Yes)
                     {
+                        DBPhotosWebServices.DeletePhoto(photosBrowser1.SelectedPhoto);
                         photosBrowser1.DeleteSelectedPhoto();
                     }
                 }
@@ -260,9 +261,6 @@ namespace Client_PM
             }
         }
 
-        private void photosBrowser1_SelectedChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
