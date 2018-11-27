@@ -46,10 +46,6 @@
             this.retraitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.réinitialisationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hautToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.basToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.droiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gaucheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CMB_UsersList = new System.Windows.Forms.ComboBox();
             this.TBX_MotsCles = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -76,10 +72,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.GBX_User = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.imageBox1 = new PhotoManagerClient.ImageBox();
+            this.BTN_EditUser = new System.Windows.Forms.Button();
+            this.IBX_User = new PhotoManagerClient.ImageBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.FBTN_MiseEnPage = new PhotoManagerClient.FlashButton();
             this.photosBrowser1 = new PhotoManagerClient.PhotosBrowser();
@@ -89,8 +85,8 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
+            this.GBX_User.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IBX_User)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,38 +216,11 @@
             // 
             // rotationToolStripMenuItem
             // 
-            this.rotationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hautToolStripMenuItem,
-            this.basToolStripMenuItem,
-            this.droiteToolStripMenuItem,
-            this.gaucheToolStripMenuItem});
             this.rotationToolStripMenuItem.Name = "rotationToolStripMenuItem";
-            this.rotationToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
-            this.rotationToolStripMenuItem.Text = "Rotation";
-            // 
-            // hautToolStripMenuItem
-            // 
-            this.hautToolStripMenuItem.Name = "hautToolStripMenuItem";
-            this.hautToolStripMenuItem.Size = new System.Drawing.Size(154, 30);
-            this.hautToolStripMenuItem.Text = "Haut";
-            // 
-            // basToolStripMenuItem
-            // 
-            this.basToolStripMenuItem.Name = "basToolStripMenuItem";
-            this.basToolStripMenuItem.Size = new System.Drawing.Size(154, 30);
-            this.basToolStripMenuItem.Text = "Bas";
-            // 
-            // droiteToolStripMenuItem
-            // 
-            this.droiteToolStripMenuItem.Name = "droiteToolStripMenuItem";
-            this.droiteToolStripMenuItem.Size = new System.Drawing.Size(154, 30);
-            this.droiteToolStripMenuItem.Text = "Droite";
-            // 
-            // gaucheToolStripMenuItem
-            // 
-            this.gaucheToolStripMenuItem.Name = "gaucheToolStripMenuItem";
-            this.gaucheToolStripMenuItem.Size = new System.Drawing.Size(154, 30);
-            this.gaucheToolStripMenuItem.Text = "Gauche";
+            this.rotationToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
+            this.rotationToolStripMenuItem.Size = new System.Drawing.Size(134, 29);
+            this.rotationToolStripMenuItem.Text = "Mise-en-page";
+            this.rotationToolStripMenuItem.Click += new System.EventHandler(this.rotationToolStripMenuItem_Click);
             // 
             // CMB_UsersList
             // 
@@ -580,19 +549,19 @@
             this.listBox2.Size = new System.Drawing.Size(178, 244);
             this.listBox2.TabIndex = 0;
             // 
-            // groupBox6
+            // GBX_User
             // 
-            this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.button5);
-            this.groupBox6.Controls.Add(this.imageBox1);
-            this.groupBox6.Location = new System.Drawing.Point(18, 42);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox6.Size = new System.Drawing.Size(234, 328);
-            this.groupBox6.TabIndex = 11;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Nom d\'utilisateur";
+            this.GBX_User.Controls.Add(this.button6);
+            this.GBX_User.Controls.Add(this.BTN_EditUser);
+            this.GBX_User.Controls.Add(this.IBX_User);
+            this.GBX_User.Location = new System.Drawing.Point(18, 42);
+            this.GBX_User.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GBX_User.Name = "GBX_User";
+            this.GBX_User.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GBX_User.Size = new System.Drawing.Size(234, 328);
+            this.GBX_User.TabIndex = 11;
+            this.GBX_User.TabStop = false;
+            this.GBX_User.Text = "Nom d\'utilisateur";
             // 
             // button6
             // 
@@ -604,32 +573,32 @@
             this.button6.Text = "Déconnexion";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BTN_EditUser
             // 
-            this.button5.Location = new System.Drawing.Point(26, 231);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(180, 35);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Éditer";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BTN_EditUser.Location = new System.Drawing.Point(26, 231);
+            this.BTN_EditUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_EditUser.Name = "BTN_EditUser";
+            this.BTN_EditUser.Size = new System.Drawing.Size(180, 35);
+            this.BTN_EditUser.TabIndex = 1;
+            this.BTN_EditUser.Text = "Éditer";
+            this.BTN_EditUser.UseVisualStyleBackColor = true;
             // 
-            // imageBox1
+            // IBX_User
             // 
-            this.imageBox1.AllowDrop = true;
-            this.imageBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox1.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+            this.IBX_User.AllowDrop = true;
+            this.IBX_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.IBX_User.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IBX_User.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
-            this.imageBox1.ImportImageText = "Import image from file...";
-            this.imageBox1.Location = new System.Drawing.Point(26, 34);
-            this.imageBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.OpenFileDialogTitle = "Please choose image an file";
-            this.imageBox1.PasteMenuText = "Paste image from clipboard";
-            this.imageBox1.Size = new System.Drawing.Size(179, 176);
-            this.imageBox1.TabIndex = 0;
-            this.imageBox1.TabStop = false;
+            this.IBX_User.ImportImageText = "Import image from file...";
+            this.IBX_User.Location = new System.Drawing.Point(26, 34);
+            this.IBX_User.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.IBX_User.Name = "IBX_User";
+            this.IBX_User.OpenFileDialogTitle = "Please choose image an file";
+            this.IBX_User.PasteMenuText = "Paste image from clipboard";
+            this.IBX_User.Size = new System.Drawing.Size(179, 176);
+            this.IBX_User.TabIndex = 0;
+            this.IBX_User.TabStop = false;
             // 
             // groupBox8
             // 
@@ -669,7 +638,7 @@
             this.photosBrowser1.Name = "photosBrowser1";
             this.photosBrowser1.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
             this.photosBrowser1.SelectedPhoto = null;
-            this.photosBrowser1.Size = new System.Drawing.Size(1036, 832);
+            this.photosBrowser1.Size = new System.Drawing.Size(1036, 838);
             this.photosBrowser1.TabIndex = 8;
             // 
             // PagePrincipale
@@ -678,7 +647,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1604, 882);
             this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.GBX_User);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.photosBrowser1);
@@ -701,8 +670,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
+            this.GBX_User.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IBX_User)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -737,10 +706,6 @@
         private System.Windows.Forms.ToolStripMenuItem réinitialisationToolStripMenuItem;
         private System.Windows.Forms.CheckBox CBOX_NotMine;
         private System.Windows.Forms.ToolStripMenuItem rotationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hautToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem basToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem droiteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gaucheToolStripMenuItem;
         private System.Windows.Forms.ListBox LBX_MotsCles;
         private System.Windows.Forms.CheckBox CBX_MotsCles;
         private System.Windows.Forms.CheckBox checkBox3;
@@ -758,10 +723,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox GBX_User;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private PhotoManagerClient.ImageBox imageBox1;
+        private System.Windows.Forms.Button BTN_EditUser;
+        private PhotoManagerClient.ImageBox IBX_User;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.ToolStripMenuItem TLSTRIP_Deconnexion;
     }

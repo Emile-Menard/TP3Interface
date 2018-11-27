@@ -89,23 +89,31 @@ namespace Client_PM
         {
             if (LoggedUser != null)
             {
-                //Si la photo appartient à l'utilisateur courant
-                if (LoggedUser.Id == photosBrowser1.SelectedPhoto.OwnerId)
+                if(photosBrowser1.SelectedPhoto != null)
                 {
-                    PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser1.SelectedPhoto);
-                    if (pgPhoto.ShowDialog() == DialogResult.OK)
+                    //S'il y a une photo sélectionnée et si la photo appartient à l'utilisateur courant
+                    if (LoggedUser.Id == photosBrowser1.SelectedPhoto.OwnerId)
                     {
-                        Update_Photo_Browser();
-                        Update_MotsCles();
-                        
-                        photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
-                        MessageBox.Show("Photo modifiée avec succès!");
+                        PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser1.SelectedPhoto);
+                        if (pgPhoto.ShowDialog() == DialogResult.OK)
+                        {
+                            Update_Photo_Browser();
+                            Update_MotsCles();
+
+                            photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
+                            MessageBox.Show("Photo modifiée avec succès!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vous ne pouvez pas effacer cette photo! (elle appartient à quelqu'un d'autre)");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vous ne pouvez pas effacer cette photo! (elle appartient à quelqu'un d'autre)");
+                    MessageBox.Show("Aucune photo n'est sélectionnée");
                 }
+
             }
             else
             {
@@ -279,7 +287,10 @@ namespace Client_PM
             RotationMiseEnPage();
         }
 
-
+        private void rotationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RotationMiseEnPage();
+        }
 
         private void ToggleUserStripOptions()
         {
@@ -352,6 +363,8 @@ namespace Client_PM
                         FilterInit();
                         LoadDataLogin();
                         CBOX_NotMine.Checked = Properties.Settings.Default.NotMyPhoto;
+                        IBX_User.BackgroundImage = LoggedUser.GetAvatarThumbnailImage();
+                        GBX_User.Text = LoggedUser.Name;
                     }
                 }
             }
@@ -418,6 +431,6 @@ namespace Client_PM
             Update_MotsCles();
         }
 
-
+        
     }
 }
