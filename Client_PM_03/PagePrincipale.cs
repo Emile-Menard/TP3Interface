@@ -385,7 +385,8 @@ namespace Client_PM
 
         private void CBOX_NotMine_CheckedChanged(object sender, EventArgs e)
         {
-            if(LoggedUser.Exists()) {
+            if(LoggedUser.Exists())
+            {
             Properties.Settings.Default.NotMyPhoto = CBOX_NotMine.Checked;
             Properties.Settings.Default.Save();
             updateSelectedUser();
@@ -401,6 +402,7 @@ namespace Client_PM
             {
 
                 mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, 0);
+
             }
             else
             {
@@ -408,7 +410,7 @@ namespace Client_PM
                 {
                     mPhotoFilter.SetUserFilter(!Properties.Settings.Default.NotMyPhoto, true, 0);
                 }
-                else if (CBOX_NotMine.Checked)
+                else 
                 {
                     mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, selectedUser.Id);
                 }
