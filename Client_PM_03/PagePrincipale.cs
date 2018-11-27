@@ -41,11 +41,8 @@ namespace Client_PM
             if (pgConnexion.ShowDialog() == DialogResult.OK)
             {
                 LoggedUser = pgConnexion.Logged_User;
-                FBTN_AjouterMotCle.Enabled = true;
-                ToggleUserStripOptions();
-                Update_Photo_Browser();
-                mPhotoFilter = new PhotoFilter(LoggedUser.Id);
-                Update_MotsCles();
+                FilterInit();
+                LoadDataLogin();
             }
 
         }
@@ -189,6 +186,16 @@ namespace Client_PM
             
         }
 
+        private void UserComboBox()
+        {
+            foreach (User user in mPhotoFilter.UsersList)
+            {
+                if (user.Name != null)
+                    CMB_UsersList.Items.Add(user);
+            }
+            CMB_UsersList.SelectedIndex = 0;
+        }
+
         private void CBX_MotsCles_CheckedChanged(object sender, EventArgs e)
         {
             Update_PhotoFilter_And_PhotoBrowser();
@@ -311,15 +318,17 @@ namespace Client_PM
             this.Close();
         }
 
-        private void PagePrincipale_Load(object sender, EventArgs e)
-        {
-            ToggleUserStripOptions();
-            
-        }
+
 
         private void TLSTRIP_Deconnexion_Click(object sender, EventArgs e)
         {
             LoggedUser = null;
+            Properties.Settings.Default.RememberMe = false;
+            Properties.Settings.Default.Username = "";
+            Properties.Settings.Default.Password = "";
+            Properties.Settings.Default.Save();
+            CMB_UsersList.Items.Clear();
+            photosBrowser1.Clear();
             ToggleUserStripOptions();
         }
 
@@ -329,8 +338,7 @@ namespace Client_PM
             ToggleUserStripOptions();
             if(LoggedUser.Exists())
             {
-                
-              
+                UserComboBox();
             }
 
         }
@@ -344,15 +352,69 @@ namespace Client_PM
                 {
                     User user = DBPhotosWebServices.Login(Properties.Settings.Default.Username, Properties.Settings.Default.Password);
                     if (user.Exists()) {
-                       LoggedUser = user;
-                        mPhotoFilter = new PhotoFilter(LoggedUser.Id);
-                        mPhotoFilter.SetUserFilter(false, true, 0);
-                        Update_Photo_Browser();
-                        Update_MotsCles();
+                        LoggedUser = user;
+                        FilterInit();
+                        LoadDataLogin();
+                        CBOX_NotMine.Checked = Properties.Settings.Default.NotMyPhoto;
                     }
                 }
             }
         }
-        
+
+
+        private void FilterInit()
+        {
+            mPhotoFilter = new PhotoFilter(LoggedUser.Id);
+        }
+
+        private void LoadDataLogin()
+        {
+            mPhotoFilter.SetUserFilter(false, false, 0);
+            Update_MotsCles();
+            UserComboBox();
+            ToggleUserStripOptions();
+        }
+
+        private void CMB_UsersList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            updateSelectedUser();
+
+            Update_Photo_Browser();
+        }
+
+        private void CBOX_NotMine_CheckedChanged(object sender, EventArgs e)
+        {
+            if(LoggedUser.Exists()) {
+            Properties.Settings.Default.NotMyPhoto = CBOX_NotMine.Checked;
+            Properties.Settings.Default.Save();
+            updateSelectedUser();
+            Update_Photo_Browser();
+            }
+        }
+
+
+        private void updateSelectedUser()
+        {
+            User selectedUser = (User)CMB_UsersList.SelectedItem;
+            if (selectedUser.Id == -1)
+            {
+
+                mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, 0);
+            }
+            else
+            {
+                if (selectedUser.Id == 0)
+                {
+                    mPhotoFilter.SetUserFilter(!Properties.Settings.Default.NotMyPhoto, true, 0);
+                }
+                else if (CBOX_NotMine.Checked)
+                {
+                    mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, selectedUser.Id);
+                }
+            }
+        }
+
+
     }
 }
