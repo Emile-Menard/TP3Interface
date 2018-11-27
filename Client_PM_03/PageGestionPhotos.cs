@@ -14,7 +14,7 @@ namespace Client_PM
 {
     public partial class PageGestionPhotos : Form
     {
-        const string MODE_MODIFIER = "Modifier";
+        bool modificationMode;
         public User mUser;
         public Photo mPhoto;
         private  AutoCompleteStringCollection mMotsCles;
@@ -23,6 +23,7 @@ namespace Client_PM
         
         public PageGestionPhotos(User user)
         {
+            modificationMode = false;
             InitializeComponent();
             Init_Ajouter(user);
             Init_Dialogue();
@@ -30,6 +31,7 @@ namespace Client_PM
 
         public PageGestionPhotos(User user, Photo photo)
         {
+            modificationMode = true;
             InitializeComponent();
             Init_Modifier(user, photo);
             Init_Dialogue();
@@ -40,21 +42,25 @@ namespace Client_PM
         //Initialisation
         //
         //----------------------------------------------------------------------------------
+        //Ititialise le dialogue en mode ajout
         private void Init_Ajouter(User user)
         {
             mUser = user;
             mPhoto = new Photo();
         }
 
+        //Ititialise le dialogue en mode modification
         private void Init_Modifier(User user, Photo photo)
         {
             mUser = user;
             mPhoto = photo;
             this.Text = "Modifier une photo";
-            BTN_Ajouter.Text = MODE_MODIFIER;
+            BTN_Ajouter.Text = "Modifier";
             PhotoToDialog();
         }
 
+
+        //Initialise le dialogue
         private void Init_Dialogue()
         {
             if(mUser != null)
@@ -68,9 +74,11 @@ namespace Client_PM
             }
         }
 
+        //Si la le membre photo n'est pas null, c'est-à-dire
+        //si on est en mode modification, 
         private void Init_IB_Image()
         {
-            if(mPhoto != null)
+            if(modificationMode)
             {
                 IB_Image.BackgroundImage = mPhoto.GetOriginalImage();
             }
@@ -78,13 +86,15 @@ namespace Client_PM
 
         private void Init_MotsCles()
         {
-            
-            mPhotoFilter.GetPhotos();
-            foreach (string keyword in mPhotoFilter.KeywordsList)
+            if (mUser != null)
             {
-                mMotsCles.Add(keyword);
+                mPhotoFilter.GetPhotos();
+                foreach (string keyword in mPhotoFilter.KeywordsList)
+                {
+                    mMotsCles.Add(keyword);
+                }
+                TBX_MotsCles.AutoCompleteCustomSource = mMotsCles;
             }
-            TBX_MotsCles.AutoCompleteCustomSource = mMotsCles;
         }
 
         //----------------------------------------------------------------------------------
@@ -155,12 +165,7 @@ namespace Client_PM
                 mPhoto.Title = TBX_Titre.Text;
                 mPhoto.CreationDate = DTP_Date.Value;
                 mPhoto.Description = RTB_Description.Text;
-               
-                if (LBX_MotsCles.Items.Count > 0)
-                {
-                    mPhoto.Keywords = MotsClesToString();
-                    
-                }
+                mPhoto.Keywords = GenericMethods.ListBoxToString(LBX_MotsCles);
                 mPhoto.Shared = CBX_Partager.Checked;
                 mPhoto.SetImage(IB_Image.BackgroundImage);
                 mPhoto.OwnerId = mUser.Id;
@@ -175,10 +180,7 @@ namespace Client_PM
                 mPhoto.Title = TBX_Titre.Text;
                 mPhoto.CreationDate = DTP_Date.Value;
                 mPhoto.Description = RTB_Description.Text;
-                if (LBX_MotsCles.Items.Count > 0)
-                {
-                    mPhoto.Keywords = MotsClesToString();
-                }
+                mPhoto.Keywords = GenericMethods.ListBoxToString(LBX_MotsCles);
                 mPhoto.Shared = CBX_Partager.Checked;
                 mPhoto.SetImage(IB_Image.BackgroundImage);
                 mPhoto.OwnerId = mUser.Id;
@@ -197,20 +199,6 @@ namespace Client_PM
             }
             CBX_Partager.Checked = mPhoto.Shared;
             IB_Image.BackgroundImage = mPhoto.GetOriginalImage();
-        }
-
-        //Convertit les mots clés dans la LBX_MotsCles en un string.
-        private string MotsClesToString()
-        {
-           
-            string str = "";
-            foreach(string motCle in LBX_MotsCles.Items)
-            {
-                str += motCle;
-                str += " ";
-            }
-            str = str.Remove(str.Length - 1);
-            return str;
         }
 
         //----------------------------------------------------------------------------------
@@ -252,7 +240,7 @@ namespace Client_PM
 
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
-            if(BTN_Ajouter.Text == MODE_MODIFIER)
+            if(modificationMode)
             {
                 DialogToPhotoUpdate();
             }

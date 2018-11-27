@@ -172,51 +172,37 @@ namespace Client_PM
             {
                 LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
                 TBX_MotsCles.Clear();
-                mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
-                Update_Photo_Browser();
+                Update_PhotoFilter_And_PhotoBrowser();
             }
+
         }
 
         private void FBTN_EffacerMotCle_Click(object sender, EventArgs e)
         {
             if(LBX_MotsCles.SelectedItem != null)
             {
-                Update_PhotoFilter();
-                mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
                 LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
+                Update_PhotoFilter_And_PhotoBrowser();
                 Update_Photo_Browser();
             }
+           
             
         }
 
         private void CBX_MotsCles_CheckedChanged(object sender, EventArgs e)
         {
-            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
-            
-           
-            Update_Photo_Browser();
+            Update_PhotoFilter_And_PhotoBrowser();
         }
-        private void Update_PhotoFilter()
+        private void Update_PhotoFilter_And_PhotoBrowser()
         {
-            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
+            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, GenericMethods.ListBoxToString(LBX_MotsCles));
+            if (CBX_MotsCles.Checked)
+            {
+                Update_Photo_Browser();
+            }
         }
 
-        //Convertit les mots clés dans LBX_MotsCles en un string
-        private string MotsClesToString()
-        {
-            string str = "";
-            foreach (string motCle in LBX_MotsCles.Items)
-            {
-                str += motCle;
-                str += " ";
-            }
-            if(str != "")
-            {
-                str = str.Remove(str.Length - 1);
-            }
-           
-            return str;
-        }
+       
 
         //----------------------------------------------------------------------------------
         //
@@ -367,7 +353,6 @@ namespace Client_PM
                 }
             }
         }
-
-       
+        
     }
 }
