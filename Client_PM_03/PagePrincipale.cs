@@ -159,8 +159,6 @@ namespace Client_PM
 
                 TBX_MotsCles.AutoCompleteCustomSource = motsCles;
             }
-            
-
         }
 
         private void FBTN_Ajouter_MotCle_Click(object sender, EventArgs e)
@@ -410,11 +408,16 @@ namespace Client_PM
                 {
                     mPhotoFilter.SetUserFilter(!Properties.Settings.Default.NotMyPhoto, true, 0);
                 }
-                else 
+                else if(CBOX_NotMine.Checked)
                 {
                     mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, selectedUser.Id);
                 }
+                else if (!CBOX_NotMine.Checked)
+                {
+                    mPhotoFilter.SetUserFilter(false, false, selectedUser.Id);
+                }
             }
+            Update_MotsCles();
         }
 
 
