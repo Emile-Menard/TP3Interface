@@ -144,3 +144,4 @@ C:\Users\Vincent\Documents\session3\devel-interface\TP3\TP3\TP3Interface\Client_
 C:\Users\Vincent\Documents\session3\devel-interface\TP3\TP3\TP3Interface\Client_PM_03\obj\Debug\TP3Interface.csproj.CopyComplete
 C:\Users\Vincent\Documents\session3\devel-interface\TP3\TP3\TP3Interface\Client_PM_03\obj\Debug\Client_PM.exe
 C:\Users\Vincent\Documents\session3\devel-interface\TP3\TP3\TP3Interface\Client_PM_03\obj\Debug\Client_PM.pdb
+C:\Users\Vincent\Documents\session3\devel-interface\TP3\TP3\TP3Interface\Client_PM_03\obj\Debug\TP3Interface.csprojResolveAssemblyReference.cache

@@ -56,8 +56,9 @@ namespace Client_PM
         //----------------------------------------------------------------------------------
         private void Update_Photo_Browser()
         {
+            photosBrowser1.Clear();
             WaitSplash.Show(this, "Téléchargement des photos");
-            photosBrowser1.LoadPhotos(DBPhotosWebServices.GetAllPhotos());
+            photosBrowser1.LoadPhotos(mPhotoFilter.GetPhotos());
             WaitSplash.Hide();
         }
 
@@ -149,15 +150,20 @@ namespace Client_PM
         //----------------------------------------------------------------------------------
         private void Update_MotsCles()
         {
-            
-            AutoCompleteStringCollection motsCles = new AutoCompleteStringCollection();
-        
-            foreach (string keyword in mPhotoFilter.KeywordsList)
+            if(LoggedUser.Exists())
             {
-                motsCles.Add(keyword);
-            }
+                AutoCompleteStringCollection motsCles = new AutoCompleteStringCollection();
+                mPhotoFilter.GetPhotos();
 
-            TBX_MotsCles.AutoCompleteCustomSource = motsCles;
+                foreach (string keyword in mPhotoFilter.KeywordsList)
+                {
+                    motsCles.Add(keyword);
+                }
+
+                TBX_MotsCles.AutoCompleteCustomSource = motsCles;
+            }
+            
+
         }
 
         private void FBTN_Ajouter_MotCle_Click(object sender, EventArgs e)
@@ -166,19 +172,50 @@ namespace Client_PM
             {
                 LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
                 TBX_MotsCles.Clear();
-                mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, LBX_MotsCles.Items.ToString());
+                mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
+                Update_Photo_Browser();
             }
         }
 
         private void FBTN_EffacerMotCle_Click(object sender, EventArgs e)
         {
-            LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
-            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, LBX_MotsCles.Items.ToString());
+            if(LBX_MotsCles.SelectedItem != null)
+            {
+                Update_PhotoFilter();
+                mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
+                LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
+                Update_Photo_Browser();
+            }
+            
         }
 
         private void CBX_MotsCles_CheckedChanged(object sender, EventArgs e)
         {
-            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, LBX_MotsCles.Items.ToString());
+            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
+            
+           
+            Update_Photo_Browser();
+        }
+        private void Update_PhotoFilter()
+        {
+            mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, MotsClesToString());
+        }
+
+        //Convertit les mots clés dans LBX_MotsCles en un string
+        private string MotsClesToString()
+        {
+            string str = "";
+            foreach (string motCle in LBX_MotsCles.Items)
+            {
+                str += motCle;
+                str += " ";
+            }
+            if(str != "")
+            {
+                str = str.Remove(str.Length - 1);
+            }
+           
+            return str;
         }
 
         //----------------------------------------------------------------------------------
@@ -233,7 +270,17 @@ namespace Client_PM
             ModifierPhoto();
         }
 
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModifierPhoto();
+        }
+
         private void FTBN_Effacer_Click(object sender, EventArgs e)
+        {
+            EffacerPhoto();
+        }
+
+        private void effacerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EffacerPhoto();
         }
@@ -281,6 +328,7 @@ namespace Client_PM
         private void PagePrincipale_Load(object sender, EventArgs e)
         {
             ToggleUserStripOptions();
+            
         }
 
         private void TLSTRIP_Deconnexion_Click(object sender, EventArgs e)
@@ -295,7 +343,8 @@ namespace Client_PM
             ToggleUserStripOptions();
             if(LoggedUser.Exists())
             {
-                Update_Photo_Browser();
+                
+              
             }
 
         }
@@ -310,11 +359,15 @@ namespace Client_PM
                     User user = DBPhotosWebServices.Login(Properties.Settings.Default.Username, Properties.Settings.Default.Password);
                     if (user.Exists()) {
                        LoggedUser = user;
+                        mPhotoFilter = new PhotoFilter(LoggedUser.Id);
+                        mPhotoFilter.SetUserFilter(false, true, 0);
+                        Update_Photo_Browser();
+                        Update_MotsCles();
                     }
                 }
             }
         }
 
-        
+       
     }
 }

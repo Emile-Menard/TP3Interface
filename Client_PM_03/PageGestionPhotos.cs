@@ -155,9 +155,11 @@ namespace Client_PM
                 mPhoto.Title = TBX_Titre.Text;
                 mPhoto.CreationDate = DTP_Date.Value;
                 mPhoto.Description = RTB_Description.Text;
+               
                 if (LBX_MotsCles.Items.Count > 0)
                 {
-                    mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+                    mPhoto.Keywords = MotsClesToString();
+                    
                 }
                 mPhoto.Shared = CBX_Partager.Checked;
                 mPhoto.SetImage(IB_Image.BackgroundImage);
@@ -175,7 +177,7 @@ namespace Client_PM
                 mPhoto.Description = RTB_Description.Text;
                 if (LBX_MotsCles.Items.Count > 0)
                 {
-                    mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
+                    mPhoto.Keywords = MotsClesToString();
                 }
                 mPhoto.Shared = CBX_Partager.Checked;
                 mPhoto.SetImage(IB_Image.BackgroundImage);
@@ -189,12 +191,26 @@ namespace Client_PM
             TBX_Titre.Text = mPhoto.Title;
             DTP_Date.Value =  mPhoto.CreationDate;
             RTB_Description.Text = mPhoto.Description;
-            if(mPhoto.Keywords == "")
+            if(mPhoto.Keywords != "")
             {
                 LBX_MotsCles.Items.AddRange(mPhoto.Keywords.Split(' ').ToArray());
             }
             CBX_Partager.Checked = mPhoto.Shared;
             IB_Image.BackgroundImage = mPhoto.GetOriginalImage();
+        }
+
+        //Convertit les mots clés dans la LBX_MotsCles en un string.
+        private string MotsClesToString()
+        {
+           
+            string str = "";
+            foreach(string motCle in LBX_MotsCles.Items)
+            {
+                str += motCle;
+                str += " ";
+            }
+            str = str.Remove(str.Length - 1);
+            return str;
         }
 
         //----------------------------------------------------------------------------------

@@ -135,27 +135,6 @@
         YII=
 </value>
   </data>
-  <data name="FBTN_Modifier.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="FBTN_Ajouter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="FTBN_Effacer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
-        YII=
-</value>
-  </data>
   <data name="FBTN_MiseEnPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -173,6 +152,27 @@
 </value>
   </data>
   <data name="FBTN_MiseEnPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="FBTN_Modifier.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="FBTN_Ajouter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="FTBN_Effacer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAABxJREFUWEftwTEBAAAAwqD1T20HbyAAAAAAgFsNFGQAAarEPc4AAAAASUVORK5C
