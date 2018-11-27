@@ -149,6 +149,8 @@ namespace Client_PM
         {
             if(LoggedUser.Exists())
             {
+                
+
                 AutoCompleteStringCollection motsCles = new AutoCompleteStringCollection();
                 mPhotoFilter.GetPhotos();
 
@@ -178,7 +180,6 @@ namespace Client_PM
             {
                 LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
                 Update_PhotoFilter_And_PhotoBrowser();
-                Update_Photo_Browser();
             }
            
             
@@ -201,10 +202,7 @@ namespace Client_PM
         private void Update_PhotoFilter_And_PhotoBrowser()
         {
             mPhotoFilter.SetKeywordsFilter(CBX_MotsCles.Checked, GenericMethods.ListBoxToString(LBX_MotsCles));
-            if (CBX_MotsCles.Checked)
-            {
-                Update_Photo_Browser();
-            }
+            Update_Photo_Browser();
         }
 
        
