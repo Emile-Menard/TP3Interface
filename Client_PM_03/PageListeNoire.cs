@@ -21,16 +21,18 @@ namespace Client_PM
         public User lUser;
         public Photo lPhoto;
         public List<User> ListeUsers;
+        public DBPhotosWebServices dBPhotosWebServices;
         public PageListeNoire()
         {
             InitializeComponent();
+            FillList();
             FillCombobox();
         }
 
 
         private void FillCombobox()
         {
-            foreach (var user in ListeUsers)
+            foreach (User user in ListeUsers)
             {
                 if (!LISTB_Liste_Noire.Items.Contains(user.Name))
                 {
@@ -41,30 +43,45 @@ namespace Client_PM
 
         private void UpdateComboAndListe()
         {
+            FillList();
             FillCombobox();
-            COB_Liste_Noire_Utilisateur.Refresh();
-            LISTB_Liste_Noire.Refresh();
+            COB_Liste_Noire_Utilisateur.Hide();
+            COB_Liste_Noire_Utilisateur.Show();
+            LISTB_Liste_Noire.Hide();
+            LISTB_Liste_Noire.Show();
         }
 
-        private void FBTN_Add_User_Black_List_Click(object sender, EventArgs e)
+        private void FBTN_Add_User_Black_Lists_Click(object sender, EventArgs e)
         {
-            LISTB_Liste_Noire.Items.Add(COB_Liste_Noire_Utilisateur.SelectedItem);
+            lUser.Name = Convert.ToString(COB_Liste_Noire_Utilisateur.SelectedItem);
+            LISTB_Liste_Noire.Items.Add(lUser.Name);
             UpdateComboAndListe();
         }
 
-        private void FBTN_Delete_Liste_User_Click(object sender, EventArgs e)
+        private void FBTN_Delete_Liste_Users_Click(object sender, EventArgs e)
         {
+            //lUser.Name = Convert.ToString(LISTB_Liste_Noire.SelectedItem);
             LISTB_Liste_Noire.Items.Remove(LISTB_Liste_Noire.SelectedItem);
             UpdateComboAndListe();
         }
 
-        private void FBTN_Clean_Black_List_Click(object sender, EventArgs e)
+        private void FBTN_Clean_Black_Lists_Click(object sender, EventArgs e)
         {
             LISTB_Liste_Noire.Items.Clear();
             UpdateComboAndListe();
         }
 
-
+        private void FillList()
+        {
+            foreach (User user in User.GetAllUsers())
+            {
+                if (!LISTB_Liste_Noire.Items.Contains(user.Name))
+                {
+                    lUser = user;
+                    ListeUsers.Add(lUser);
+                }
+            }
+        }
 
     }
 }
