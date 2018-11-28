@@ -220,7 +220,34 @@ namespace Client_PM
             Update_Photo_Browser();
         }
 
-       
+        //----------------------------------------------------------------------------------
+        //
+        //Date
+        //
+        //----------------------------------------------------------------------------------
+
+        private void CBX_Date_CheckedChanged(object sender, EventArgs e)
+        {
+            Update_DateFilter();
+        }
+
+        private void DTP_Debut_ValueChanged(object sender, EventArgs e)
+        {
+            Update_DateFilter();
+        }
+
+        private void DTP_Fin_ValueChanged(object sender, EventArgs e)
+        {
+            Update_DateFilter();
+        }
+
+        private void Update_DateFilter()
+        {
+            mPhotoFilter.SetDateFilter(CBX_Date.Checked, DTP_Debut.Value, DTP_Fin.Value);
+            Update_Photo_Browser();
+        }
+
+
 
         //----------------------------------------------------------------------------------
         //
