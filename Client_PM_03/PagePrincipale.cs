@@ -53,9 +53,9 @@ namespace Client_PM
         //----------------------------------------------------------------------------------
         private void Update_Photo_Browser()
         {
-            photosBrowser1.Clear();
+            photosBrowser.Clear();
             WaitSplash.Show(this, "Téléchargement des photos");
-            photosBrowser1.LoadPhotos(mPhotoFilter.GetPhotos());
+            photosBrowser.LoadPhotos(mPhotoFilter.GetPhotos());
             WaitSplash.Hide();
         }
 
@@ -74,7 +74,7 @@ namespace Client_PM
                 {
                     Update_Photo_Browser();
                     Update_MotsCles();
-                    photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
+                    photosBrowser.SelectedPhoto = pgPhoto.mPhoto;
                     MessageBox.Show("Photo ajoutée avec succès!");
                 }
             }
@@ -89,18 +89,18 @@ namespace Client_PM
         {
             if (LoggedUser != null)
             {
-                if(photosBrowser1.SelectedPhoto != null)
+                if(photosBrowser.SelectedPhoto != null)
                 {
                     //S'il y a une photo sélectionnée et si la photo appartient à l'utilisateur courant
-                    if (LoggedUser.Id == photosBrowser1.SelectedPhoto.OwnerId)
+                    if (LoggedUser.Id == photosBrowser.SelectedPhoto.OwnerId)
                     {
-                        PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser1.SelectedPhoto);
+                        PageGestionPhotos pgPhoto = new PageGestionPhotos(LoggedUser, photosBrowser.SelectedPhoto);
                         if (pgPhoto.ShowDialog() == DialogResult.OK)
                         {
                             Update_Photo_Browser();
                             Update_MotsCles();
 
-                            photosBrowser1.SelectedPhoto = pgPhoto.mPhoto;
+                            photosBrowser.SelectedPhoto = pgPhoto.mPhoto;
                             MessageBox.Show("Photo modifiée avec succès!");
                         }
                     }
@@ -125,20 +125,27 @@ namespace Client_PM
         {
             if (LoggedUser.Exists())
             {
-                //Si la photo appartient à l'utilisateur courant
-                if (LoggedUser.Id == photosBrowser1.SelectedPhoto.OwnerId)
+                if (photosBrowser.SelectedPhoto != null)
                 {
-                    var confirmer = MessageBox.Show("Êtes-vous certain de vouloir effacer cette photo?", "Confirmation", MessageBoxButtons.YesNo);
-                    if (confirmer == DialogResult.Yes)
+                    //Si la photo appartient à l'utilisateur courant
+                    if (LoggedUser.Id == photosBrowser.SelectedPhoto.OwnerId)
                     {
-                        DBPhotosWebServices.DeletePhoto(photosBrowser1.SelectedPhoto);
-                        photosBrowser1.DeleteSelectedPhoto();
-                        Update_MotsCles();
+                        var confirmer = MessageBox.Show("Êtes-vous certain de vouloir effacer cette photo?", "Confirmation", MessageBoxButtons.YesNo);
+                        if (confirmer == DialogResult.Yes)
+                        {
+                            DBPhotosWebServices.DeletePhoto(photosBrowser.SelectedPhoto);
+                            photosBrowser.DeleteSelectedPhoto();
+                            Update_MotsCles();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vous ne pouvez pas effacer cette photo! (elle appartient à quelqu'un d'autre)");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vous ne pouvez pas effacer cette photo! (elle appartient à quelqu'un d'autre)");
+                    MessageBox.Show("Aucune photo n'est sélectionnée");
                 }
             }
             else
@@ -243,7 +250,7 @@ namespace Client_PM
                 mPhotoBrowserPlacement = PhotoBrowserPlacement.Left;
             }
 
-            photosBrowser1.Placement = mPhotoBrowserPlacement;
+            photosBrowser.Placement = mPhotoBrowserPlacement;
 
         }
 
@@ -351,7 +358,7 @@ namespace Client_PM
             Properties.Settings.Default.Password = "";
             Properties.Settings.Default.Save();
             CMB_UsersList.Items.Clear();
-            photosBrowser1.Clear();
+            photosBrowser.Clear();
             ToggleUserStripOptions();
             UnloadUserData();
         }
@@ -364,7 +371,7 @@ namespace Client_PM
             {
                 UserComboBox();
             }
-            photosBrowser1.Placement = mPhotoBrowserPlacement;
+            photosBrowser.Placement = mPhotoBrowserPlacement;
 
         }
 
@@ -426,10 +433,10 @@ namespace Client_PM
         {
             if(LoggedUser.Exists())
             {
-            Properties.Settings.Default.NotMyPhoto = CBOX_NotMine.Checked;
-            Properties.Settings.Default.Save();
-            updateSelectedUser();
-            Update_Photo_Browser();
+                Properties.Settings.Default.NotMyPhoto = CBOX_NotMine.Checked;
+                Properties.Settings.Default.Save();
+                updateSelectedUser();
+                Update_Photo_Browser();
             }
         }
 
@@ -437,28 +444,7 @@ namespace Client_PM
         private void updateSelectedUser()
         {
             User selectedUser = (User)CMB_UsersList.SelectedItem;
-            if (selectedUser.Id == -1)
-            {
-
-                mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, 0);
-
-            }
-            else
-            {
-                if (selectedUser.Id == 0)
-                {
-                    mPhotoFilter.SetUserFilter(!Properties.Settings.Default.NotMyPhoto, true, 0);
-                }
-                else if(CBOX_NotMine.Checked)
-                {
-                    mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, selectedUser.Id);
-                }
-                else if (!CBOX_NotMine.Checked)
-                {
-                    mPhotoFilter.SetUserFilter(false, false, selectedUser.Id);
-                }
-            }
-            Update_MotsCles();
+           
         }
 
         

@@ -130,6 +130,7 @@
             // 
             // BTN_Annuler
             // 
+            this.BTN_Annuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTN_Annuler.Location = new System.Drawing.Point(175, 355);
             this.BTN_Annuler.Name = "BTN_Annuler";
@@ -140,6 +141,7 @@
             // 
             // BTN_Ajouter
             // 
+            this.BTN_Ajouter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Ajouter.Location = new System.Drawing.Point(10, 355);
             this.BTN_Ajouter.Name = "BTN_Ajouter";
@@ -161,54 +163,57 @@
             // 
             // FBTN_EffacerMotCle
             // 
-            this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.Delete;
+            this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.trash;
             this.FBTN_EffacerMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_EffacerMotCle.ClickedImage = null;
-            this.FBTN_EffacerMotCle.DisabledImage = null;
+            this.FBTN_EffacerMotCle.ClickedImage = global::Client_PM.Properties.Resources.trash_accept;
+            this.FBTN_EffacerMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_EffacerMotCle.DisabledImage = global::Client_PM.Properties.Resources.trash_disable;
             this.FBTN_EffacerMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EffacerMotCle.Image")));
             this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(358, 219);
             this.FBTN_EffacerMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_EffacerMotCle.Name = "FBTN_EffacerMotCle";
-            this.FBTN_EffacerMotCle.NeutralImage = null;
-            this.FBTN_EffacerMotCle.OverImage = null;
+            this.FBTN_EffacerMotCle.NeutralImage = global::Client_PM.Properties.Resources.trash;
+            this.FBTN_EffacerMotCle.OverImage = global::Client_PM.Properties.Resources.trash_accept;
             this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(26, 26);
             this.FBTN_EffacerMotCle.TabIndex = 15;
-            this.FBTN_EffacerMotCle.Text = "flashButton3";
+            this.FBTN_EffacerMotCle.Text = "Effacer un mot-clé";
             this.FBTN_EffacerMotCle.UseVisualStyleBackColor = true;
             this.FBTN_EffacerMotCle.Click += new System.EventHandler(this.FBTN_EffacerMotCle_Click);
             // 
             // FBTN_AjouterMotCle
             // 
-            this.FBTN_AjouterMotCle.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
+            this.FBTN_AjouterMotCle.BackgroundImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
             this.FBTN_AjouterMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_AjouterMotCle.ClickedImage = null;
-            this.FBTN_AjouterMotCle.DisabledImage = null;
+            this.FBTN_AjouterMotCle.ClickedImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Click;
+            this.FBTN_AjouterMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_AjouterMotCle.DisabledImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Disable;
             this.FBTN_AjouterMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AjouterMotCle.Image")));
             this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(358, 187);
             this.FBTN_AjouterMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_AjouterMotCle.Name = "FBTN_AjouterMotCle";
-            this.FBTN_AjouterMotCle.NeutralImage = null;
-            this.FBTN_AjouterMotCle.OverImage = null;
+            this.FBTN_AjouterMotCle.NeutralImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
+            this.FBTN_AjouterMotCle.OverImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Over;
             this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(26, 22);
             this.FBTN_AjouterMotCle.TabIndex = 14;
-            this.FBTN_AjouterMotCle.Text = "flashButton2";
+            this.FBTN_AjouterMotCle.Text = "Ajouter un mot-clé";
             this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
             this.FBTN_AjouterMotCle.Click += new System.EventHandler(this.FBTN_AjouterMotCle_Click);
             // 
             // FTBN_Rotation
             // 
-            this.FTBN_Rotation.BackgroundImage = global::Client_PM.Properties.Resources.ArrowRotation;
+            this.FTBN_Rotation.BackgroundImage = global::Client_PM.Properties.Resources.rotate;
             this.FTBN_Rotation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FTBN_Rotation.ClickedImage = null;
+            this.FTBN_Rotation.ClickedImage = global::Client_PM.Properties.Resources.rotate_accept;
+            this.FTBN_Rotation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FTBN_Rotation.DisabledImage = null;
             this.FTBN_Rotation.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Rotation.Image")));
             this.FTBN_Rotation.Location = new System.Drawing.Point(332, 355);
             this.FTBN_Rotation.Name = "FTBN_Rotation";
-            this.FTBN_Rotation.NeutralImage = null;
-            this.FTBN_Rotation.OverImage = null;
+            this.FTBN_Rotation.NeutralImage = global::Client_PM.Properties.Resources.rotate;
+            this.FTBN_Rotation.OverImage = global::Client_PM.Properties.Resources.rotate_accept;
             this.FTBN_Rotation.Size = new System.Drawing.Size(52, 53);
             this.FTBN_Rotation.TabIndex = 10;
-            this.FTBN_Rotation.Text = "flashButton1";
+            this.FTBN_Rotation.Text = "Rotater l\'image";
             this.FTBN_Rotation.UseVisualStyleBackColor = true;
             this.FTBN_Rotation.Click += new System.EventHandler(this.FTBN_Rotation_Click);
             // 

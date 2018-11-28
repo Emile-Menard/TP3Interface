@@ -42,9 +42,6 @@
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listeNoireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.retraitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.réinitialisationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CMB_UsersList = new System.Windows.Forms.ComboBox();
             this.TBX_MotsCles = new System.Windows.Forms.TextBox();
@@ -72,7 +69,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Username = new System.Windows.Forms.Label();
             this.IMB_UserAvatar = new PhotoManagerClient.ImageBox();
-            this.photosBrowser1 = new PhotoManagerClient.PhotosBrowser();
+            this.photosBrowser = new PhotoManagerClient.PhotosBrowser();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -182,32 +179,9 @@
             // 
             // listeNoireToolStripMenuItem
             // 
-            this.listeNoireToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajoutToolStripMenuItem,
-            this.retraitToolStripMenuItem,
-            this.réinitialisationToolStripMenuItem});
             this.listeNoireToolStripMenuItem.Name = "listeNoireToolStripMenuItem";
             this.listeNoireToolStripMenuItem.Size = new System.Drawing.Size(104, 29);
             this.listeNoireToolStripMenuItem.Text = "Liste noire";
-            // 
-            // ajoutToolStripMenuItem
-            // 
-            this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
-            this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
-            this.ajoutToolStripMenuItem.Text = "Ajout";
-            this.ajoutToolStripMenuItem.Click += new System.EventHandler(this.TLSP_Liste_Noire_Ajout_Click);
-            // 
-            // retraitToolStripMenuItem
-            // 
-            this.retraitToolStripMenuItem.Name = "retraitToolStripMenuItem";
-            this.retraitToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
-            this.retraitToolStripMenuItem.Text = "Retrait";
-            // 
-            // réinitialisationToolStripMenuItem
-            // 
-            this.réinitialisationToolStripMenuItem.Name = "réinitialisationToolStripMenuItem";
-            this.réinitialisationToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
-            this.réinitialisationToolStripMenuItem.Text = "Réinitialisation";
             // 
             // rotationToolStripMenuItem
             // 
@@ -295,7 +269,7 @@
             this.FBTN_EffacerMotCle.OverImage = null;
             this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(40, 40);
             this.FBTN_EffacerMotCle.TabIndex = 10;
-            this.FBTN_EffacerMotCle.Text = "flashButton3";
+            this.FBTN_EffacerMotCle.Text = "Retirer un mot-clé";
             this.FBTN_EffacerMotCle.UseVisualStyleBackColor = true;
             this.FBTN_EffacerMotCle.Click += new System.EventHandler(this.FBTN_EffacerMotCle_Click);
             // 
@@ -313,7 +287,7 @@
             this.FBTN_AjouterMotCle.OverImage = null;
             this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(40, 40);
             this.FBTN_AjouterMotCle.TabIndex = 9;
-            this.FBTN_AjouterMotCle.Text = "flashButton2";
+            this.FBTN_AjouterMotCle.Text = "Ajouter un mot-clé";
             this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
             this.FBTN_AjouterMotCle.Click += new System.EventHandler(this.FBTN_Ajouter_MotCle_Click);
             // 
@@ -354,7 +328,7 @@
             this.groupBox3.Size = new System.Drawing.Size(288, 208);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Date interval";
+            this.groupBox3.Text = "Date";
             // 
             // checkBox3
             // 
@@ -489,7 +463,7 @@
             this.FBTN_Carousel.ClickedImage = null;
             this.FBTN_Carousel.DisabledImage = null;
             this.FBTN_Carousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Carousel.Image")));
-            this.FBTN_Carousel.Location = new System.Drawing.Point(72, 35);
+            this.FBTN_Carousel.Location = new System.Drawing.Point(68, 35);
             this.FBTN_Carousel.Name = "FBTN_Carousel";
             this.FBTN_Carousel.NeutralImage = null;
             this.FBTN_Carousel.OverImage = null;
@@ -564,19 +538,19 @@
             this.IMB_UserAvatar.TabIndex = 0;
             this.IMB_UserAvatar.TabStop = false;
             // 
-            // photosBrowser1
+            // photosBrowser
             // 
-            this.photosBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.photosBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.photosBrowser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.photosBrowser1.Location = new System.Drawing.Point(327, 174);
-            this.photosBrowser1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.photosBrowser1.Name = "photosBrowser1";
-            this.photosBrowser1.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
-            this.photosBrowser1.SelectedPhoto = null;
-            this.photosBrowser1.Size = new System.Drawing.Size(1264, 684);
-            this.photosBrowser1.TabIndex = 8;
+            this.photosBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.photosBrowser.Location = new System.Drawing.Point(327, 174);
+            this.photosBrowser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.photosBrowser.Name = "photosBrowser";
+            this.photosBrowser.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
+            this.photosBrowser.SelectedPhoto = null;
+            this.photosBrowser.Size = new System.Drawing.Size(1264, 684);
+            this.photosBrowser.TabIndex = 8;
             // 
             // PagePrincipale
             // 
@@ -587,7 +561,7 @@
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.photosBrowser1);
+            this.Controls.Add(this.photosBrowser);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -640,15 +614,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private PhotoManagerClient.FlashButton FBTN_MiseEnPage;
         private System.Windows.Forms.ToolStripMenuItem listeNoireToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem retraitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem réinitialisationToolStripMenuItem;
         private System.Windows.Forms.CheckBox CBOX_NotMine;
         private System.Windows.Forms.ToolStripMenuItem rotationToolStripMenuItem;
         private System.Windows.Forms.ListBox LBX_MotsCles;
         private System.Windows.Forms.CheckBox CBX_MotsCles;
         private System.Windows.Forms.CheckBox checkBox3;
-        private PhotoManagerClient.PhotosBrowser photosBrowser1;
+        private PhotoManagerClient.PhotosBrowser photosBrowser;
         private PhotoManagerClient.FlashButton FBTN_AjouterMotCle;
         private System.Windows.Forms.GroupBox groupBox4;
         private PhotoManagerClient.FlashButton FBTN_EffacerMotCle;
