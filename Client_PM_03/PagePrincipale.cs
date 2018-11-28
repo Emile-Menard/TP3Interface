@@ -337,6 +337,7 @@ namespace Client_PM
             CMB_UsersList.Items.Clear();
             photosBrowser1.Clear();
             ToggleUserStripOptions();
+            UnloadUserData();
         }
 
         private void PagePrincipale_Load_1(object sender, EventArgs e)
@@ -382,6 +383,19 @@ namespace Client_PM
             Update_MotsCles();
             UserComboBox();
             ToggleUserStripOptions();
+            LoadUserData();
+        }
+
+        private void LoadUserData()
+        {
+            IMB_UserAvatar.BackgroundImage = LoggedUser.GetAvatarOriginalImage();
+            Username.Text = LoggedUser.Name;
+        }
+
+        private void UnloadUserData()
+        {
+            Username.Text = "Aucun utilisateur connecté";
+            IMB_UserAvatar.BackgroundImage = null;
         }
 
         private void CMB_UsersList_SelectedIndexChanged(object sender, EventArgs e)
