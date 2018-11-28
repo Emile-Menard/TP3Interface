@@ -71,7 +71,11 @@ namespace Client_PM
                 Properties.Settings.Default.Username = "";
                 Properties.Settings.Default.Password = "";
             }
-            Properties.Settings.Default.SlideShowList.Clear();
+            if(Properties.Settings.Default.SlideShowList != null)
+            {
+                Properties.Settings.Default.SlideShowList.Clear();
+            }
+            
             Properties.Settings.Default.FirstInit = false;
             Properties.Settings.Default.Save();
             Logged_User = DBPhotosWebServices.Login(TBXName_Connexion.Text, TBXPassword_Connexion.Text);

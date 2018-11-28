@@ -229,10 +229,12 @@ namespace Client_PM
         //
         //----------------------------------------------------------------------------------
 
+
         private void CBX_Date_CheckedChanged(object sender, EventArgs e)
         {
             Update_DateFilter();
         }
+
 
         private void DTP_Debut_ValueChanged(object sender, EventArgs e)
         {
@@ -243,14 +245,16 @@ namespace Client_PM
         {
             Update_DateFilter();
         }
-
         private void Update_DateFilter()
         {
-            mPhotoFilter.SetDateFilter(CBX_Date.Checked, DTP_Debut.Value, DTP_Fin.Value);
-            Update_Photo_Browser();
+            if(LoggedUser.Exists())
+            {
+                mPhotoFilter.SetDateFilter(CBX_Date.Checked, DTP_Debut.Value, DTP_Fin.Value);
+                Update_Photo_Browser();
+            }
+            
+           
         }
-
-
 
         //----------------------------------------------------------------------------------
         //
@@ -541,6 +545,32 @@ namespace Client_PM
                 {
                     Properties.Settings.Default.SlideShowList.Add(photoId.ToString());
                 }
+        }
+
+        private void FTBN_Info_Click(object sender, EventArgs e)
+        {
+            if (LoggedUser != null)
+            {
+                if (photosBrowser.SelectedPhoto != null)
+                {
+                    PageInfoPhotos pgPhoto = new PageInfoPhotos(photosBrowser.SelectedPhoto);
+                    if (pgPhoto.ShowDialog() == DialogResult.OK)
+                    {
+                        
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Aucune photo n'est sélectionnée");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
         }
     }
 }

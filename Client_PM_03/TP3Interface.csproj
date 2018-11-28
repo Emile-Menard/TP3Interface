@@ -259,5 +259,17 @@
   <ItemGroup>
     <None Include="Resources\carousel_accept.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Over.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
