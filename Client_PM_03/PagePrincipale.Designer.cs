@@ -181,25 +181,7 @@
             this.listeNoireToolStripMenuItem.Name = "listeNoireToolStripMenuItem";
             this.listeNoireToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.listeNoireToolStripMenuItem.Text = "Liste noire";
-            // 
-            // ajoutToolStripMenuItem
-            // 
-            this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
-            this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.ajoutToolStripMenuItem.Text = "Ajout";
-            this.ajoutToolStripMenuItem.Click += new System.EventHandler(this.TLSP_Liste_Noire_Ajout_Click);
-            // 
-            // retraitToolStripMenuItem
-            // 
-            this.retraitToolStripMenuItem.Name = "retraitToolStripMenuItem";
-            this.retraitToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.retraitToolStripMenuItem.Text = "Retrait";
-            // 
-            // réinitialisationToolStripMenuItem
-            // 
-            this.réinitialisationToolStripMenuItem.Name = "réinitialisationToolStripMenuItem";
-            this.réinitialisationToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.réinitialisationToolStripMenuItem.Text = "Réinitialisation";
+            
             // 
             // rotationToolStripMenuItem
             // 
@@ -537,13 +519,13 @@
             this.photosBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.photosBrowser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.photosBrowser1.Location = new System.Drawing.Point(218, 106);
-            this.photosBrowser1.Name = "photosBrowser1";
-            this.photosBrowser1.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
-            this.photosBrowser1.SelectedPhoto = null;
-            this.photosBrowser1.Size = new System.Drawing.Size(842, 449);
-            this.photosBrowser1.TabIndex = 8;
+            this.photosBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.photosBrowser.Location = new System.Drawing.Point(218, 106);
+            this.photosBrowser.Name = "photosBrowser1";
+            this.photosBrowser.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
+            this.photosBrowser.SelectedPhoto = null;
+            this.photosBrowser.Size = new System.Drawing.Size(842, 449);
+            this.photosBrowser.TabIndex = 8;
             // 
             // PagePrincipale
             // 
