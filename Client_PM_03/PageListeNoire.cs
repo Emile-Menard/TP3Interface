@@ -51,37 +51,79 @@ namespace Client_PM
             LISTB_Liste_Noire.Show();
         }
 
-        private void FBTN_Add_User_Black_Lists_Click(object sender, EventArgs e)
-        {
-            lUser.Name = Convert.ToString(COB_Liste_Noire_Utilisateur.SelectedItem);
-            LISTB_Liste_Noire.Items.Add(lUser.Name);
-            UpdateComboAndListe();
-        }
+        //private void FBTN_Add_User_Black_Lists_Click(object sender, EventArgs e)
+        //{
+        //}
 
-        private void FBTN_Delete_Liste_Users_Click(object sender, EventArgs e)
-        {
-            //lUser.Name = Convert.ToString(LISTB_Liste_Noire.SelectedItem);
-            LISTB_Liste_Noire.Items.Remove(LISTB_Liste_Noire.SelectedItem);
-            UpdateComboAndListe();
-        }
+        //private void FBTN_Delete_Liste_Users_Click(object sender, EventArgs e)
+        //{
+        //}
 
-        private void FBTN_Clean_Black_Lists_Click(object sender, EventArgs e)
-        {
-            LISTB_Liste_Noire.Items.Clear();
-            UpdateComboAndListe();
-        }
+        //private void FBTN_Clean_Black_Lists_Click(object sender, EventArgs e)
+        //{
+        //}
 
         private void FillList()
         {
+            List<User> lusers = new List<User>();
             foreach (User user in User.GetAllUsers())
             {
-                if (!LISTB_Liste_Noire.Items.Contains(user.Name))
+                if (!LISTB_Liste_Noire.Items.Contains(user))
                 {
                     lUser = user;
-                    ListeUsers.Add(lUser);
+                    lusers.Add(lUser);
+                    ListeUsers = lusers;
                 }
             }
         }
 
+        private void FBTN_Add_User_Black_Lists_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                lUser.Name = Convert.ToString(COB_Liste_Noire_Utilisateur.SelectedItem);
+                LISTB_Liste_Noire.Items.Add(lUser.Name);
+                MessageBox.Show("L'ajout du membre a la liste noire réussite!");
+                UpdateComboAndListe();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("L'insertion a échoué!");
+                throw;
+            }
+        }
+
+        private void FBTN_Delete_Liste_Users_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                //lUser.Name = Convert.ToString(LISTB_Liste_Noire.SelectedItem);
+                LISTB_Liste_Noire.Items.Remove(LISTB_Liste_Noire.SelectedItem);
+                MessageBox.Show("Le retret du membre a la liste noire réussite!");
+                UpdateComboAndListe();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Le retret a échoué!");
+                throw;
+            }
+          
+        }
+
+        private void FBTN_Clean_Black_Lists_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LISTB_Liste_Noire.Items.Clear();
+                MessageBox.Show("La rénitialisation de la liste noire réussite!");
+                UpdateComboAndListe();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("La rénitialisation a échoué!");
+                throw;
+            }
+            
+        }
     }
 }

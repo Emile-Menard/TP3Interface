@@ -108,6 +108,7 @@
             this.FBTN_Clean_Black_Lists.TabIndex = 10;
             this.FBTN_Clean_Black_Lists.Text = "flashButton1";
             this.FBTN_Clean_Black_Lists.UseVisualStyleBackColor = true;
+            this.FBTN_Clean_Black_Lists.Click += new System.EventHandler(this.FBTN_Clean_Black_Lists_Click_1);
             // 
             // FBTN_Delete_Liste_Users
             // 
@@ -124,6 +125,7 @@
             this.FBTN_Delete_Liste_Users.TabIndex = 9;
             this.FBTN_Delete_Liste_Users.Text = "Enlever un utilisateur de la liste noire";
             this.FBTN_Delete_Liste_Users.UseVisualStyleBackColor = true;
+            this.FBTN_Delete_Liste_Users.Click += new System.EventHandler(this.FBTN_Delete_Liste_Users_Click_1);
             // 
             // FBTN_Add_User_Black_Lists
             // 
@@ -140,6 +142,7 @@
             this.FBTN_Add_User_Black_Lists.TabIndex = 8;
             this.FBTN_Add_User_Black_Lists.Text = "Ajouter un utilisateur a la liste noire";
             this.FBTN_Add_User_Black_Lists.UseVisualStyleBackColor = true;
+            this.FBTN_Add_User_Black_Lists.Click += new System.EventHandler(this.FBTN_Add_User_Black_Lists_Click_1);
             // 
             // PageListeNoire
             // 
