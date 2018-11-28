@@ -287,6 +287,22 @@ namespace Client_PM
             RotationMiseEnPage();
         }
 
+        private void TLSP_Liste_Noire_Ajout_Click(object sender, EventArgs e)
+        {
+            if (LoggedUser.Exists())
+            {
+                PageListeNoire pgListeNoire = new PageListeNoire();
+                if (pgListeNoire.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    MessageBox.Show("");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
+        }
         private void rotationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RotationMiseEnPage();
