@@ -363,8 +363,7 @@ namespace Client_PM
                         FilterInit();
                         LoadDataLogin();
                         CBOX_NotMine.Checked = Properties.Settings.Default.NotMyPhoto;
-                        IBX_User.BackgroundImage = LoggedUser.GetAvatarThumbnailImage();
-                        GBX_User.Text = LoggedUser.Name;
+                       
                     }
                 }
             }
