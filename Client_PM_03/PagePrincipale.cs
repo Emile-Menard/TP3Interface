@@ -444,7 +444,24 @@ namespace Client_PM
         private void updateSelectedUser()
         {
             User selectedUser = (User)CMB_UsersList.SelectedItem;
-           
+            if (selectedUser.Id == -1)
+            {
+
+                mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, 0);
+
+            }
+            else
+            {
+                if (selectedUser.Id == 0)
+                {
+                    mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, true, 0);
+                }
+                else
+                {
+                    mPhotoFilter.SetUserFilter(!Properties.Settings.Default.NotMyPhoto, false, selectedUser.Id);
+                }
+            }
+            Update_MotsCles();
         }
 
         

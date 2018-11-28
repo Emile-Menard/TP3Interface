@@ -58,6 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageEditSlideShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageEditSlideShow.designer.cs">
+      <DependentUpon>PageEditSlideShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageSlideShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageSlideShow.designer.cs">
+      <DependentUpon>PageSlideShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,9 @@
     </Compile>
     <Compile Include="PageListeNoire.designer.cs">
       <DependentUpon>PageListeNoire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoPanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PM_Controls\FlashButton.cs">
       <SubType>Component</SubType>
@@ -119,6 +134,12 @@
       <DependentUpon>PageInfoPhotos.cs</DependentUpon>
     </Compile>
     <Compile Include="StaticMethods.cs" />
+    <EmbeddedResource Include="PageEditSlideShow.resx">
+      <DependentUpon>PageEditSlideShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageSlideShow.resx">
+      <DependentUpon>PageSlideShow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PageConnexion.resx">
       <DependentUpon>PageConnexion.cs</DependentUpon>
     </EmbeddedResource>
