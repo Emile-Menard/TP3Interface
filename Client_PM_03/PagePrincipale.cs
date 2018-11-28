@@ -287,6 +287,22 @@ namespace Client_PM
             RotationMiseEnPage();
         }
 
+        private void TLSP_Liste_Noire_Ajout_Click(object sender, EventArgs e)
+        {
+            if (LoggedUser.Exists())
+            {
+                PageListeNoire pgListeNoire = new PageListeNoire();
+                if (pgListeNoire.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    MessageBox.Show("");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
+        }
         private void rotationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RotationMiseEnPage();
@@ -337,6 +353,7 @@ namespace Client_PM
             CMB_UsersList.Items.Clear();
             photosBrowser1.Clear();
             ToggleUserStripOptions();
+            UnloadUserData();
         }
 
         private void PagePrincipale_Load_1(object sender, EventArgs e)
@@ -347,6 +364,7 @@ namespace Client_PM
             {
                 UserComboBox();
             }
+            photosBrowser1.Placement = mPhotoBrowserPlacement;
 
         }
 
@@ -363,8 +381,7 @@ namespace Client_PM
                         FilterInit();
                         LoadDataLogin();
                         CBOX_NotMine.Checked = Properties.Settings.Default.NotMyPhoto;
-                        IBX_User.BackgroundImage = LoggedUser.GetAvatarThumbnailImage();
-                        GBX_User.Text = LoggedUser.Name;
+                       
                     }
                 }
             }
@@ -382,6 +399,19 @@ namespace Client_PM
             Update_MotsCles();
             UserComboBox();
             ToggleUserStripOptions();
+            LoadUserData();
+        }
+
+        private void LoadUserData()
+        {
+            IMB_UserAvatar.BackgroundImage = LoggedUser.GetAvatarOriginalImage();
+            Username.Text = LoggedUser.Name;
+        }
+
+        private void UnloadUserData()
+        {
+            Username.Text = "Aucun utilisateur connecté";
+            IMB_UserAvatar.BackgroundImage = null;
         }
 
         private void CMB_UsersList_SelectedIndexChanged(object sender, EventArgs e)

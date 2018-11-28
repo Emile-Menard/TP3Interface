@@ -28,50 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageListeNoire));
+            this.COB_Liste_Noire_Utilisateur = new System.Windows.Forms.ComboBox();
+            this.LISTB_Liste_Noire = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.BTN_Cancel = new System.Windows.Forms.Button();
+            this.BTN_Save_Black_List = new System.Windows.Forms.Button();
+            this.FBTN_Clean_Black_Lists = new PhotoManagerClient.FlashButton();
+            this.FBTN_Delete_Liste_Users = new PhotoManagerClient.FlashButton();
+            this.FBTN_Add_User_Black_Lists = new PhotoManagerClient.FlashButton();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // COB_Liste_Noire_Utilisateur
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(32, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 0;
+            this.COB_Liste_Noire_Utilisateur.FormattingEnabled = true;
+            this.COB_Liste_Noire_Utilisateur.Location = new System.Drawing.Point(32, 50);
+            this.COB_Liste_Noire_Utilisateur.Name = "COB_Liste_Noire_Utilisateur";
+            this.COB_Liste_Noire_Utilisateur.Size = new System.Drawing.Size(224, 21);
+            this.COB_Liste_Noire_Utilisateur.TabIndex = 0;
             // 
-            // button1
+            // LISTB_Liste_Noire
             // 
-            this.button1.Location = new System.Drawing.Point(220, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(32, 105);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(263, 160);
-            this.listBox1.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(192, 271);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Suprimer de la liste";
-            this.button2.UseVisualStyleBackColor = true;
+            this.LISTB_Liste_Noire.FormattingEnabled = true;
+            this.LISTB_Liste_Noire.Location = new System.Drawing.Point(32, 105);
+            this.LISTB_Liste_Noire.Name = "LISTB_Liste_Noire";
+            this.LISTB_Liste_Noire.Size = new System.Drawing.Size(224, 160);
+            this.LISTB_Liste_Noire.TabIndex = 2;
             // 
             // label1
             // 
@@ -91,48 +74,93 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Utilisateurs";
             // 
-            // button3
+            // BTN_Cancel
             // 
-            this.button3.Location = new System.Drawing.Point(220, 315);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Annuler";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BTN_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTN_Cancel.Location = new System.Drawing.Point(181, 271);
+            this.BTN_Cancel.Name = "BTN_Cancel";
+            this.BTN_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Cancel.TabIndex = 6;
+            this.BTN_Cancel.Text = "Annuler";
+            this.BTN_Cancel.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BTN_Save_Black_List
             // 
-            this.button4.Location = new System.Drawing.Point(139, 315);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Sauvegarder";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BTN_Save_Black_List.Location = new System.Drawing.Point(100, 271);
+            this.BTN_Save_Black_List.Name = "BTN_Save_Black_List";
+            this.BTN_Save_Black_List.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Save_Black_List.TabIndex = 7;
+            this.BTN_Save_Black_List.Text = "Sauvegarder";
+            this.BTN_Save_Black_List.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // FBTN_Clean_Black_Lists
             // 
-            this.button5.Location = new System.Drawing.Point(32, 271);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Reinitialiser";
-            this.button5.UseVisualStyleBackColor = true;
+            this.FBTN_Clean_Black_Lists.BackgroundImage = global::Client_PM.Properties.Resources.ArrowRotation;
+            this.FBTN_Clean_Black_Lists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Clean_Black_Lists.ClickedImage = null;
+            this.FBTN_Clean_Black_Lists.DisabledImage = null;
+            this.FBTN_Clean_Black_Lists.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Clean_Black_Lists.Image")));
+            this.FBTN_Clean_Black_Lists.Location = new System.Drawing.Point(262, 147);
+            this.FBTN_Clean_Black_Lists.Name = "FBTN_Clean_Black_Lists";
+            this.FBTN_Clean_Black_Lists.NeutralImage = null;
+            this.FBTN_Clean_Black_Lists.OverImage = null;
+            this.FBTN_Clean_Black_Lists.Size = new System.Drawing.Size(36, 36);
+            this.FBTN_Clean_Black_Lists.TabIndex = 10;
+            this.FBTN_Clean_Black_Lists.Text = "flashButton1";
+            this.FBTN_Clean_Black_Lists.UseVisualStyleBackColor = true;
+            this.FBTN_Clean_Black_Lists.Click += new System.EventHandler(this.FBTN_Clean_Black_Lists_Click_1);
             // 
-            // Form4
+            // FBTN_Delete_Liste_Users
             // 
+            this.FBTN_Delete_Liste_Users.BackgroundImage = global::Client_PM.Properties.Resources.Delete;
+            this.FBTN_Delete_Liste_Users.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Delete_Liste_Users.ClickedImage = null;
+            this.FBTN_Delete_Liste_Users.DisabledImage = null;
+            this.FBTN_Delete_Liste_Users.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Delete_Liste_Users.Image")));
+            this.FBTN_Delete_Liste_Users.Location = new System.Drawing.Point(262, 105);
+            this.FBTN_Delete_Liste_Users.Name = "FBTN_Delete_Liste_Users";
+            this.FBTN_Delete_Liste_Users.NeutralImage = null;
+            this.FBTN_Delete_Liste_Users.OverImage = null;
+            this.FBTN_Delete_Liste_Users.Size = new System.Drawing.Size(36, 36);
+            this.FBTN_Delete_Liste_Users.TabIndex = 9;
+            this.FBTN_Delete_Liste_Users.Text = "Enlever un utilisateur de la liste noire";
+            this.FBTN_Delete_Liste_Users.UseVisualStyleBackColor = true;
+            this.FBTN_Delete_Liste_Users.Click += new System.EventHandler(this.FBTN_Delete_Liste_Users_Click_1);
+            // 
+            // FBTN_Add_User_Black_Lists
+            // 
+            this.FBTN_Add_User_Black_Lists.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
+            this.FBTN_Add_User_Black_Lists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Add_User_Black_Lists.ClickedImage = null;
+            this.FBTN_Add_User_Black_Lists.DisabledImage = null;
+            this.FBTN_Add_User_Black_Lists.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Add_User_Black_Lists.Image")));
+            this.FBTN_Add_User_Black_Lists.Location = new System.Drawing.Point(262, 50);
+            this.FBTN_Add_User_Black_Lists.Name = "FBTN_Add_User_Black_Lists";
+            this.FBTN_Add_User_Black_Lists.NeutralImage = null;
+            this.FBTN_Add_User_Black_Lists.OverImage = null;
+            this.FBTN_Add_User_Black_Lists.Size = new System.Drawing.Size(36, 36);
+            this.FBTN_Add_User_Black_Lists.TabIndex = 8;
+            this.FBTN_Add_User_Black_Lists.Text = "Ajouter un utilisateur a la liste noire";
+            this.FBTN_Add_User_Black_Lists.UseVisualStyleBackColor = true;
+            this.FBTN_Add_User_Black_Lists.Click += new System.EventHandler(this.FBTN_Add_User_Black_Lists_Click_1);
+            // 
+            // PageListeNoire
+            // 
+            this.AcceptButton = this.BTN_Save_Black_List;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 364);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.CancelButton = this.BTN_Cancel;
+            this.ClientSize = new System.Drawing.Size(314, 314);
+            this.Controls.Add(this.FBTN_Clean_Black_Lists);
+            this.Controls.Add(this.FBTN_Delete_Liste_Users);
+            this.Controls.Add(this.FBTN_Add_User_Black_Lists);
+            this.Controls.Add(this.BTN_Save_Black_List);
+            this.Controls.Add(this.BTN_Cancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Name = "Form4";
+            this.Controls.Add(this.LISTB_Liste_Noire);
+            this.Controls.Add(this.COB_Liste_Noire_Utilisateur);
+            this.Name = "PageListeNoire";
             this.Text = "Liste noire";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,14 +169,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox COB_Liste_Noire_Utilisateur;
+        private System.Windows.Forms.ListBox LISTB_Liste_Noire;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button BTN_Cancel;
+        private System.Windows.Forms.Button BTN_Save_Black_List;
+        private PhotoManagerClient.FlashButton FBTN_Add_User_Black_Lists;
+        private PhotoManagerClient.FlashButton FBTN_Delete_Liste_Users;
+        private PhotoManagerClient.FlashButton FBTN_Clean_Black_Lists;
     }
 }

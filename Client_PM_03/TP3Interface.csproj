@@ -187,6 +187,56 @@
   <ItemGroup>
     <None Include="Resources\Editer.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\edit_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel_accept.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

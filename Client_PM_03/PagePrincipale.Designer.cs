@@ -51,7 +51,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CBOX_NotMine = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.FBTN_EffacerMotCle = new PhotoManagerClient.FlashButton();
             this.FBTN_AjouterMotCle = new PhotoManagerClient.FlashButton();
             this.LBX_MotsCles = new System.Windows.Forms.ListBox();
@@ -67,17 +66,12 @@
             this.FBTN_Ajouter = new PhotoManagerClient.FlashButton();
             this.FTBN_Effacer = new PhotoManagerClient.FlashButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.GBX_User = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.BTN_EditUser = new System.Windows.Forms.Button();
-            this.IBX_User = new PhotoManagerClient.ImageBox();
+            this.FBTN_Carousel = new PhotoManagerClient.FlashButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.FBTN_MiseEnPage = new PhotoManagerClient.FlashButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Username = new System.Windows.Forms.Label();
+            this.IMB_UserAvatar = new PhotoManagerClient.ImageBox();
             this.photosBrowser1 = new PhotoManagerClient.PhotosBrowser();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -85,9 +79,9 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.GBX_User.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IBX_User)).BeginInit();
             this.groupBox8.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IMB_UserAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -199,19 +193,20 @@
             // ajoutToolStripMenuItem
             // 
             this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
-            this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(208, 30);
+            this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.ajoutToolStripMenuItem.Text = "Ajout";
+            this.ajoutToolStripMenuItem.Click += new System.EventHandler(this.TLSP_Liste_Noire_Ajout_Click);
             // 
             // retraitToolStripMenuItem
             // 
             this.retraitToolStripMenuItem.Name = "retraitToolStripMenuItem";
-            this.retraitToolStripMenuItem.Size = new System.Drawing.Size(208, 30);
+            this.retraitToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.retraitToolStripMenuItem.Text = "Retrait";
             // 
             // réinitialisationToolStripMenuItem
             // 
             this.réinitialisationToolStripMenuItem.Name = "réinitialisationToolStripMenuItem";
-            this.réinitialisationToolStripMenuItem.Size = new System.Drawing.Size(208, 30);
+            this.réinitialisationToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.réinitialisationToolStripMenuItem.Text = "Réinitialisation";
             // 
             // rotationToolStripMenuItem
@@ -226,10 +221,10 @@
             // 
             this.CMB_UsersList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMB_UsersList.FormattingEnabled = true;
-            this.CMB_UsersList.Location = new System.Drawing.Point(9, 69);
+            this.CMB_UsersList.Location = new System.Drawing.Point(15, 63);
             this.CMB_UsersList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CMB_UsersList.Name = "CMB_UsersList";
-            this.CMB_UsersList.Size = new System.Drawing.Size(295, 28);
+            this.CMB_UsersList.Size = new System.Drawing.Size(256, 28);
             this.CMB_UsersList.TabIndex = 1;
             this.CMB_UsersList.SelectedIndexChanged += new System.EventHandler(this.CMB_UsersList_SelectedIndexChanged);
             // 
@@ -237,21 +232,21 @@
             // 
             this.TBX_MotsCles.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TBX_MotsCles.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.TBX_MotsCles.Location = new System.Drawing.Point(10, 75);
+            this.TBX_MotsCles.Location = new System.Drawing.Point(15, 75);
             this.TBX_MotsCles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TBX_MotsCles.Name = "TBX_MotsCles";
-            this.TBX_MotsCles.Size = new System.Drawing.Size(262, 26);
+            this.TBX_MotsCles.Size = new System.Drawing.Size(251, 26);
             this.TBX_MotsCles.TabIndex = 2;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.CBOX_NotMine);
             this.groupBox1.Controls.Add(this.CMB_UsersList);
-            this.groupBox1.Location = new System.Drawing.Point(261, 42);
+            this.groupBox1.Location = new System.Drawing.Point(20, 42);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(339, 111);
+            this.groupBox1.Size = new System.Drawing.Size(288, 111);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Utilisateurs";
@@ -259,7 +254,7 @@
             // CBOX_NotMine
             // 
             this.CBOX_NotMine.AutoSize = true;
-            this.CBOX_NotMine.Location = new System.Drawing.Point(9, 29);
+            this.CBOX_NotMine.Location = new System.Drawing.Point(15, 29);
             this.CBOX_NotMine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CBOX_NotMine.Name = "CBOX_NotMine";
             this.CBOX_NotMine.Size = new System.Drawing.Size(174, 24);
@@ -270,45 +265,35 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.groupBox7);
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.FBTN_EffacerMotCle);
             this.groupBox2.Controls.Add(this.FBTN_AjouterMotCle);
             this.groupBox2.Controls.Add(this.LBX_MotsCles);
             this.groupBox2.Controls.Add(this.CBX_MotsCles);
             this.groupBox2.Controls.Add(this.TBX_MotsCles);
-            this.groupBox2.Location = new System.Drawing.Point(261, 382);
+            this.groupBox2.Location = new System.Drawing.Point(20, 378);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(339, 383);
+            this.groupBox2.Size = new System.Drawing.Size(288, 480);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mots-clés";
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Location = new System.Drawing.Point(212, 392);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox7.Size = new System.Drawing.Size(126, 100);
-            this.groupBox7.TabIndex = 12;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
-            // 
             // FBTN_EffacerMotCle
             // 
-            this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.Delete;
+            this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.trash;
             this.FBTN_EffacerMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.FBTN_EffacerMotCle.ClickedImage = null;
             this.FBTN_EffacerMotCle.DisabledImage = null;
             this.FBTN_EffacerMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EffacerMotCle.Image")));
-            this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(276, 111);
+            this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(226, 25);
             this.FBTN_EffacerMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_EffacerMotCle.Name = "FBTN_EffacerMotCle";
             this.FBTN_EffacerMotCle.NeutralImage = null;
             this.FBTN_EffacerMotCle.OverImage = null;
-            this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(28, 31);
+            this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(40, 40);
             this.FBTN_EffacerMotCle.TabIndex = 10;
             this.FBTN_EffacerMotCle.Text = "flashButton3";
             this.FBTN_EffacerMotCle.UseVisualStyleBackColor = true;
@@ -316,17 +301,17 @@
             // 
             // FBTN_AjouterMotCle
             // 
-            this.FBTN_AjouterMotCle.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
+            this.FBTN_AjouterMotCle.BackgroundImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
             this.FBTN_AjouterMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.FBTN_AjouterMotCle.ClickedImage = null;
             this.FBTN_AjouterMotCle.DisabledImage = null;
             this.FBTN_AjouterMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AjouterMotCle.Image")));
-            this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(276, 75);
+            this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(178, 25);
             this.FBTN_AjouterMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_AjouterMotCle.Name = "FBTN_AjouterMotCle";
             this.FBTN_AjouterMotCle.NeutralImage = null;
             this.FBTN_AjouterMotCle.OverImage = null;
-            this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(28, 26);
+            this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(40, 40);
             this.FBTN_AjouterMotCle.TabIndex = 9;
             this.FBTN_AjouterMotCle.Text = "flashButton2";
             this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
@@ -334,18 +319,20 @@
             // 
             // LBX_MotsCles
             // 
+            this.LBX_MotsCles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.LBX_MotsCles.FormattingEnabled = true;
             this.LBX_MotsCles.ItemHeight = 20;
-            this.LBX_MotsCles.Location = new System.Drawing.Point(10, 111);
+            this.LBX_MotsCles.Location = new System.Drawing.Point(15, 111);
             this.LBX_MotsCles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LBX_MotsCles.Name = "LBX_MotsCles";
-            this.LBX_MotsCles.Size = new System.Drawing.Size(260, 244);
+            this.LBX_MotsCles.Size = new System.Drawing.Size(251, 344);
             this.LBX_MotsCles.TabIndex = 4;
             // 
             // CBX_MotsCles
             // 
             this.CBX_MotsCles.AutoSize = true;
-            this.CBX_MotsCles.Location = new System.Drawing.Point(10, 31);
+            this.CBX_MotsCles.Location = new System.Drawing.Point(15, 36);
             this.CBX_MotsCles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CBX_MotsCles.Name = "CBX_MotsCles";
             this.CBX_MotsCles.Size = new System.Drawing.Size(22, 21);
@@ -360,11 +347,11 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Location = new System.Drawing.Point(261, 162);
+            this.groupBox3.Location = new System.Drawing.Point(20, 163);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(339, 208);
+            this.groupBox3.Size = new System.Drawing.Size(288, 208);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Date interval";
@@ -382,7 +369,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 111);
+            this.label2.Location = new System.Drawing.Point(11, 129);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
@@ -392,7 +379,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 71);
+            this.label1.Location = new System.Drawing.Point(11, 73);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
@@ -401,18 +388,18 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(108, 111);
+            this.dateTimePicker2.Location = new System.Drawing.Point(15, 154);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(198, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(251, 26);
             this.dateTimePicker2.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(108, 69);
+            this.dateTimePicker1.Location = new System.Drawing.Point(14, 98);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(196, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(251, 26);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // groupBox4
@@ -420,28 +407,28 @@
             this.groupBox4.Controls.Add(this.FBTN_Modifier);
             this.groupBox4.Controls.Add(this.FBTN_Ajouter);
             this.groupBox4.Controls.Add(this.FTBN_Effacer);
-            this.groupBox4.Location = new System.Drawing.Point(261, 771);
+            this.groupBox4.Location = new System.Drawing.Point(327, 47);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox4.Size = new System.Drawing.Size(202, 106);
+            this.groupBox4.Size = new System.Drawing.Size(340, 106);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Photo";
             // 
             // FBTN_Modifier
             // 
-            this.FBTN_Modifier.BackgroundImage = global::Client_PM.Properties.Resources.Editer;
+            this.FBTN_Modifier.BackgroundImage = global::Client_PM.Properties.Resources.edit;
             this.FBTN_Modifier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_Modifier.ClickedImage = null;
-            this.FBTN_Modifier.DisabledImage = null;
+            this.FBTN_Modifier.ClickedImage = global::Client_PM.Properties.Resources.edit_accept;
+            this.FBTN_Modifier.DisabledImage = global::Client_PM.Properties.Resources.edit_disable;
             this.FBTN_Modifier.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Modifier.Image")));
-            this.FBTN_Modifier.Location = new System.Drawing.Point(80, 32);
+            this.FBTN_Modifier.Location = new System.Drawing.Point(145, 29);
             this.FBTN_Modifier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_Modifier.Name = "FBTN_Modifier";
-            this.FBTN_Modifier.NeutralImage = null;
-            this.FBTN_Modifier.OverImage = null;
-            this.FBTN_Modifier.Size = new System.Drawing.Size(48, 49);
+            this.FBTN_Modifier.NeutralImage = global::Client_PM.Properties.Resources.edit;
+            this.FBTN_Modifier.OverImage = global::Client_PM.Properties.Resources.edit_accept;
+            this.FBTN_Modifier.Size = new System.Drawing.Size(48, 48);
             this.FBTN_Modifier.TabIndex = 10;
             this.FBTN_Modifier.Text = "Éditer la photo sélectionnée";
             this.FBTN_Modifier.UseVisualStyleBackColor = true;
@@ -449,17 +436,17 @@
             // 
             // FBTN_Ajouter
             // 
-            this.FBTN_Ajouter.BackgroundImage = global::Client_PM.Properties.Resources.Plus;
+            this.FBTN_Ajouter.BackgroundImage = global::Client_PM.Properties.Resources.add;
             this.FBTN_Ajouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_Ajouter.ClickedImage = null;
-            this.FBTN_Ajouter.DisabledImage = null;
+            this.FBTN_Ajouter.ClickedImage = global::Client_PM.Properties.Resources.add_accept;
+            this.FBTN_Ajouter.DisabledImage = global::Client_PM.Properties.Resources.add_disable;
             this.FBTN_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Ajouter.Image")));
-            this.FBTN_Ajouter.Location = new System.Drawing.Point(22, 32);
+            this.FBTN_Ajouter.Location = new System.Drawing.Point(35, 29);
             this.FBTN_Ajouter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_Ajouter.Name = "FBTN_Ajouter";
-            this.FBTN_Ajouter.NeutralImage = null;
-            this.FBTN_Ajouter.OverImage = null;
-            this.FBTN_Ajouter.Size = new System.Drawing.Size(48, 49);
+            this.FBTN_Ajouter.NeutralImage = global::Client_PM.Properties.Resources.add;
+            this.FBTN_Ajouter.OverImage = global::Client_PM.Properties.Resources.add_accept;
+            this.FBTN_Ajouter.Size = new System.Drawing.Size(48, 48);
             this.FBTN_Ajouter.TabIndex = 9;
             this.FBTN_Ajouter.Text = "Ajouter une photo";
             this.FBTN_Ajouter.UseVisualStyleBackColor = true;
@@ -467,17 +454,17 @@
             // 
             // FTBN_Effacer
             // 
-            this.FTBN_Effacer.BackgroundImage = global::Client_PM.Properties.Resources.Delete;
+            this.FTBN_Effacer.BackgroundImage = global::Client_PM.Properties.Resources.trash;
             this.FTBN_Effacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FTBN_Effacer.ClickedImage = null;
-            this.FTBN_Effacer.DisabledImage = null;
+            this.FTBN_Effacer.ClickedImage = global::Client_PM.Properties.Resources.trash_accept;
+            this.FTBN_Effacer.DisabledImage = global::Client_PM.Properties.Resources.trash_disable;
             this.FTBN_Effacer.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Effacer.Image")));
-            this.FTBN_Effacer.Location = new System.Drawing.Point(135, 32);
+            this.FTBN_Effacer.Location = new System.Drawing.Point(255, 29);
             this.FTBN_Effacer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FTBN_Effacer.Name = "FTBN_Effacer";
-            this.FTBN_Effacer.NeutralImage = null;
-            this.FTBN_Effacer.OverImage = null;
-            this.FTBN_Effacer.Size = new System.Drawing.Size(48, 49);
+            this.FTBN_Effacer.NeutralImage = global::Client_PM.Properties.Resources.trash;
+            this.FTBN_Effacer.OverImage = global::Client_PM.Properties.Resources.trash_accept;
+            this.FTBN_Effacer.Size = new System.Drawing.Size(48, 48);
             this.FTBN_Effacer.TabIndex = 8;
             this.FTBN_Effacer.Text = "Retirer la photo sélectionnée";
             this.FTBN_Effacer.UseVisualStyleBackColor = true;
@@ -485,125 +472,36 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.button2);
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.listBox2);
-            this.groupBox5.Location = new System.Drawing.Point(18, 382);
+            this.groupBox5.Controls.Add(this.FBTN_Carousel);
+            this.groupBox5.Location = new System.Drawing.Point(688, 47);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox5.Size = new System.Drawing.Size(234, 495);
+            this.groupBox5.Size = new System.Drawing.Size(184, 106);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Carousel";
             // 
-            // button4
+            // FBTN_Carousel
             // 
-            this.button4.Location = new System.Drawing.Point(26, 120);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(180, 35);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Réinitialiser";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(26, 75);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 35);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Retirer";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(26, 165);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 35);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Visionner";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(26, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(26, 220);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(178, 244);
-            this.listBox2.TabIndex = 0;
-            // 
-            // GBX_User
-            // 
-            this.GBX_User.Controls.Add(this.button6);
-            this.GBX_User.Controls.Add(this.BTN_EditUser);
-            this.GBX_User.Controls.Add(this.IBX_User);
-            this.GBX_User.Location = new System.Drawing.Point(18, 42);
-            this.GBX_User.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GBX_User.Name = "GBX_User";
-            this.GBX_User.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GBX_User.Size = new System.Drawing.Size(234, 328);
-            this.GBX_User.TabIndex = 11;
-            this.GBX_User.TabStop = false;
-            this.GBX_User.Text = "Nom d\'utilisateur";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(26, 277);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(180, 35);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Déconnexion";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // BTN_EditUser
-            // 
-            this.BTN_EditUser.Location = new System.Drawing.Point(26, 231);
-            this.BTN_EditUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BTN_EditUser.Name = "BTN_EditUser";
-            this.BTN_EditUser.Size = new System.Drawing.Size(180, 35);
-            this.BTN_EditUser.TabIndex = 1;
-            this.BTN_EditUser.Text = "Éditer";
-            this.BTN_EditUser.UseVisualStyleBackColor = true;
-            // 
-            // IBX_User
-            // 
-            this.IBX_User.AllowDrop = true;
-            this.IBX_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.IBX_User.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IBX_User.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
-    "th context menu.";
-            this.IBX_User.ImportImageText = "Import image from file...";
-            this.IBX_User.Location = new System.Drawing.Point(26, 34);
-            this.IBX_User.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.IBX_User.Name = "IBX_User";
-            this.IBX_User.OpenFileDialogTitle = "Please choose image an file";
-            this.IBX_User.PasteMenuText = "Paste image from clipboard";
-            this.IBX_User.Size = new System.Drawing.Size(179, 176);
-            this.IBX_User.TabIndex = 0;
-            this.IBX_User.TabStop = false;
+            this.FBTN_Carousel.BackgroundImage = global::Client_PM.Properties.Resources.carousel;
+            this.FBTN_Carousel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Carousel.ClickedImage = null;
+            this.FBTN_Carousel.DisabledImage = null;
+            this.FBTN_Carousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Carousel.Image")));
+            this.FBTN_Carousel.Location = new System.Drawing.Point(72, 35);
+            this.FBTN_Carousel.Name = "FBTN_Carousel";
+            this.FBTN_Carousel.NeutralImage = null;
+            this.FBTN_Carousel.OverImage = null;
+            this.FBTN_Carousel.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_Carousel.TabIndex = 0;
+            this.FBTN_Carousel.Text = "flashButton1";
+            this.FBTN_Carousel.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.FBTN_MiseEnPage);
-            this.groupBox8.Location = new System.Drawing.Point(472, 774);
+            this.groupBox8.Location = new System.Drawing.Point(1463, 47);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -614,40 +512,79 @@
             // 
             // FBTN_MiseEnPage
             // 
-            this.FBTN_MiseEnPage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.BackgroundImage")));
+            this.FBTN_MiseEnPage.BackgroundImage = global::Client_PM.Properties.Resources.rotate;
             this.FBTN_MiseEnPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_MiseEnPage.ClickedImage = null;
-            this.FBTN_MiseEnPage.DisabledImage = null;
+            this.FBTN_MiseEnPage.ClickedImage = global::Client_PM.Properties.Resources.rotate_accept;
+            this.FBTN_MiseEnPage.DisabledImage = global::Client_PM.Properties.Resources.rotate;
             this.FBTN_MiseEnPage.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.Image")));
             this.FBTN_MiseEnPage.Location = new System.Drawing.Point(40, 29);
             this.FBTN_MiseEnPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_MiseEnPage.Name = "FBTN_MiseEnPage";
-            this.FBTN_MiseEnPage.NeutralImage = null;
-            this.FBTN_MiseEnPage.OverImage = null;
-            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(54, 55);
+            this.FBTN_MiseEnPage.NeutralImage = global::Client_PM.Properties.Resources.rotate;
+            this.FBTN_MiseEnPage.OverImage = global::Client_PM.Properties.Resources.rotate_accept;
+            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(48, 48);
             this.FBTN_MiseEnPage.TabIndex = 7;
             this.FBTN_MiseEnPage.Text = "Changer la mise-en-page";
             this.FBTN_MiseEnPage.UseVisualStyleBackColor = true;
             this.FBTN_MiseEnPage.Click += new System.EventHandler(this.FBTN_MiseEnPage_Click);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.Username);
+            this.groupBox6.Controls.Add(this.IMB_UserAvatar);
+            this.groupBox6.Location = new System.Drawing.Point(893, 53);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(552, 100);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Utilisateur";
+            // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.Location = new System.Drawing.Point(76, 43);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(197, 20);
+            this.Username.TabIndex = 1;
+            this.Username.Text = "Aucun utilisateur connecté";
+            // 
+            // IMB_UserAvatar
+            // 
+            this.IMB_UserAvatar.AllowDrop = true;
+            this.IMB_UserAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.IMB_UserAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMB_UserAvatar.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+    "th context menu.";
+            this.IMB_UserAvatar.ImportImageText = "Import image from file...";
+            this.IMB_UserAvatar.Location = new System.Drawing.Point(22, 29);
+            this.IMB_UserAvatar.Name = "IMB_UserAvatar";
+            this.IMB_UserAvatar.OpenFileDialogTitle = "Please choose image an file";
+            this.IMB_UserAvatar.PasteMenuText = "Paste image from clipboard";
+            this.IMB_UserAvatar.Size = new System.Drawing.Size(48, 48);
+            this.IMB_UserAvatar.TabIndex = 0;
+            this.IMB_UserAvatar.TabStop = false;
+            // 
             // photosBrowser1
             // 
+            this.photosBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.photosBrowser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.photosBrowser1.Location = new System.Drawing.Point(609, 42);
+            this.photosBrowser1.Location = new System.Drawing.Point(327, 174);
             this.photosBrowser1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.photosBrowser1.Name = "photosBrowser1";
             this.photosBrowser1.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
             this.photosBrowser1.SelectedPhoto = null;
-            this.photosBrowser1.Size = new System.Drawing.Size(1036, 838);
+            this.photosBrowser1.Size = new System.Drawing.Size(1264, 684);
             this.photosBrowser1.TabIndex = 8;
             // 
             // PagePrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1604, 882);
+            this.ClientSize = new System.Drawing.Size(1604, 872);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.GBX_User);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.photosBrowser1);
@@ -657,6 +594,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1626, 928);
             this.Name = "PagePrincipale";
             this.Text = "Prototype";
             this.Load += new System.EventHandler(this.PagePrincipale_Load_1);
@@ -670,9 +608,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.GBX_User.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IBX_User)).EndInit();
             this.groupBox8.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IMB_UserAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -717,17 +656,11 @@
         private PhotoManagerClient.FlashButton FBTN_Ajouter;
         private PhotoManagerClient.FlashButton FTBN_Effacer;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox GBX_User;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button BTN_EditUser;
-        private PhotoManagerClient.ImageBox IBX_User;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.ToolStripMenuItem TLSTRIP_Deconnexion;
+        private PhotoManagerClient.FlashButton FBTN_Carousel;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label Username;
+        private PhotoManagerClient.ImageBox IMB_UserAvatar;
     }
 }
