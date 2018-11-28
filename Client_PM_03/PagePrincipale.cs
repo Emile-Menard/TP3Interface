@@ -289,7 +289,7 @@ namespace Client_PM
 
         private void TLSP_Liste_Noire_Ajout_Click(object sender, EventArgs e)
         {
-            if (mConnected)
+            if (LoggedUser.Exists())
             {
                 PageListeNoire pgListeNoire = new PageListeNoire();
                 if (pgListeNoire.ShowDialog() == DialogResult.OK)
