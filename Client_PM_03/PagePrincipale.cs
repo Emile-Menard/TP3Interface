@@ -447,15 +447,11 @@ namespace Client_PM
             {
                 if (selectedUser.Id == 0)
                 {
-                    mPhotoFilter.SetUserFilter(!Properties.Settings.Default.NotMyPhoto, true, 0);
+                    mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, true, 0);
                 }
-                else if(CBOX_NotMine.Checked)
+                else
                 {
-                    mPhotoFilter.SetUserFilter(Properties.Settings.Default.NotMyPhoto, false, selectedUser.Id);
-                }
-                else if (!CBOX_NotMine.Checked)
-                {
-                    mPhotoFilter.SetUserFilter(false, false, selectedUser.Id);
+                    mPhotoFilter.SetUserFilter(!Properties.Settings.Default.NotMyPhoto, false, selectedUser.Id);
                 }
             }
             Update_MotsCles();
