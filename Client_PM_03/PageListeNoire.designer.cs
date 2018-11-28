@@ -86,12 +86,13 @@
             // 
             // BTN_Save_Black_List
             // 
-            this.BTN_Save_Black_List.Location = new System.Drawing.Point(100, 271);
+            this.BTN_Save_Black_List.Location = new System.Drawing.Point(97, 271);
             this.BTN_Save_Black_List.Name = "BTN_Save_Black_List";
-            this.BTN_Save_Black_List.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Save_Black_List.Size = new System.Drawing.Size(78, 23);
             this.BTN_Save_Black_List.TabIndex = 7;
             this.BTN_Save_Black_List.Text = "Sauvegarder";
             this.BTN_Save_Black_List.UseVisualStyleBackColor = true;
+            this.BTN_Save_Black_List.Click += new System.EventHandler(this.BTN_Save_Black_List_Click);
             // 
             // FBTN_Clean_Black_Lists
             // 
