@@ -70,6 +70,7 @@
             this.Username = new System.Windows.Forms.Label();
             this.IMB_UserAvatar = new PhotoManagerClient.ImageBox();
             this.photosBrowser = new PhotoManagerClient.PhotosBrowser();
+            this.FBTN_EditerCarousel = new PhotoManagerClient.FlashButton();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -181,7 +182,6 @@
             this.listeNoireToolStripMenuItem.Name = "listeNoireToolStripMenuItem";
             this.listeNoireToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.listeNoireToolStripMenuItem.Text = "Liste noire";
-            
             // 
             // rotationToolStripMenuItem
             // 
@@ -422,6 +422,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.FBTN_EditerCarousel);
             this.groupBox5.Controls.Add(this.FBTN_Carousel);
             this.groupBox5.Location = new System.Drawing.Point(459, 31);
             this.groupBox5.Name = "groupBox5";
@@ -437,15 +438,16 @@
             this.FBTN_Carousel.ClickedImage = null;
             this.FBTN_Carousel.DisabledImage = null;
             this.FBTN_Carousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Carousel.Image")));
-            this.FBTN_Carousel.Location = new System.Drawing.Point(48, 23);
-            this.FBTN_Carousel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FBTN_Carousel.Location = new System.Drawing.Point(19, 23);
+            this.FBTN_Carousel.Margin = new System.Windows.Forms.Padding(2);
             this.FBTN_Carousel.Name = "FBTN_Carousel";
             this.FBTN_Carousel.NeutralImage = null;
             this.FBTN_Carousel.OverImage = null;
             this.FBTN_Carousel.Size = new System.Drawing.Size(32, 31);
             this.FBTN_Carousel.TabIndex = 0;
-            this.FBTN_Carousel.Text = "flashButton1";
+            this.FBTN_Carousel.Text = "Visionner le carousel";
             this.FBTN_Carousel.UseVisualStyleBackColor = true;
+            this.FBTN_Carousel.Click += new System.EventHandler(this.FBTN_Carousel_Click);
             // 
             // groupBox8
             // 
@@ -479,9 +481,9 @@
             this.groupBox6.Controls.Add(this.Username);
             this.groupBox6.Controls.Add(this.IMB_UserAvatar);
             this.groupBox6.Location = new System.Drawing.Point(595, 34);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(368, 65);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
@@ -506,7 +508,7 @@
     "th context menu.";
             this.IMB_UserAvatar.ImportImageText = "Import image from file...";
             this.IMB_UserAvatar.Location = new System.Drawing.Point(15, 19);
-            this.IMB_UserAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IMB_UserAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.IMB_UserAvatar.Name = "IMB_UserAvatar";
             this.IMB_UserAvatar.OpenFileDialogTitle = "Please choose image an file";
             this.IMB_UserAvatar.PasteMenuText = "Paste image from clipboard";
@@ -521,11 +523,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.photosBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.photosBrowser.Location = new System.Drawing.Point(218, 106);
-            this.photosBrowser.Name = "photosBrowser1";
+            this.photosBrowser.Name = "photosBrowser";
             this.photosBrowser.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
             this.photosBrowser.SelectedPhoto = null;
             this.photosBrowser.Size = new System.Drawing.Size(842, 449);
             this.photosBrowser.TabIndex = 8;
+            // 
+            // FBTN_EditerCarousel
+            // 
+            this.FBTN_EditerCarousel.BackgroundImage = global::Client_PM.Properties.Resources.carousel;
+            this.FBTN_EditerCarousel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_EditerCarousel.ClickedImage = null;
+            this.FBTN_EditerCarousel.DisabledImage = null;
+            this.FBTN_EditerCarousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EditerCarousel.Image")));
+            this.FBTN_EditerCarousel.Location = new System.Drawing.Point(75, 22);
+            this.FBTN_EditerCarousel.Margin = new System.Windows.Forms.Padding(2);
+            this.FBTN_EditerCarousel.Name = "FBTN_EditerCarousel";
+            this.FBTN_EditerCarousel.NeutralImage = null;
+            this.FBTN_EditerCarousel.OverImage = null;
+            this.FBTN_EditerCarousel.Size = new System.Drawing.Size(32, 31);
+            this.FBTN_EditerCarousel.TabIndex = 0;
+            this.FBTN_EditerCarousel.Text = "Visionner le carousel";
+            this.FBTN_EditerCarousel.UseVisualStyleBackColor = true;
+            this.FBTN_EditerCarousel.Click += new System.EventHandler(this.FBTN_Carousel_Click);
             // 
             // PagePrincipale
             // 
@@ -607,5 +627,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label Username;
         private PhotoManagerClient.ImageBox IMB_UserAvatar;
+        private PhotoManagerClient.FlashButton FBTN_EditerCarousel;
     }
 }

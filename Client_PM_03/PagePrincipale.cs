@@ -14,6 +14,9 @@ namespace Client_PM
 
     public partial class PagePrincipale : Form
     {
+
+        private List<Photo> photos = new List<Photo>();
+        private List<int> SlideShowList = new List<int>();
         //Bool qui permet de savoir si on est connecté pour permettre certaines opérations
         User LoggedUser = null;
         PhotoBrowserPlacement mPhotoBrowserPlacement;
@@ -361,11 +364,22 @@ namespace Client_PM
             photosBrowser.Clear();
             ToggleUserStripOptions();
             UnloadUserData();
+            SlideShowList.Clear();
         }
 
         private void PagePrincipale_Load_1(object sender, EventArgs e)
         {
             Load_Settings();
+            if (!Properties.Settings.Default.FirstInit && Properties.Settings.Default.RememberMe)
+            {
+                LoadSlideShowList();
+            }
+            else
+            {
+                SlideShowList = new List<int>();
+            }
+
+            photos = DBPhotosWebServices.GetAllPhotos();
             ToggleUserStripOptions();
             if(LoggedUser.Exists())
             {
@@ -464,6 +478,42 @@ namespace Client_PM
             Update_MotsCles();
         }
 
-        
+        private void FBTN_Carousel_Click(object sender, EventArgs e)
+        {
+            PageEditSlideShow slideShow = new PageEditSlideShow();
+            slideShow.SlideShowList = SlideShowList;
+            slideShow.PhotoPool = photos;
+            slideShow.ShowDialog();
+            SaveSlideShowList();
+            Properties.Settings.Default.Save();
+          
+           
+
+        }
+
+        private void LoadSlideShowList()
+        {
+            SlideShowList = new List<int>();
+            if (Properties.Settings.Default.SlideShowList != null)
+            {
+                foreach (string stringPhotoId in Properties.Settings.Default.SlideShowList)
+                {
+                    int photoId = int.Parse(stringPhotoId);
+                    SlideShowList.Add(photoId);
+                }
+            }
+        }
+
+        private void SaveSlideShowList()
+        {
+            if (Properties.Settings.Default.SlideShowList == null)
+                Properties.Settings.Default.SlideShowList = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.SlideShowList.Clear();
+            if (SlideShowList != null)
+                foreach (int photoId in SlideShowList)
+                {
+                    Properties.Settings.Default.SlideShowList.Add(photoId.ToString());
+                }
+        }
     }
 }
