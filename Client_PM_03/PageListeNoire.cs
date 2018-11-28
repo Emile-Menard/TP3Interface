@@ -123,9 +123,12 @@ namespace Client_PM
             IdUsers = new List<int>();
             foreach (User user in ListeUsers)
             {
-                IdUsers.Add(user.Id);
-                MessageBox.Show("");
+                if (LISTB_Liste_Noire.Items.Contains(user.Name))
+                {
+                    IdUsers.Add(user.Id);
+                }
             }
+            MessageBox.Show("Liste noire sauvegarder!");
         }
     }
 }
