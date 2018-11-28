@@ -62,17 +62,17 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.photosBrowser1 = new PhotoManagerClient.PhotosBrowser();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.USername = new System.Windows.Forms.Label();
+            this.imageBox1 = new PhotoManagerClient.ImageBox();
             this.FBTN_MiseEnPage = new PhotoManagerClient.FlashButton();
             this.FBTN_Carousel = new PhotoManagerClient.FlashButton();
             this.FBTN_Modifier = new PhotoManagerClient.FlashButton();
             this.FBTN_Ajouter = new PhotoManagerClient.FlashButton();
             this.FTBN_Effacer = new PhotoManagerClient.FlashButton();
+            this.photosBrowser1 = new PhotoManagerClient.PhotosBrowser();
             this.FBTN_EffacerMotCle = new PhotoManagerClient.FlashButton();
             this.FBTN_AjouterMotCle = new PhotoManagerClient.FlashButton();
-            this.imageBox1 = new PhotoManagerClient.ImageBox();
-            this.Name = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -399,20 +399,9 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Mise-en-page";
             // 
-            // photosBrowser1
-            // 
-            this.photosBrowser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.photosBrowser1.Location = new System.Drawing.Point(327, 174);
-            this.photosBrowser1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.photosBrowser1.Name = "photosBrowser1";
-            this.photosBrowser1.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
-            this.photosBrowser1.SelectedPhoto = null;
-            this.photosBrowser1.Size = new System.Drawing.Size(1264, 684);
-            this.photosBrowser1.TabIndex = 8;
-            // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.Name);
+            this.groupBox6.Controls.Add(this.USername);
             this.groupBox6.Controls.Add(this.imageBox1);
             this.groupBox6.Location = new System.Drawing.Point(893, 53);
             this.groupBox6.Name = "groupBox6";
@@ -420,6 +409,31 @@
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Utilisateur";
+            // 
+            // USername
+            // 
+            this.USername.AutoSize = true;
+            this.USername.Location = new System.Drawing.Point(90, 43);
+            this.USername.Name = "USername";
+            this.USername.Size = new System.Drawing.Size(142, 20);
+            this.USername.TabIndex = 1;
+            this.USername.Text = "Nom de l\'utilisateur";
+            // 
+            // imageBox1
+            // 
+            this.imageBox1.AllowDrop = true;
+            this.imageBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBox1.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+    "th context menu.";
+            this.imageBox1.ImportImageText = "Import image from file...";
+            this.imageBox1.Location = new System.Drawing.Point(22, 29);
+            this.imageBox1.Name = "imageBox1";
+            this.imageBox1.OpenFileDialogTitle = "Please choose image an file";
+            this.imageBox1.PasteMenuText = "Paste image from clipboard";
+            this.imageBox1.Size = new System.Drawing.Size(48, 48);
+            this.imageBox1.TabIndex = 0;
+            this.imageBox1.TabStop = false;
             // 
             // FBTN_MiseEnPage
             // 
@@ -509,6 +523,20 @@
             this.FTBN_Effacer.UseVisualStyleBackColor = true;
             this.FTBN_Effacer.Click += new System.EventHandler(this.FTBN_Effacer_Click);
             // 
+            // photosBrowser1
+            // 
+            this.photosBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.photosBrowser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.photosBrowser1.Location = new System.Drawing.Point(327, 174);
+            this.photosBrowser1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.photosBrowser1.Name = "photosBrowser1";
+            this.photosBrowser1.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
+            this.photosBrowser1.SelectedPhoto = null;
+            this.photosBrowser1.Size = new System.Drawing.Size(1264, 684);
+            this.photosBrowser1.TabIndex = 8;
+            // 
             // FBTN_EffacerMotCle
             // 
             this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.trash;
@@ -545,31 +573,6 @@
             this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
             this.FBTN_AjouterMotCle.Click += new System.EventHandler(this.FBTN_Ajouter_MotCle_Click);
             // 
-            // imageBox1
-            // 
-            this.imageBox1.AllowDrop = true;
-            this.imageBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox1.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
-    "th context menu.";
-            this.imageBox1.ImportImageText = "Import image from file...";
-            this.imageBox1.Location = new System.Drawing.Point(22, 29);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.OpenFileDialogTitle = "Please choose image an file";
-            this.imageBox1.PasteMenuText = "Paste image from clipboard";
-            this.imageBox1.Size = new System.Drawing.Size(48, 48);
-            this.imageBox1.TabIndex = 0;
-            this.imageBox1.TabStop = false;
-            // 
-            // Name
-            // 
-            this.Name.AutoSize = true;
-            this.Name.Location = new System.Drawing.Point(90, 43);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(142, 20);
-            this.Name.TabIndex = 1;
-            this.Name.Text = "Nom de l\'utilisateur";
-            // 
             // PagePrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -586,6 +589,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1626, 928);
+            this.Name = "PagePrincipale";
             this.Text = "Prototype";
             this.Load += new System.EventHandler(this.PagePrincipale_Load_1);
             this.menuStrip1.ResumeLayout(false);
@@ -650,7 +655,7 @@
         private System.Windows.Forms.ToolStripMenuItem TLSTRIP_Deconnexion;
         private PhotoManagerClient.FlashButton FBTN_Carousel;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label USername;
         private PhotoManagerClient.ImageBox imageBox1;
     }
 }

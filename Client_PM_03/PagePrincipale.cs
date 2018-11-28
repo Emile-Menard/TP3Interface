@@ -347,6 +347,7 @@ namespace Client_PM
             {
                 UserComboBox();
             }
+            photosBrowser1.Placement = mPhotoBrowserPlacement;
 
         }
 
