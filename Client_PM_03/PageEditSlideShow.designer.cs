@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.FLPN_Photos = new System.Windows.Forms.FlowLayoutPanel();
+            this.BTN_ReinitCarousel = new System.Windows.Forms.Button();
+            this.BTN_Ok = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // FLPN_Photos
@@ -38,16 +40,38 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FLPN_Photos.Location = new System.Drawing.Point(13, 13);
             this.FLPN_Photos.Name = "FLPN_Photos";
-            this.FLPN_Photos.Size = new System.Drawing.Size(926, 424);
+            this.FLPN_Photos.Size = new System.Drawing.Size(926, 395);
             this.FLPN_Photos.TabIndex = 0;
             // 
-            // DLG_ManageSlideShow
+            // BTN_ReinitCarousel
+            // 
+            this.BTN_ReinitCarousel.Location = new System.Drawing.Point(864, 418);
+            this.BTN_ReinitCarousel.Name = "BTN_ReinitCarousel";
+            this.BTN_ReinitCarousel.Size = new System.Drawing.Size(75, 23);
+            this.BTN_ReinitCarousel.TabIndex = 1;
+            this.BTN_ReinitCarousel.Text = "Réinitialiser";
+            this.BTN_ReinitCarousel.UseVisualStyleBackColor = true;
+            this.BTN_ReinitCarousel.Click += new System.EventHandler(this.BTN_ReinitCarousel_Click);
+            // 
+            // BTN_Ok
+            // 
+            this.BTN_Ok.Location = new System.Drawing.Point(765, 418);
+            this.BTN_Ok.Name = "BTN_Ok";
+            this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Ok.TabIndex = 1;
+            this.BTN_Ok.Text = "OK";
+            this.BTN_Ok.UseVisualStyleBackColor = true;
+            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
+            // 
+            // PageEditSlideShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 449);
+            this.Controls.Add(this.BTN_Ok);
+            this.Controls.Add(this.BTN_ReinitCarousel);
             this.Controls.Add(this.FLPN_Photos);
-            this.Name = "DLG_ManageSlideShow";
+            this.Name = "PageEditSlideShow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Silde Show";
             this.Shown += new System.EventHandler(this.DLG_ManageSildeShow_Shown);
@@ -58,5 +82,7 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel FLPN_Photos;
+        private System.Windows.Forms.Button BTN_ReinitCarousel;
+        private System.Windows.Forms.Button BTN_Ok;
     }
 }

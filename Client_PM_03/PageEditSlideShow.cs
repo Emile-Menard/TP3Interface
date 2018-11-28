@@ -116,5 +116,15 @@ namespace Client_PM
             else
                 SlideShowList.RemoveAt(index);
         }
+
+        private void BTN_Ok_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BTN_ReinitCarousel_Click(object sender, EventArgs e)
+        {
+            SlideShowList.Clear();
+        }
     }
 }
