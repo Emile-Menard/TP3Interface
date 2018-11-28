@@ -59,6 +59,20 @@ namespace Client_PM
         private void Submit_Task()
         {
             WaitSplash.Show(this, "Connexion...");
+            if(CBOX_RememberMe.Checked)
+            {
+                Properties.Settings.Default.RememberMe = true;
+                Properties.Settings.Default.Username = TBXName_Connexion.Text;
+                Properties.Settings.Default.Password = TBXPassword_Connexion.Text;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.RememberMe = false;
+                Properties.Settings.Default.Username = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+            }
             Logged_User = DBPhotosWebServices.Login(TBXName_Connexion.Text, TBXPassword_Connexion.Text);
             WaitSplash.Hide();
         }

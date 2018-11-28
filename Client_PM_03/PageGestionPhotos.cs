@@ -14,6 +14,7 @@ namespace Client_PM
 {
     public partial class PageGestionPhotos : Form
     {
+        bool modificationMode;
         public User mUser;
         public Photo mPhoto;
         private  AutoCompleteStringCollection mMotsCles;
@@ -22,6 +23,7 @@ namespace Client_PM
         
         public PageGestionPhotos(User user)
         {
+            modificationMode = false;
             InitializeComponent();
             Init_Ajouter(user);
             Init_Dialogue();
@@ -29,6 +31,7 @@ namespace Client_PM
 
         public PageGestionPhotos(User user, Photo photo)
         {
+            modificationMode = true;
             InitializeComponent();
             Init_Modifier(user, photo);
             Init_Dialogue();
@@ -39,12 +42,14 @@ namespace Client_PM
         //Initialisation
         //
         //----------------------------------------------------------------------------------
+        //Ititialise le dialogue en mode ajout
         private void Init_Ajouter(User user)
         {
             mUser = user;
             mPhoto = new Photo();
         }
 
+        //Ititialise le dialogue en mode modification
         private void Init_Modifier(User user, Photo photo)
         {
             mUser = user;
@@ -54,6 +59,8 @@ namespace Client_PM
             PhotoToDialog();
         }
 
+
+        //Initialise le dialogue
         private void Init_Dialogue()
         {
             if(mUser != null)
@@ -67,9 +74,11 @@ namespace Client_PM
             }
         }
 
+        //Si la le membre photo n'est pas null, c'est-à-dire
+        //si on est en mode modification, 
         private void Init_IB_Image()
         {
-            if(mPhoto != null)
+            if(modificationMode)
             {
                 IB_Image.BackgroundImage = mPhoto.GetOriginalImage();
             }
@@ -77,13 +86,15 @@ namespace Client_PM
 
         private void Init_MotsCles()
         {
-            
-            mPhotoFilter.GetPhotos();
-            foreach (string keyword in mPhotoFilter.KeywordsList)
+            if (mUser != null)
             {
-                mMotsCles.Add(keyword);
+                mPhotoFilter.GetPhotos();
+                foreach (string keyword in mPhotoFilter.KeywordsList)
+                {
+                    mMotsCles.Add(keyword);
+                }
+                TBX_MotsCles.AutoCompleteCustomSource = mMotsCles;
             }
-            TBX_MotsCles.AutoCompleteCustomSource = mMotsCles;
         }
 
         //----------------------------------------------------------------------------------
@@ -102,7 +113,8 @@ namespace Client_PM
         private bool Valider_IB_Image(ref string message)
         {
             message = "Il n'y a aucune photo";
-            return IB_Image.Image != null;
+            return IB_Image.BackgroundImage != null;
+            
         }
 
         //----------------------------------------------------------------------------------
@@ -146,14 +158,34 @@ namespace Client_PM
         //
         //----------------------------------------------------------------------------------
 
-        private void DialogToPhoto()
+        private void DialogToPhotoCreate()
         {
-            mPhoto.Title = TBX_Titre.Text;
-            mPhoto.CreationDate = DTP_Date.Value;
-            mPhoto.Description = RTB_Description.Text;
-            mPhoto.Keywords = string.Join(" ", LBX_MotsCles.Items);
-            mPhoto.Shared = CBX_Partager.Checked;
-            mPhoto.SetImage(IB_Image.Image);
+            if(IB_Image.BackgroundImage != null && TBX_Titre.Text != "")
+            {
+                mPhoto.Title = TBX_Titre.Text;
+                mPhoto.CreationDate = DTP_Date.Value;
+                mPhoto.Description = RTB_Description.Text;
+                mPhoto.Keywords = GenericMethods.ListBoxToString(LBX_MotsCles);
+                mPhoto.Shared = CBX_Partager.Checked;
+                mPhoto.SetImage(IB_Image.BackgroundImage);
+                mPhoto.OwnerId = mUser.Id;
+                mPhoto = DBPhotosWebServices.CreatePhoto(mPhoto);
+            }
+        }
+
+        private void DialogToPhotoUpdate()
+        {
+            if (IB_Image.BackgroundImage != null && TBX_Titre.Text != "")
+            {
+                mPhoto.Title = TBX_Titre.Text;
+                mPhoto.CreationDate = DTP_Date.Value;
+                mPhoto.Description = RTB_Description.Text;
+                mPhoto.Keywords = GenericMethods.ListBoxToString(LBX_MotsCles);
+                mPhoto.Shared = CBX_Partager.Checked;
+                mPhoto.SetImage(IB_Image.BackgroundImage);
+                mPhoto.OwnerId = mUser.Id;
+                mPhoto = DBPhotosWebServices.UpdatePhoto(mPhoto);
+            }
         }
 
         private void PhotoToDialog()
@@ -161,9 +193,12 @@ namespace Client_PM
             TBX_Titre.Text = mPhoto.Title;
             DTP_Date.Value =  mPhoto.CreationDate;
             RTB_Description.Text = mPhoto.Description;
-            LBX_MotsCles.Items.AddRange(mPhoto.Keywords.Split(' ').ToArray());
+            if(mPhoto.Keywords != "")
+            {
+                LBX_MotsCles.Items.AddRange(mPhoto.Keywords.Split(' ').ToArray());
+            }
             CBX_Partager.Checked = mPhoto.Shared;
-            IB_Image.Image = mPhoto.GetOriginalImage();
+            IB_Image.BackgroundImage = mPhoto.GetOriginalImage();
         }
 
         //----------------------------------------------------------------------------------
@@ -176,14 +211,6 @@ namespace Client_PM
             mValidationProvider.AddControlToValidate(TBX_Titre, Valider_TBX_Titre);
             mValidationProvider.AddControlToValidate(IB_Image, Valider_IB_Image);
         }
-
-        //private void TBX_MotsCles_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if(e.KeyChar == (char)Keys.Enter)
-        //    {
-        //        AjouterMotCle();
-        //    }
-        //}
 
         private void FBTN_AjouterMotCle_Click(object sender, EventArgs e)
         {
@@ -213,9 +240,17 @@ namespace Client_PM
 
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
-            DialogToPhoto();
+            if(modificationMode)
+            {
+                DialogToPhotoUpdate();
+            }
+            else
+            {
+                DialogToPhotoCreate();
+            }
+           
         }
 
-        
+
     }
 }
