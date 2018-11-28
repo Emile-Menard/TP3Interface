@@ -573,7 +573,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(1622, 902);
             this.Name = "PagePrincipale";
-            this.Text = "Prototype";
+            this.Text = "Gestionnaire de photos";
             this.Load += new System.EventHandler(this.PagePrincipale_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
