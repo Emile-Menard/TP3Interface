@@ -1,13 +1,9 @@
 ﻿using PhotoManagerClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Client_PM
@@ -65,14 +61,12 @@ namespace Client_PM
                 // Masquer la bordure et l'entête
                 this.FormBorderStyle = FormBorderStyle.None;
                 // Masquer la barre des menus
-                this.menuStrip1.Visible = false;
                 // Agrandir
                 this.WindowState = FormWindowState.Maximized;
             }
             else
             {
                 this.FormBorderStyle = FormBorderStyle.Sizable;
-                this.menuStrip1.Visible = true;
                 this.WindowState = FormWindowState.Normal;
             }
         }
@@ -150,6 +144,21 @@ namespace Client_PM
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowHelp();
+        }
+
+
+
+
+        private void SaveSlideShowList()
+        {
+            if (Properties.Settings.Default.SlideShowList == null)
+                Properties.Settings.Default.SlideShowList = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.SlideShowList.Clear();
+            if (SlideShowList != null)
+                foreach (int photoId in SlideShowList)
+                {
+                    Properties.Settings.Default.SlideShowList.Add(photoId.ToString());
+                }
         }
     }
 }

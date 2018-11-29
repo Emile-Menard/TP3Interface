@@ -125,6 +125,8 @@ namespace Client_PM
         private void BTN_ReinitCarousel_Click(object sender, EventArgs e)
         {
             SlideShowList.Clear();
+            this.Close();
+
         }
     }
 }

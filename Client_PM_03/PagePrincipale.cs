@@ -511,7 +511,7 @@ namespace Client_PM
 
         private void FBTN_Carousel_Click(object sender, EventArgs e)
         {
-            PageEditSlideShow slideShow = new PageEditSlideShow();
+            PageSlideShow slideShow = new PageSlideShow();
             slideShow.SlideShowList = SlideShowList;
             slideShow.PhotoPool = photos;
             slideShow.ShowDialog();
@@ -519,6 +519,20 @@ namespace Client_PM
             Properties.Settings.Default.Save();
           
            
+
+        }
+
+
+        private void FBTN_EditCarousel_Click(object sender, EventArgs e)
+        {
+            PageEditSlideShow slideShow = new PageEditSlideShow();
+            slideShow.SlideShowList = SlideShowList;
+            slideShow.PhotoPool = photos;
+            slideShow.ShowDialog();
+            SaveSlideShowList();
+            Properties.Settings.Default.Save();
+
+
 
         }
 
