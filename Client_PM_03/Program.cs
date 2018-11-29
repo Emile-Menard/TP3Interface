@@ -16,7 +16,9 @@ namespace Client_PM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PagePrincipale());
+            PagePrincipale pp = new PagePrincipale();
+            Application.Run(pp);
+            
         }
     }
 }

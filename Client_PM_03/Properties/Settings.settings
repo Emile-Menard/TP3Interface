@@ -20,5 +20,11 @@
     <Setting Name="FirstInit" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="DimensionPagePrincipale" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">1626, 928</Value>
+    </Setting>
+    <Setting Name="StartPositionPagePrincipale" Type="System.Windows.Forms.FormStartPosition" Scope="User">
+      <Value Profile="(Default)">Manual</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

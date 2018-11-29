@@ -398,12 +398,22 @@ namespace Client_PM
             SlideShowList.Clear();
         }
 
+        //----------------------------------------------------------------------------------
+        //
+        //Load / Leave
+        //
+        //----------------------------------------------------------------------------------
+
         private void PagePrincipale_Load_1(object sender, EventArgs e)
         {
             Load_Settings();
             if (!Properties.Settings.Default.FirstInit && Properties.Settings.Default.RememberMe)
             {
                 LoadSlideShowList();
+                
+                this.Size = Properties.Settings.Default.DimensionPagePrincipale;
+                this.StartPosition = Properties.Settings.Default.StartPositionPagePrincipale;
+
             }
             else
             {
@@ -414,27 +424,35 @@ namespace Client_PM
             ToggleUserStripOptions();
             if(LoggedUser.Exists())
             {
-                UserComboBox();
+                UserComboBox(); 
             }
             photosBrowser.Placement = mPhotoBrowserPlacement;
 
+        }
+
+        private void PagePrincipale_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Properties.Settings.Default.RememberMe)
+            {
+                Properties.Settings.Default.DimensionPagePrincipale = this.Size;
+                //Start position fonctionne pas
+                Properties.Settings.Default.StartPositionPagePrincipale = this.StartPosition;
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void Load_Settings()
         {
             if (Properties.Settings.Default.RememberMe)
             {
-               var RememberMe = Properties.Settings.Default.RememberMe;
-               if(RememberMe)
+                User user = DBPhotosWebServices.Login(Properties.Settings.Default.Username, Properties.Settings.Default.Password);
+                if (user.Exists())
                 {
-                    User user = DBPhotosWebServices.Login(Properties.Settings.Default.Username, Properties.Settings.Default.Password);
-                    if (user.Exists()) {
-                        LoggedUser = user;
-                        FilterInit();
-                        LoadDataLogin();
-                        CBOX_NotMine.Checked = Properties.Settings.Default.NotMyPhoto;
-                       
-                    }
+                    LoggedUser = user;
+                    FilterInit();
+                    LoadDataLogin();
+                    CBOX_NotMine.Checked = Properties.Settings.Default.NotMyPhoto;
+
                 }
             }
         }
@@ -586,5 +604,7 @@ namespace Client_PM
                 MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
             }
         }
+
+        
     }
 }
