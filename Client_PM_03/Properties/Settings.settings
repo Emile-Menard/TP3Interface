@@ -23,11 +23,17 @@
     <Setting Name="DimensionPagePrincipale" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">1626, 928</Value>
     </Setting>
-    <Setting Name="StartPositionPagePrincipale" Type="System.Windows.Forms.FormStartPosition" Scope="User">
-      <Value Profile="(Default)">Manual</Value>
+    <Setting Name="PosPagePrincipale" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
     </Setting>
     <Setting Name="Blacklist" Type="System.Collections.ArrayList" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MiseEnPage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Left</Value>
+    </Setting>
+    <Setting Name="PosListeNoire" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

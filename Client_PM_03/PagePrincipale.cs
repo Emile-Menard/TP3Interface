@@ -23,6 +23,9 @@ namespace Client_PM
         PhotoBrowserPlacement mPhotoBrowserPlacement;
         PhotoFilter mPhotoFilter;
         ArrayList mBlackListedUsers;
+
+        Point mPointListeNoire;
+
         //List<Photo> mPhotos;
         public PagePrincipale()
         {
@@ -307,6 +310,7 @@ namespace Client_PM
                     mBlackListedUsers = pg.mListeNoire;
                     Update_Photo_Browser();
                     Update_MotsCles();
+                    mPointListeNoire = pg.Location;
                     MessageBox.Show("Liste noire modifiée avec succès");
                 }
             }
@@ -369,7 +373,14 @@ namespace Client_PM
             TLSTRIP_Connexion.Enabled = !LoggedUser.Exists();
         }
 
-        private void TLSTRIP_Editer_Click(object sender, EventArgs e)
+
+        //----------------------------------------------------------------------------------
+        //
+        //Éditer compte
+        //
+        //----------------------------------------------------------------------------------
+
+        private void EditerCompte()
         {
             PageGestionUser pgEditerCompte = new PageGestionUser();
             pgEditerCompte.User = LoggedUser;
@@ -377,17 +388,52 @@ namespace Client_PM
             {
 
             }
+        } 
+        private void TLSTRIP_Editer_Click(object sender, EventArgs e)
+        {
+            EditerCompte();
         }
 
-        private void TLSTRIP_Cree_Click(object sender, EventArgs e)
+        private void IMB_UserAvatar_Click(object sender, EventArgs e)
+        {
+            if(LoggedUser.Exists())
+            {
+                EditerCompte();
+            }
+            else
+            {
+                CreerCompte();
+            }
+            
+        }
+
+        //----------------------------------------------------------------------------------
+        //
+        //Creer
+        //
+        //----------------------------------------------------------------------------------
+
+        private void CreerCompte()
         {
             PageGestionUser pgCreation = new PageGestionUser();
             if (pgCreation.ShowDialog() == DialogResult.OK)
             {
-               LoggedUser = pgCreation.User;
+                LoggedUser = pgCreation.User;
                 ToggleUserStripOptions();
             }
         }
+
+        private void TLSTRIP_Cree_Click(object sender, EventArgs e)
+        {
+            CreerCompte();
+        }
+
+        //----------------------------------------------------------------------------------
+        //
+        //Quitter
+        //
+        //----------------------------------------------------------------------------------
+
 
         private void TLSTRIP_Quitter_Click(object sender, EventArgs e)
         {
@@ -424,8 +470,10 @@ namespace Client_PM
                 LoadSlideShowList();
                 
                 this.Size = Properties.Settings.Default.DimensionPagePrincipale;
-                this.StartPosition = Properties.Settings.Default.StartPositionPagePrincipale;
-                if(Properties.Settings.Default.Blacklist != null)
+                this.Location =  Properties.Settings.Default.PosPagePrincipale;
+                mPhotoBrowserPlacement = Init_miseEnPage();
+               
+                if (Properties.Settings.Default.Blacklist != null)
                 {
                     mBlackListedUsers = Properties.Settings.Default.Blacklist;
                 }
@@ -452,14 +500,36 @@ namespace Client_PM
 
         }
 
+        //Retourne 
+        private PhotoBrowserPlacement Init_miseEnPage()
+        {
+            PhotoBrowserPlacement placement = PhotoBrowserPlacement.Left;
+            string placementStr = Properties.Settings.Default.MiseEnPage;
+            if(placementStr == PhotoBrowserPlacement.Right.ToString())
+            {
+                placement = PhotoBrowserPlacement.Right;
+            }
+            else if (placementStr == PhotoBrowserPlacement.Top.ToString())
+            {
+                placement = PhotoBrowserPlacement.Top;
+            }
+            else if (placementStr == PhotoBrowserPlacement.Bottom.ToString())
+            {
+                placement = PhotoBrowserPlacement.Bottom;
+            }
+            return placement;
+        }
+
         private void PagePrincipale_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Properties.Settings.Default.RememberMe)
             {
                 Properties.Settings.Default.DimensionPagePrincipale = this.Size;
-                //Start position fonctionne pas
-                Properties.Settings.Default.StartPositionPagePrincipale = this.StartPosition;
+              
+                Properties.Settings.Default.PosPagePrincipale = this.Location;
                 Properties.Settings.Default.Blacklist = mBlackListedUsers;
+                Properties.Settings.Default.MiseEnPage = photosBrowser.Placement.ToString();
+                Properties.Settings.Default.PosListeNoire = mPointListeNoire;
                 Properties.Settings.Default.Save();
             }
         }
@@ -628,6 +698,6 @@ namespace Client_PM
             }
         }
 
-        
+       
     }
 }

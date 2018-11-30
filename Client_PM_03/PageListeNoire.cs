@@ -19,6 +19,7 @@ namespace Client_PM
         public ArrayList mListeNoire;
         public PageListeNoire(ArrayList listeNoire, User user)
         {
+            this.Location = Properties.Settings.Default.PosListeNoire;
             InitializeComponent();
             mUser = user;
             mListeNoire = listeNoire;
@@ -82,6 +83,12 @@ namespace Client_PM
                     }
                 }
            }
+            Properties.Settings.Default.PosListeNoire = this.Location;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

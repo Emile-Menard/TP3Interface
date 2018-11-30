@@ -262,5 +262,17 @@
   <ItemGroup>
     <None Include="Resources\ICON_Nouveau_Over.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Over.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

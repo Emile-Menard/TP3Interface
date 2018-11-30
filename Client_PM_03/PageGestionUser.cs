@@ -46,6 +46,7 @@ namespace Client_PM
 
         private void UserToData()
         {
+            this.Text = "Modifier votre compte";
             TBX_CreeUsername.Text = User.Name;
             TBX_CreePassword.Text = User.Password;
             TBX_CreeConfirmPassword.Text = User.Password;
