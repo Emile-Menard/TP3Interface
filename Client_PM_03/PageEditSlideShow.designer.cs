@@ -38,16 +38,18 @@
             this.FLPN_Photos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FLPN_Photos.Location = new System.Drawing.Point(13, 13);
+            this.FLPN_Photos.Location = new System.Drawing.Point(20, 20);
+            this.FLPN_Photos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FLPN_Photos.Name = "FLPN_Photos";
-            this.FLPN_Photos.Size = new System.Drawing.Size(926, 395);
+            this.FLPN_Photos.Size = new System.Drawing.Size(1389, 608);
             this.FLPN_Photos.TabIndex = 0;
             // 
             // BTN_ReinitCarousel
             // 
-            this.BTN_ReinitCarousel.Location = new System.Drawing.Point(864, 418);
+            this.BTN_ReinitCarousel.Location = new System.Drawing.Point(1296, 643);
+            this.BTN_ReinitCarousel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_ReinitCarousel.Name = "BTN_ReinitCarousel";
-            this.BTN_ReinitCarousel.Size = new System.Drawing.Size(75, 23);
+            this.BTN_ReinitCarousel.Size = new System.Drawing.Size(112, 35);
             this.BTN_ReinitCarousel.TabIndex = 1;
             this.BTN_ReinitCarousel.Text = "Réinitialiser";
             this.BTN_ReinitCarousel.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // BTN_Ok
             // 
-            this.BTN_Ok.Location = new System.Drawing.Point(765, 418);
+            this.BTN_Ok.Location = new System.Drawing.Point(1148, 643);
+            this.BTN_Ok.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Ok.Size = new System.Drawing.Size(112, 35);
             this.BTN_Ok.TabIndex = 1;
             this.BTN_Ok.Text = "OK";
             this.BTN_Ok.UseVisualStyleBackColor = true;
@@ -65,15 +68,16 @@
             // 
             // PageEditSlideShow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 449);
+            this.ClientSize = new System.Drawing.Size(1426, 691);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.BTN_ReinitCarousel);
             this.Controls.Add(this.FLPN_Photos);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PageEditSlideShow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Silde Show";
+            this.Text = "Édition du carousel";
             this.Shown += new System.EventHandler(this.DLG_ManageSildeShow_Shown);
             this.ResumeLayout(false);
 

@@ -160,7 +160,7 @@ namespace Client_PM
             }
             else
             {
-                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+                
             }
             
         }
@@ -622,12 +622,28 @@ namespace Client_PM
 
         private void FBTN_Carousel_Click(object sender, EventArgs e)
         {
-            PageSlideShow slideShow = new PageSlideShow();
-            slideShow.SlideShowList = SlideShowList;
-            slideShow.PhotoPool = photos;
-            slideShow.ShowDialog();
-            SaveSlideShowList();
-            Properties.Settings.Default.Save();
+            if(LoggedUser.Exists())
+            {
+                if (SlideShowList.Count > 0)
+                {
+                    PageSlideShow slideShow = new PageSlideShow();
+                    slideShow.SlideShowList = SlideShowList;
+                    slideShow.PhotoPool = photos;
+                    slideShow.ShowDialog();
+                    SaveSlideShowList();
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez ajouter des photos dans l'édition du carousel!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
+           
+           
           
            
 
@@ -636,12 +652,20 @@ namespace Client_PM
 
         private void FBTN_EditCarousel_Click(object sender, EventArgs e)
         {
-            PageEditSlideShow slideShow = new PageEditSlideShow();
-            slideShow.SlideShowList = SlideShowList;
-            slideShow.PhotoPool = photos;
-            slideShow.ShowDialog();
-            SaveSlideShowList();
-            Properties.Settings.Default.Save();
+            if(LoggedUser.Exists())
+            {
+                PageEditSlideShow slideShow = new PageEditSlideShow();
+                slideShow.SlideShowList = SlideShowList;
+                slideShow.PhotoPool = photos;
+                slideShow.ShowDialog();
+                SaveSlideShowList();
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
+           
 
 
 

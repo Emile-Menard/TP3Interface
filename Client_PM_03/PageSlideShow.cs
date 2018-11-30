@@ -29,10 +29,14 @@ namespace Client_PM
         public PageSlideShow()
         {
             InitializeComponent();
+            
+
             // Optimiser l'affichage
             this.DoubleBuffered = true;
             this.BackColor = Color.Black;
             this.BackgroundImageLayout = ImageLayout.Zoom;
+
+            
         }
         private void DLG_Slideshow_Shown(object sender, EventArgs e)
         {
@@ -159,6 +163,44 @@ namespace Client_PM
                 {
                     Properties.Settings.Default.SlideShowList.Add(photoId.ToString());
                 }
+        }
+
+        private void PageSlideShow_Leave(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            Next();
+        }
+
+        private void TSL_Fullscreen_Click(object sender, EventArgs e)
+        {
+            Toggle_FullScreen();
+            if (TSL_Fullscreen.Text == "Mode plein écran")
+            {
+                TSL_Fullscreen.Text = "Mode pas plein écran";
+            }
+            else if(TSL_Fullscreen.Text == "Mode pas plein écran")
+            {
+                TSL_Fullscreen.Text = "Mode plein écran";
+            }
+           
+        }
+
+        private void TSL_Random_Click(object sender, EventArgs e)
+        {
+            //RandomOrder = !RandomOrder;
+            //SetPhotosOrder();
+            //if (TSL_Random.Text == "Ordre aléatoire")
+            //{
+            //    TSL_Fullscreen.Text = "Ordre pas aléatoire";
+            //}
+            //else if (TSL_Fullscreen.Text == "Ordre pas aléatoire")
+            //{
+            //    TSL_Fullscreen.Text = "Ordre aléatoire";
+            //}
         }
     }
 }
