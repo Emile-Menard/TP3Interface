@@ -117,5 +117,16 @@ namespace Client_PM.Properties {
                 this["StartPositionPagePrincipale"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.ArrayList Blacklist {
+            get {
+                return ((global::System.Collections.ArrayList)(this["Blacklist"]));
+            }
+            set {
+                this["Blacklist"] = value;
+            }
+        }
     }
 }

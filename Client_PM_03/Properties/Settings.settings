@@ -26,5 +26,8 @@
     <Setting Name="StartPositionPagePrincipale" Type="System.Windows.Forms.FormStartPosition" Scope="User">
       <Value Profile="(Default)">Manual</Value>
     </Setting>
+    <Setting Name="Blacklist" Type="System.Collections.ArrayList" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 using PhotoManagerClient;
 
 namespace Client_PM
@@ -21,14 +22,15 @@ namespace Client_PM
         User LoggedUser = null;
         PhotoBrowserPlacement mPhotoBrowserPlacement;
         PhotoFilter mPhotoFilter;
-        //List<int> mBlackListedUsers;
+        ArrayList mBlackListedUsers;
         //List<Photo> mPhotos;
         public PagePrincipale()
         {
             InitializeComponent();
             mPhotoBrowserPlacement = PhotoBrowserPlacement.Left;
             Update_MotsCles();
-            // mPhotos = DBPhotosWebServices.GetAllPhotos().Where(p => mBlackListedUsers.IndexOf(p.OwnerId) == -1).ToList();
+            mBlackListedUsers = new ArrayList();
+
 
         }
 
@@ -58,7 +60,9 @@ namespace Client_PM
         {
             photosBrowser.Clear();
             WaitSplash.Show(this, "Téléchargement des photos");
-            photosBrowser.LoadPhotos(mPhotoFilter.GetPhotos());
+
+            photosBrowser.LoadPhotos(mPhotoFilter.GetPhotos().Where(p => mBlackListedUsers.IndexOf(p.OwnerId) == -1).ToList());
+
             WaitSplash.Hide();
         }
 
@@ -290,6 +294,30 @@ namespace Client_PM
 
         //----------------------------------------------------------------------------------
         //
+        //Liste noire
+        //
+        //----------------------------------------------------------------------------------
+        private void listeNoireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (LoggedUser.Exists())
+            {
+               PageListeNoire pg = new PageListeNoire(mBlackListedUsers, LoggedUser);
+                if (pg.ShowDialog() == DialogResult.OK)
+                {
+                    mBlackListedUsers = pg.mListeNoire;
+                    Update_Photo_Browser();
+                    Update_MotsCles();
+                    MessageBox.Show("Liste noire modifiée avec succès");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
+        }
+
+        //----------------------------------------------------------------------------------
+        //
         //Évènements
         //
         //----------------------------------------------------------------------------------
@@ -328,22 +356,6 @@ namespace Client_PM
             RotationMiseEnPage();
         }
 
-        private void TLSP_Liste_Noire_Ajout_Click(object sender, EventArgs e)
-        {
-            if (LoggedUser.Exists())
-            {
-                PageListeNoire pgListeNoire = new PageListeNoire();
-                if (pgListeNoire.ShowDialog() == DialogResult.OK)
-                {
-                    
-                    MessageBox.Show("");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
-            }
-        }
         private void rotationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RotationMiseEnPage();
@@ -413,11 +425,21 @@ namespace Client_PM
                 
                 this.Size = Properties.Settings.Default.DimensionPagePrincipale;
                 this.StartPosition = Properties.Settings.Default.StartPositionPagePrincipale;
+                if(Properties.Settings.Default.Blacklist != null)
+                {
+                    mBlackListedUsers = Properties.Settings.Default.Blacklist;
+                }
+                else
+                {
+                    mBlackListedUsers = new ArrayList();
+                }
+
 
             }
             else
             {
                 SlideShowList = new List<int>();
+                
             }
 
             photos = DBPhotosWebServices.GetAllPhotos();
@@ -437,6 +459,7 @@ namespace Client_PM
                 Properties.Settings.Default.DimensionPagePrincipale = this.Size;
                 //Start position fonctionne pas
                 Properties.Settings.Default.StartPositionPagePrincipale = this.StartPosition;
+                Properties.Settings.Default.Blacklist = mBlackListedUsers;
                 Properties.Settings.Default.Save();
             }
         }

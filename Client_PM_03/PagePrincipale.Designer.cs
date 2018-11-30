@@ -184,6 +184,7 @@
             this.listeNoireToolStripMenuItem.Name = "listeNoireToolStripMenuItem";
             this.listeNoireToolStripMenuItem.Size = new System.Drawing.Size(104, 29);
             this.listeNoireToolStripMenuItem.Text = "Liste noire";
+            this.listeNoireToolStripMenuItem.Click += new System.EventHandler(this.listeNoireToolStripMenuItem_Click);
             // 
             // rotationToolStripMenuItem
             // 
@@ -470,9 +471,9 @@
             // 
             this.groupBox5.Controls.Add(this.FBTN_EditerCarousel);
             this.groupBox5.Controls.Add(this.FBTN_Carousel);
-            this.groupBox5.Location = new System.Drawing.Point(674, 56);
+            this.groupBox5.Location = new System.Drawing.Point(674, 48);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(123, 69);
+            this.groupBox5.Size = new System.Drawing.Size(180, 105);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Carousel";
@@ -484,12 +485,12 @@
             this.FBTN_EditerCarousel.ClickedImage = global::Client_PM.Properties.Resources.edit_accept;
             this.FBTN_EditerCarousel.DisabledImage = global::Client_PM.Properties.Resources.edit_disable;
             this.FBTN_EditerCarousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EditerCarousel.Image")));
-            this.FBTN_EditerCarousel.Location = new System.Drawing.Point(75, 22);
+            this.FBTN_EditerCarousel.Location = new System.Drawing.Point(102, 26);
             this.FBTN_EditerCarousel.Margin = new System.Windows.Forms.Padding(2);
             this.FBTN_EditerCarousel.Name = "FBTN_EditerCarousel";
             this.FBTN_EditerCarousel.NeutralImage = global::Client_PM.Properties.Resources.edit;
             this.FBTN_EditerCarousel.OverImage = global::Client_PM.Properties.Resources.edit_accept;
-            this.FBTN_EditerCarousel.Size = new System.Drawing.Size(32, 31);
+            this.FBTN_EditerCarousel.Size = new System.Drawing.Size(50, 54);
             this.FBTN_EditerCarousel.TabIndex = 0;
             this.FBTN_EditerCarousel.Text = "Éditer le carousel";
             this.FBTN_EditerCarousel.UseVisualStyleBackColor = true;
@@ -502,12 +503,12 @@
             this.FBTN_Carousel.ClickedImage = null;
             this.FBTN_Carousel.DisabledImage = null;
             this.FBTN_Carousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Carousel.Image")));
-            this.FBTN_Carousel.Location = new System.Drawing.Point(19, 23);
+            this.FBTN_Carousel.Location = new System.Drawing.Point(16, 24);
             this.FBTN_Carousel.Margin = new System.Windows.Forms.Padding(2);
             this.FBTN_Carousel.Name = "FBTN_Carousel";
             this.FBTN_Carousel.NeutralImage = null;
             this.FBTN_Carousel.OverImage = null;
-            this.FBTN_Carousel.Size = new System.Drawing.Size(32, 31);
+            this.FBTN_Carousel.Size = new System.Drawing.Size(58, 58);
             this.FBTN_Carousel.TabIndex = 0;
             this.FBTN_Carousel.Text = "Visionner le carousel";
             this.FBTN_Carousel.UseVisualStyleBackColor = true;
@@ -516,9 +517,9 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.FBTN_MiseEnPage);
-            this.groupBox8.Location = new System.Drawing.Point(1232, 57);
+            this.groupBox8.Location = new System.Drawing.Point(1170, 50);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(122, 83);
+            this.groupBox8.Size = new System.Drawing.Size(120, 105);
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Mise-en-page";
@@ -530,11 +531,11 @@
             this.FBTN_MiseEnPage.ClickedImage = global::Client_PM.Properties.Resources.rotate_accept;
             this.FBTN_MiseEnPage.DisabledImage = global::Client_PM.Properties.Resources.rotate;
             this.FBTN_MiseEnPage.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.Image")));
-            this.FBTN_MiseEnPage.Location = new System.Drawing.Point(27, 19);
+            this.FBTN_MiseEnPage.Location = new System.Drawing.Point(31, 29);
             this.FBTN_MiseEnPage.Name = "FBTN_MiseEnPage";
             this.FBTN_MiseEnPage.NeutralImage = global::Client_PM.Properties.Resources.rotate;
             this.FBTN_MiseEnPage.OverImage = global::Client_PM.Properties.Resources.rotate_accept;
-            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(32, 31);
+            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(54, 49);
             this.FBTN_MiseEnPage.TabIndex = 7;
             this.FBTN_MiseEnPage.Text = "Changer la mise-en-page";
             this.FBTN_MiseEnPage.UseVisualStyleBackColor = true;
@@ -544,11 +545,11 @@
             // 
             this.groupBox6.Controls.Add(this.Username);
             this.groupBox6.Controls.Add(this.IMB_UserAvatar);
-            this.groupBox6.Location = new System.Drawing.Point(859, 68);
+            this.groupBox6.Location = new System.Drawing.Point(869, 48);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(368, 65);
+            this.groupBox6.Size = new System.Drawing.Size(296, 105);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Utilisateur";
@@ -556,7 +557,7 @@
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(51, 28);
+            this.Username.Location = new System.Drawing.Point(86, 45);
             this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(197, 20);
@@ -571,12 +572,12 @@
             this.IMB_UserAvatar.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
             this.IMB_UserAvatar.ImportImageText = "Import image from file...";
-            this.IMB_UserAvatar.Location = new System.Drawing.Point(15, 19);
+            this.IMB_UserAvatar.Location = new System.Drawing.Point(21, 31);
             this.IMB_UserAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.IMB_UserAvatar.Name = "IMB_UserAvatar";
             this.IMB_UserAvatar.OpenFileDialogTitle = "Please choose image an file";
             this.IMB_UserAvatar.PasteMenuText = "Paste image from clipboard";
-            this.IMB_UserAvatar.Size = new System.Drawing.Size(33, 32);
+            this.IMB_UserAvatar.Size = new System.Drawing.Size(61, 56);
             this.IMB_UserAvatar.TabIndex = 0;
             this.IMB_UserAvatar.TabStop = false;
             // 
