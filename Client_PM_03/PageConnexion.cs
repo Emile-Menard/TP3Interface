@@ -81,5 +81,10 @@ namespace Client_PM
             Logged_User = DBPhotosWebServices.Login(TBXName_Connexion.Text, TBXPassword_Connexion.Text);
             WaitSplash.Hide();
         }
+
+        private void PageConnexion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+       
+        }
     }
 }

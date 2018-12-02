@@ -44,59 +44,66 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(234, 70);
+            this.label2.Location = new System.Drawing.Point(351, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(105, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Mot de passe";
             // 
             // TBX_CreePassword
             // 
-            this.TBX_CreePassword.Location = new System.Drawing.Point(237, 86);
+            this.TBX_CreePassword.Location = new System.Drawing.Point(356, 132);
+            this.TBX_CreePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TBX_CreePassword.Name = "TBX_CreePassword";
             this.TBX_CreePassword.PasswordChar = '*';
-            this.TBX_CreePassword.Size = new System.Drawing.Size(210, 20);
+            this.TBX_CreePassword.Size = new System.Drawing.Size(313, 26);
             this.TBX_CreePassword.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(234, 11);
+            this.label1.Location = new System.Drawing.Point(351, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nom d\'utilisateur";
             // 
             // TBX_CreeUsername
             // 
-            this.TBX_CreeUsername.Location = new System.Drawing.Point(236, 26);
+            this.TBX_CreeUsername.Location = new System.Drawing.Point(354, 40);
+            this.TBX_CreeUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TBX_CreeUsername.Name = "TBX_CreeUsername";
-            this.TBX_CreeUsername.Size = new System.Drawing.Size(210, 20);
+            this.TBX_CreeUsername.Size = new System.Drawing.Size(313, 26);
             this.TBX_CreeUsername.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(234, 113);
+            this.label3.Location = new System.Drawing.Point(351, 174);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 13);
+            this.label3.Size = new System.Drawing.Size(194, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Confirmer le mot de passe";
             // 
             // TBX_CreeConfirmPassword
             // 
-            this.TBX_CreeConfirmPassword.Location = new System.Drawing.Point(236, 129);
+            this.TBX_CreeConfirmPassword.Location = new System.Drawing.Point(354, 198);
+            this.TBX_CreeConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TBX_CreeConfirmPassword.Name = "TBX_CreeConfirmPassword";
             this.TBX_CreeConfirmPassword.PasswordChar = '*';
-            this.TBX_CreeConfirmPassword.Size = new System.Drawing.Size(210, 20);
+            this.TBX_CreeConfirmPassword.Size = new System.Drawing.Size(313, 26);
             this.TBX_CreeConfirmPassword.TabIndex = 8;
             // 
             // BTN_CreateCancel
             // 
             this.BTN_CreateCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_CreateCancel.Location = new System.Drawing.Point(371, 190);
+            this.BTN_CreateCancel.Location = new System.Drawing.Point(556, 292);
+            this.BTN_CreateCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_CreateCancel.Name = "BTN_CreateCancel";
-            this.BTN_CreateCancel.Size = new System.Drawing.Size(75, 23);
+            this.BTN_CreateCancel.Size = new System.Drawing.Size(112, 35);
             this.BTN_CreateCancel.TabIndex = 12;
             this.BTN_CreateCancel.Text = "Annuler";
             this.BTN_CreateCancel.UseVisualStyleBackColor = true;
@@ -104,9 +111,10 @@
             // BTN_CreeCompte
             // 
             this.BTN_CreeCompte.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_CreeCompte.Location = new System.Drawing.Point(286, 190);
+            this.BTN_CreeCompte.Location = new System.Drawing.Point(429, 292);
+            this.BTN_CreeCompte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_CreeCompte.Name = "BTN_CreeCompte";
-            this.BTN_CreeCompte.Size = new System.Drawing.Size(75, 23);
+            this.BTN_CreeCompte.Size = new System.Drawing.Size(112, 35);
             this.BTN_CreeCompte.TabIndex = 11;
             this.BTN_CreeCompte.Text = "Accepter";
             this.BTN_CreeCompte.UseVisualStyleBackColor = true;
@@ -119,22 +127,21 @@
             this.IBX_CreeAvatar.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
             this.IBX_CreeAvatar.ImportImageText = "Import image from file...";
-            this.IBX_CreeAvatar.Location = new System.Drawing.Point(11, 11);
-            this.IBX_CreeAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IBX_CreeAvatar.Location = new System.Drawing.Point(16, 17);
             this.IBX_CreeAvatar.Name = "IBX_CreeAvatar";
             this.IBX_CreeAvatar.OpenFileDialogTitle = "Please choose image an file";
             this.IBX_CreeAvatar.PasteMenuText = "Paste image from clipboard";
-            this.IBX_CreeAvatar.Size = new System.Drawing.Size(207, 202);
+            this.IBX_CreeAvatar.Size = new System.Drawing.Size(310, 310);
             this.IBX_CreeAvatar.TabIndex = 13;
             this.IBX_CreeAvatar.TabStop = false;
             // 
             // PageGestionUser
             // 
             this.AcceptButton = this.BTN_CreeCompte;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_CreateCancel;
-            this.ClientSize = new System.Drawing.Size(462, 227);
+            this.ClientSize = new System.Drawing.Size(693, 349);
             this.Controls.Add(this.IBX_CreeAvatar);
             this.Controls.Add(this.BTN_CreateCancel);
             this.Controls.Add(this.BTN_CreeCompte);
@@ -145,8 +152,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_CreeUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PageGestionUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Créer un compte";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageGestionUser_FormClosing);
             this.Load += new System.EventHandler(this.PageCreation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IBX_CreeAvatar)).EndInit();
             this.ResumeLayout(false);

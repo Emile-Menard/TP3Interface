@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageCommandesCarousel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageCommandesCarousel.Designer.cs">
+      <DependentUpon>PageCommandesCarousel.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageEditSlideShow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
       <DependentUpon>PageInfoPhotos.cs</DependentUpon>
     </Compile>
     <Compile Include="StaticMethods.cs" />
+    <EmbeddedResource Include="PageCommandesCarousel.resx">
+      <DependentUpon>PageCommandesCarousel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PageEditSlideShow.resx">
       <DependentUpon>PageEditSlideShow.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +282,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ICON_Annuler_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel_edit_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carousel._editpng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

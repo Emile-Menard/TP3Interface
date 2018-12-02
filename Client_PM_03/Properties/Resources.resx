@@ -208,4 +208,16 @@
   <data name="ICON_Annuler_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Annuler_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="carousel_edit_accept" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carousel_edit_accept.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carousel__editpng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carousel._editpng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eye_accept" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eye_accept.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

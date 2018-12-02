@@ -35,5 +35,32 @@
     <Setting Name="PosListeNoire" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
+    <Setting Name="DimensionCarousel" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">1824, 1106</Value>
+    </Setting>
+    <Setting Name="LocationCarousel" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="DimensionCarouselCommandes" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">374, 472</Value>
+    </Setting>
+    <Setting Name="LocationCarouselCommandes" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="LocationPageConnexion" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="LocationPageEditionUser" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="LocationPageEditCarousel" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="DimensionPageEditCarousel" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">1448, 747</Value>
+    </Setting>
+    <Setting Name="IntervalleCarousel" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

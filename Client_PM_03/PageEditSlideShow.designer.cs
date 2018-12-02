@@ -46,8 +46,12 @@
             // 
             // BTN_ReinitCarousel
             // 
+            this.BTN_ReinitCarousel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_ReinitCarousel.Location = new System.Drawing.Point(1296, 643);
             this.BTN_ReinitCarousel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_ReinitCarousel.MaximumSize = new System.Drawing.Size(112, 35);
             this.BTN_ReinitCarousel.Name = "BTN_ReinitCarousel";
             this.BTN_ReinitCarousel.Size = new System.Drawing.Size(112, 35);
             this.BTN_ReinitCarousel.TabIndex = 1;
@@ -57,8 +61,12 @@
             // 
             // BTN_Ok
             // 
+            this.BTN_Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Ok.Location = new System.Drawing.Point(1148, 643);
             this.BTN_Ok.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_Ok.MaximumSize = new System.Drawing.Size(112, 35);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(112, 35);
             this.BTN_Ok.TabIndex = 1;
@@ -74,10 +82,13 @@
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.BTN_ReinitCarousel);
             this.Controls.Add(this.FLPN_Photos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PageEditSlideShow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Édition du carousel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageEditSlideShow_FormClosing);
+            this.Load += new System.EventHandler(this.PageEditSlideShow_Load);
             this.Shown += new System.EventHandler(this.DLG_ManageSildeShow_Shown);
             this.ResumeLayout(false);
 
