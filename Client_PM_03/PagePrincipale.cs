@@ -641,11 +641,7 @@ namespace Client_PM
             else
             {
                 MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
-            }
-           
-           
-          
-           
+            }        
 
         }
 
