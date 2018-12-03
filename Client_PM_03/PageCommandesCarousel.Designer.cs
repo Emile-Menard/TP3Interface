@@ -126,6 +126,7 @@
             this.Controls.Add(this.Affi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PageCommandesCarousel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Commandes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageCommandesCarousel_FormClosing);
             this.Load += new System.EventHandler(this.PageCommandesCarousel_Load);

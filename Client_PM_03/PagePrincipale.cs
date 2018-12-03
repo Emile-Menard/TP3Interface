@@ -310,6 +310,8 @@ namespace Client_PM
                     mBlackListedUsers = pg.mListeNoire;
                     Update_Photo_Browser();
                     Update_MotsCles();
+                    UpdatePhotoPool();
+                   
                     mPointListeNoire = pg.Location;
                     MessageBox.Show("Liste noire modifiée avec succès");
                 }
@@ -318,6 +320,20 @@ namespace Client_PM
             {
                 MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
             }
+        }
+
+
+        private void UpdatePhotoPool()
+        {
+
+            photos = DBPhotosWebServices.GetAllPhotos().Where(p => mBlackListedUsers.IndexOf(p.OwnerId) == -1).ToList();
+            List<Photo> tempPhotos  = DBPhotosWebServices.GetAllPhotos().Where(p => SlideShowList.Contains(p.Id) && mBlackListedUsers.IndexOf(p.OwnerId) == -1).ToList();
+            List<int> tempsInts = new List<int>();
+            foreach (Photo p in tempPhotos)
+                tempsInts.Add(p.Id);
+
+            SlideShowList = tempsInts;
+
         }
 
         //----------------------------------------------------------------------------------
@@ -420,6 +436,9 @@ namespace Client_PM
             {
                 LoggedUser = pgCreation.User;
                 ToggleUserStripOptions();
+                FilterInit();
+                LoadDataLogin();
+                UpdatePhotoPool();
             }
         }
 
@@ -485,6 +504,7 @@ namespace Client_PM
                 if (Properties.Settings.Default.Blacklist != null)
                 {
                     mBlackListedUsers = Properties.Settings.Default.Blacklist;
+                    UpdatePhotoPool();
                 }
                 else
                 {
@@ -503,6 +523,7 @@ namespace Client_PM
           
 
             photos = DBPhotosWebServices.GetAllPhotos();
+            UpdatePhotoPool();
             ToggleUserStripOptions();
             if(LoggedUser.Exists())
             {
@@ -556,6 +577,7 @@ namespace Client_PM
                     LoggedUser = user;
                     FilterInit();
                     LoadDataLogin();
+          
                     CBOX_NotMine.Checked = Properties.Settings.Default.NotMyPhoto;
 
                 }

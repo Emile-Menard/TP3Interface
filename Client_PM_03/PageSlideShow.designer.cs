@@ -160,7 +160,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PageSlideShow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carousel (F1 pour aide)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageSlideShow_FormClosing);
             this.Load += new System.EventHandler(this.PageSlideShow_Load);
