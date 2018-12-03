@@ -134,6 +134,7 @@
             this.IBX_CreeAvatar.Size = new System.Drawing.Size(310, 310);
             this.IBX_CreeAvatar.TabIndex = 13;
             this.IBX_CreeAvatar.TabStop = false;
+            this.IBX_CreeAvatar.BackgroundImageChanged += new System.EventHandler(this.IBX_CreeAvatar_BackgroundImageChanged);
             // 
             // PageGestionUser
             // 

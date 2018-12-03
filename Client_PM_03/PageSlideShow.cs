@@ -85,11 +85,12 @@ namespace Client_PM
             {
                 case Keys.F1: ShowHelp(); break;
                 case Keys.F11: Toggle_FullScreen(); break;
-                case Keys.P: SlideshowTimer.Start(); break;
-                case Keys.S: SlideshowTimer.Stop(); break;
+                case Keys.S: SlideshowTimer.Start(); break;
+                case Keys.P: SlideshowTimer.Stop(); break;
                 case Keys.R: RandomOrder = !RandomOrder; SetPhotosOrder(); break;
                 case Keys.Down: diminuerIntervalle(); break;
-                case Keys.Up: augmenterIntervalle(); ; break;
+                case Keys.Up: augmenterIntervalle(); break;
+                case Keys.Right: Next(); break;
                 case Keys.Escape: SlideshowTimer.Stop(); Close(); break;
             }
         }
@@ -193,16 +194,7 @@ namespace Client_PM
 
         private void TSL_Random_Click(object sender, EventArgs e)
         {
-            //RandomOrder = !RandomOrder;
-            //SetPhotosOrder();
-            //if (TSL_Random.Text == "Ordre aléatoire")
-            //{
-            //    TSL_Fullscreen.Text = "Ordre pas aléatoire";
-            //}
-            //else if (TSL_Fullscreen.Text == "Ordre pas aléatoire")
-            //{
-            //    TSL_Fullscreen.Text = "Ordre aléatoire";
-            //}
+            RandomOrder = !RandomOrder; SetPhotosOrder();
         }
 
         private void toolStripTextBox1_Enter(object sender, EventArgs e)
@@ -213,7 +205,7 @@ namespace Client_PM
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             augmenterIntervalle();
-            toolStripTextBox1.Text = SlideshowTimer.Interval.ToString();
+        
         }
         private void DiminuerIntervalle_Click(object sender, EventArgs e)
         {
@@ -268,12 +260,14 @@ namespace Client_PM
         {
             Properties.Settings.Default.IntervalleCarousel = SlideshowTimer.Interval = (SlideshowTimer.Interval < 60000 ? SlideshowTimer.Interval + 250 : SlideshowTimer.Interval);
             Properties.Settings.Default.Save();
+            toolStripTextBox1.Text = SlideshowTimer.Interval.ToString();
         }
 
         private void diminuerIntervalle()
         {
             Properties.Settings.Default.IntervalleCarousel = SlideshowTimer.Interval = (SlideshowTimer.Interval > 500 ? SlideshowTimer.Interval - 250 : SlideshowTimer.Interval);
             Properties.Settings.Default.Save();
+            toolStripTextBox1.Text = SlideshowTimer.Interval.ToString();
         }
     }
 }

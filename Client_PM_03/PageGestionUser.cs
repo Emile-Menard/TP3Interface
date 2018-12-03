@@ -46,7 +46,7 @@ namespace Client_PM
             User.Name = TBX_CreeUsername.Text;
             User.Password = TBX_CreePassword.Text;
             if (AvatarImageChanged)
-                User.SetAvatarImage(TBX_CreeConfirmPassword.BackgroundImage);
+                User.SetAvatarImage(IBX_CreeAvatar.BackgroundImage);
         }
 
         private void UserToData()
@@ -80,7 +80,7 @@ namespace Client_PM
         private bool Validate_TBX_verifyPassword(ref string message)
         {
             message = "Mot de passe ne correspond avec vérification";
-            return TBX_CreePassword.Text == TBX_CreePassword.Text;
+            return TBX_CreePassword.Text == TBX_CreeConfirmPassword.Text;
         }
 
         private bool Validate_IBX_Avatar(ref string message)
@@ -94,7 +94,7 @@ namespace Client_PM
             if (!User.Exists())
             {
                 User = new User();
-                UserToData();
+                DataToUser();
                 User = DBPhotosWebServices.CreateUser(User);
             }
             else
@@ -108,6 +108,12 @@ namespace Client_PM
         {
             Properties.Settings.Default.LocationPageEditionUser = this.Location;
             Properties.Settings.Default.Save();
+        }
+
+        private void IBX_CreeAvatar_BackgroundImageChanged(object sender, EventArgs e)
+        {
+            ValidationProvider.UpdateValid(IBX_CreeAvatar);
+            AvatarImageChanged = true;
         }
     }
 }
