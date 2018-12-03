@@ -128,5 +128,24 @@ namespace Client_PM
             this.Close();
 
         }
+
+        private void PageEditSlideShow_Load(object sender, EventArgs e)
+        {
+
+
+            this.Location = Properties.Settings.Default.LocationPageEditCarousel;
+
+        }
+
+        private void PageEditSlideShow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            Properties.Settings.Default.LocationPageEditCarousel = this.Location;
+
+            // Save settings
+            Properties.Settings.Default.Save();
+ 
+
+        }
     }
 }

@@ -454,6 +454,7 @@ namespace Client_PM
             ToggleUserStripOptions();
             UnloadUserData();
             SlideShowList.Clear();
+            Properties.Settings.Default.Reset();
         }
 
         //----------------------------------------------------------------------------------
@@ -464,13 +465,21 @@ namespace Client_PM
 
         private void PagePrincipale_Load_1(object sender, EventArgs e)
         {
+            if (!Properties.Settings.Default.RememberMe)
+            {
+                Properties.Settings.Default.Reset();
+            }else
+            {
+                this.Location = Properties.Settings.Default.PosPagePrincipale;
+            }
             Load_Settings();
             if (!Properties.Settings.Default.FirstInit && Properties.Settings.Default.RememberMe)
             {
                 LoadSlideShowList();
                 
                 this.Size = Properties.Settings.Default.DimensionPagePrincipale;
-                this.Location =  Properties.Settings.Default.PosPagePrincipale;
+           
+                
                 mPhotoBrowserPlacement = Init_miseEnPage();
                
                 if (Properties.Settings.Default.Blacklist != null)
@@ -489,6 +498,9 @@ namespace Client_PM
                 SlideShowList = new List<int>();
                 
             }
+
+
+          
 
             photos = DBPhotosWebServices.GetAllPhotos();
             ToggleUserStripOptions();

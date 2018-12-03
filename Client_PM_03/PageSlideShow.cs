@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace Client_PM
 {
     public partial class PageSlideShow : Form
@@ -52,8 +53,11 @@ namespace Client_PM
             WaitSplash.Hide();
             // Définir l'ordre des photos
             SetPhotosOrder();
+            SlideshowTimer.Interval = Properties.Settings.Default.IntervalleCarousel;
             // Démarrer l'horloge
             SlideshowTimer.Start();
+            toolStripTextBox1.Text = SlideshowTimer.Interval.ToString();
+            toolStripTextBox1.Enabled = false;
         }
 
         private void Toggle_FullScreen()
@@ -84,8 +88,8 @@ namespace Client_PM
                 case Keys.P: SlideshowTimer.Start(); break;
                 case Keys.S: SlideshowTimer.Stop(); break;
                 case Keys.R: RandomOrder = !RandomOrder; SetPhotosOrder(); break;
-                case Keys.Down: SlideshowTimer.Interval = (SlideshowTimer.Interval < 60000 ? SlideshowTimer.Interval + 250 : SlideshowTimer.Interval); break;
-                case Keys.Up: SlideshowTimer.Interval = (SlideshowTimer.Interval > 500 ? SlideshowTimer.Interval - 250 : SlideshowTimer.Interval); break;
+                case Keys.Down: diminuerIntervalle(); break;
+                case Keys.Up: augmenterIntervalle(); ; break;
                 case Keys.Escape: SlideshowTimer.Stop(); Close(); break;
             }
         }
@@ -102,6 +106,7 @@ namespace Client_PM
         private void SlideshowTimer_Tick(object sender, EventArgs e)
         {
             // passer à la prochaine photo
+            Console.Write("abc");
             Next();
         }
 
@@ -143,13 +148,10 @@ namespace Client_PM
         }
         private void ShowHelp()
         {
-         
+            PageCommandesCarousel page = new PageCommandesCarousel();
+            page.ShowDialog();
         }
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowHelp();
-        }
-
+    
 
 
 
@@ -201,6 +203,77 @@ namespace Client_PM
             //{
             //    TSL_Fullscreen.Text = "Ordre aléatoire";
             //}
+        }
+
+        private void toolStripTextBox1_Enter(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            augmenterIntervalle();
+            toolStripTextBox1.Text = SlideshowTimer.Interval.ToString();
+        }
+        private void DiminuerIntervalle_Click(object sender, EventArgs e)
+        {
+            diminuerIntervalle();
+            toolStripTextBox1.Text = SlideshowTimer.Interval.ToString();
+        }
+
+    
+
+        private void TSL_Aide_Click(object sender, EventArgs e)
+        {
+            PageCommandesCarousel page =  new PageCommandesCarousel();
+            page.ShowDialog();
+        }
+
+        private void PageSlideShow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                 // Copy window size to app settings
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                Properties.Settings.Default.DimensionCarousel = this.Size;
+                }
+                else
+                {
+                      Properties.Settings.Default.DimensionCarousel = this.RestoreBounds.Size;
+                }
+
+
+            Properties.Settings.Default.LocationCarousel = this.Location;
+
+            // Save settings
+            Properties.Settings.Default.Save();
+            
+        }
+
+        private void PageSlideShow_Load(object sender, EventArgs e)
+        {
+
+   
+
+            if (Properties.Settings.Default.DimensionCarousel != null)
+            {
+                this.Size = Properties.Settings.Default.DimensionCarousel;
+            }
+
+            this.Location = Properties.Settings.Default.LocationCarousel;
+            
+        }
+
+
+        private void augmenterIntervalle()
+        {
+            Properties.Settings.Default.IntervalleCarousel = SlideshowTimer.Interval = (SlideshowTimer.Interval < 60000 ? SlideshowTimer.Interval + 250 : SlideshowTimer.Interval);
+            Properties.Settings.Default.Save();
+        }
+
+        private void diminuerIntervalle()
+        {
+            Properties.Settings.Default.IntervalleCarousel = SlideshowTimer.Interval = (SlideshowTimer.Interval > 500 ? SlideshowTimer.Interval - 250 : SlideshowTimer.Interval);
+            Properties.Settings.Default.Save();
         }
     }
 }

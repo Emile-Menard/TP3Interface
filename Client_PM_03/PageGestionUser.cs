@@ -26,6 +26,11 @@ namespace Client_PM
 
         private void PageCreation_Load(object sender, EventArgs e)
         {
+            if(!Properties.Settings.Default.LocationPageEditionUser.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationPageEditionUser;
+            }
+         
             ValidationProvider = new ValidationProvider(this, SubmitTask);
             ValidationProvider.AddControlToValidate(TBX_CreeUsername, Validate_TBX_Username, Validate_TBX_Username_OnSubmit);
             ValidationProvider.AddControlToValidate(TBX_CreePassword, Validate_TBX_Password);
@@ -97,6 +102,12 @@ namespace Client_PM
                 DataToUser();
                 DBPhotosWebServices.UpdateUser(User);
             }
+        }
+
+        private void PageGestionUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationPageEditionUser = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }
