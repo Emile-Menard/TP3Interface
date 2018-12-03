@@ -45,19 +45,23 @@ namespace Client_PM
             Slides = new List<Photo>();
             foreach (int photoId in SlideShowList)
             {
-                // Obtenir la photo 
-                Photo photo = PhotoPool.Where(p => p.Id == photoId).First<Photo>();
+                // Obtenir la photo du service
+                Photo photo = DBPhotosWebServices.GetPhoto(photoId);
+                // Si la photo existe
                 if (photo != null)
                     Slides.Add(photo);
+            }
+            // Nettoyer la liste des Id des photos (certaines ont pu être effacée d'une fois à l'autre)
+            SlideShowList.Clear();
+            foreach (Photo photo in Slides)
+            {
+                SlideShowList.Add(photo.Id);
             }
             WaitSplash.Hide();
             // Définir l'ordre des photos
             SetPhotosOrder();
-            SlideshowTimer.Interval = Properties.Settings.Default.IntervalleCarousel;
             // Démarrer l'horloge
             SlideshowTimer.Start();
-            toolStripTextBox1.Text = SlideshowTimer.Interval.ToString();
-            toolStripTextBox1.Enabled = false;
         }
 
         private void Toggle_FullScreen()

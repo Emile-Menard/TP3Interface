@@ -146,6 +146,7 @@ namespace Client_PM
                             DBPhotosWebServices.DeletePhoto(photosBrowser.SelectedPhoto);
                             photosBrowser.DeleteSelectedPhoto();
                             Update_MotsCles();
+                            MessageBox.Show("Photo effacée avec succès!");
                         }
                     }
                     else
@@ -205,6 +206,10 @@ namespace Client_PM
             {
                 LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
                 Update_PhotoFilter_And_PhotoBrowser();
+            }
+            else
+            {
+                MessageBox.Show("Aucun mot-clé n'est sélectionné");
             }
            
             

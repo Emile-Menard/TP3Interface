@@ -49,6 +49,7 @@ namespace Client_PM
            List<User> userList = DBPhotosWebServices.GetAllUsers();
            foreach (User user in userList)
            {
+
                 this.COB_Liste_Noire_Utilisateur.Items.Add(user.Name);
            }
         }       

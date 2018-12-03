@@ -23,7 +23,7 @@ namespace Client_PM
             string str = "";
             foreach (string item in lbx.Items)
             {
-                str += item;
+                str += item.ToLower();
                 str += " ";
             }
             //Enlever le dernier espace de trop à la fin
