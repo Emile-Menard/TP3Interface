@@ -70,6 +70,12 @@
     <Compile Include="PageEditSlideShow.designer.cs">
       <DependentUpon>PageEditSlideShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageAideOuAPropos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAideOuAPropos.Designer.cs">
+      <DependentUpon>PageAideOuAPropos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageSlideShow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageEditSlideShow.resx">
       <DependentUpon>PageEditSlideShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAideOuAPropos.resx">
+      <DependentUpon>PageAideOuAPropos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageSlideShow.resx">
       <DependentUpon>PageSlideShow.cs</DependentUpon>

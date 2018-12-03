@@ -632,9 +632,26 @@ namespace Client_PM
             Update_MotsCles();
         }
 
+        //----------------------------------------------------------------------------------
+        //
+        //Carousel
+        //
+        //----------------------------------------------------------------------------------
+
+        private void visionnerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VisionnerCarousel();
+        }
+
         private void FBTN_Carousel_Click(object sender, EventArgs e)
         {
-            if(LoggedUser.Exists())
+            VisionnerCarousel();
+
+        }
+
+        private void VisionnerCarousel()
+        {
+            if (LoggedUser.Exists())
             {
                 if (SlideShowList.Count > 0)
                 {
@@ -653,14 +670,25 @@ namespace Client_PM
             else
             {
                 MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
-            }        
-
+            }
         }
+
+        
 
 
         private void FBTN_EditCarousel_Click(object sender, EventArgs e)
         {
-            if(LoggedUser.Exists())
+            EditerCarousel();
+        }
+
+        private void éditerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditerCarousel();
+        }
+
+        private void EditerCarousel()
+        {
+            if (LoggedUser.Exists())
             {
                 PageEditSlideShow slideShow = new PageEditSlideShow();
                 slideShow.SlideShowList = SlideShowList;
@@ -673,9 +701,6 @@ namespace Client_PM
             {
                 MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
             }
-           
-
-
 
         }
 
@@ -704,7 +729,25 @@ namespace Client_PM
                 }
         }
 
+        //----------------------------------------------------------------------------------
+        //
+        //Info photo
+        //
+        //----------------------------------------------------------------------------------
+
+
         private void FTBN_Info_Click(object sender, EventArgs e)
+        {
+            DisplayInfoPhoto();
+            
+        }
+
+        private void voirInformationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisplayInfoPhoto();
+        }
+
+        private void DisplayInfoPhoto()
         {
             if (LoggedUser != null)
             {
@@ -713,7 +756,7 @@ namespace Client_PM
                     PageInfoPhotos pgPhoto = new PageInfoPhotos(photosBrowser.SelectedPhoto);
                     if (pgPhoto.ShowDialog() == DialogResult.OK)
                     {
-                        
+
 
                     }
 
@@ -730,6 +773,48 @@ namespace Client_PM
             }
         }
 
-       
+        //----------------------------------------------------------------------------------
+        //
+        //Aide
+        //
+        //----------------------------------------------------------------------------------
+
+        private void aideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PageAideOuAPropos pa = new PageAideOuAPropos(
+                "Aide: Alt + I" + '\n' +
+                '\n' +
+                "Connexion: Alt + C" + '\n' +
+                "Déconnexion: Alt + D" + '\n' +
+                '\n' +
+                "Ajouter photo: Alt + A" + '\n' +
+                "Modifier photo: Alt + M" + '\n' +
+                "Effacer photo: Alt + E" + '\n' +
+                "Voir infos photo: Alt + V" + '\n' +
+                '\n' +
+                "Liste noire: Alt + L" + '\n' +
+                '\n' +
+                "Visionner carousel: Alt + S" + '\n' +
+                "Éditer carousel: Alt + B" + '\n' +
+                '\n' +
+                "Mise-en-page: Alt + R" + '\n' +
+                '\n' +
+                "À propos: Alt + P" + '\n' +
+                '\n' +
+                "Quitter: Alt + Q" + '\n', "Aide");
+            pa.Show();
+        }
+
+        private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PageAideOuAPropos pa = new PageAideOuAPropos(
+               "Travail pratique 3" + '\n' + '\n' +
+               "Réalisé par " + '\n' + '\n' +
+               "Vincent Falardeau," + '\n' +
+               "Émile Ménard" + '\n' +
+               "Dominic Vachon" + '\n' + '\n' +
+                "Pour le cours de développement d'interfaces", "À propos");
+            pa.Show();
+        }
     }
 }

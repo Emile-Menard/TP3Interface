@@ -47,20 +47,19 @@
             // LBX_MotsCles
             // 
             this.LBX_MotsCles.FormattingEnabled = true;
-            this.LBX_MotsCles.Location = new System.Drawing.Point(15, 229);
-            this.LBX_MotsCles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LBX_MotsCles.ItemHeight = 20;
+            this.LBX_MotsCles.Location = new System.Drawing.Point(22, 352);
             this.LBX_MotsCles.Name = "LBX_MotsCles";
-            this.LBX_MotsCles.Size = new System.Drawing.Size(190, 82);
+            this.LBX_MotsCles.Size = new System.Drawing.Size(283, 124);
             this.LBX_MotsCles.TabIndex = 29;
             // 
             // BTN_Ok
             // 
             this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ok.Location = new System.Drawing.Point(16, 321);
-            this.BTN_Ok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Ok.Location = new System.Drawing.Point(24, 494);
             this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(189, 34);
+            this.BTN_Ok.Size = new System.Drawing.Size(284, 52);
             this.BTN_Ok.TabIndex = 28;
             this.BTN_Ok.Text = "Ok";
             this.BTN_Ok.UseVisualStyleBackColor = true;
@@ -69,10 +68,9 @@
             // 
             this.CBX_Partager.AutoSize = true;
             this.CBX_Partager.Enabled = false;
-            this.CBX_Partager.Location = new System.Drawing.Point(143, 32);
-            this.CBX_Partager.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBX_Partager.Location = new System.Drawing.Point(214, 49);
             this.CBX_Partager.Name = "CBX_Partager";
-            this.CBX_Partager.Size = new System.Drawing.Size(63, 17);
+            this.CBX_Partager.Size = new System.Drawing.Size(91, 24);
             this.CBX_Partager.TabIndex = 25;
             this.CBX_Partager.Text = "Partagé";
             this.CBX_Partager.UseVisualStyleBackColor = true;
@@ -80,70 +78,63 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 214);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(20, 329);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 24;
             this.label4.Text = "Mots-clés";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 113);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(20, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "Description";
             // 
             // RTB_Description
             // 
             this.RTB_Description.AcceptsTab = true;
-            this.RTB_Description.Location = new System.Drawing.Point(16, 128);
-            this.RTB_Description.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RTB_Description.Location = new System.Drawing.Point(24, 197);
             this.RTB_Description.Name = "RTB_Description";
             this.RTB_Description.ReadOnly = true;
-            this.RTB_Description.Size = new System.Drawing.Size(190, 74);
+            this.RTB_Description.Size = new System.Drawing.Size(283, 112);
             this.RTB_Description.TabIndex = 21;
             this.RTB_Description.Text = "";
             // 
             // DTP_Date
             // 
             this.DTP_Date.Enabled = false;
-            this.DTP_Date.Location = new System.Drawing.Point(16, 79);
-            this.DTP_Date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTP_Date.Location = new System.Drawing.Point(24, 122);
             this.DTP_Date.Name = "DTP_Date";
-            this.DTP_Date.Size = new System.Drawing.Size(190, 20);
+            this.DTP_Date.Size = new System.Drawing.Size(283, 26);
             this.DTP_Date.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(20, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "Date";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(24, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Titre";
             // 
             // TBX_Titre
             // 
-            this.TBX_Titre.Location = new System.Drawing.Point(16, 30);
-            this.TBX_Titre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBX_Titre.Location = new System.Drawing.Point(24, 46);
             this.TBX_Titre.Name = "TBX_Titre";
             this.TBX_Titre.ReadOnly = true;
-            this.TBX_Titre.Size = new System.Drawing.Size(114, 20);
+            this.TBX_Titre.Size = new System.Drawing.Size(169, 26);
             this.TBX_Titre.TabIndex = 17;
             // 
             // IB_Image
@@ -157,12 +148,12 @@
             this.IB_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
             this.IB_Image.ImportImageText = "Import image from file...";
-            this.IB_Image.Location = new System.Drawing.Point(223, 15);
-            this.IB_Image.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
+            this.IB_Image.Location = new System.Drawing.Point(334, 23);
+            this.IB_Image.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.IB_Image.Name = "IB_Image";
             this.IB_Image.OpenFileDialogTitle = "Please choose image an file";
             this.IB_Image.PasteMenuText = "Paste image from clipboard";
-            this.IB_Image.Size = new System.Drawing.Size(296, 296);
+            this.IB_Image.Size = new System.Drawing.Size(443, 454);
             this.IB_Image.TabIndex = 16;
             this.IB_Image.TabStop = false;
             // 
@@ -172,18 +163,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infos.AutoSize = true;
-            this.infos.Location = new System.Drawing.Point(220, 332);
-            this.infos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.infos.Location = new System.Drawing.Point(330, 511);
             this.infos.Name = "infos";
-            this.infos.Size = new System.Drawing.Size(119, 13);
+            this.infos.Size = new System.Drawing.Size(180, 20);
             this.infos.TabIndex = 30;
             this.infos.Text = "par Auteur - Dimensions";
             // 
             // PageInfoPhotos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 365);
+            this.ClientSize = new System.Drawing.Size(801, 562);
             this.Controls.Add(this.infos);
             this.Controls.Add(this.LBX_MotsCles);
             this.Controls.Add(this.BTN_Ok);
@@ -196,10 +186,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Titre);
             this.Controls.Add(this.IB_Image);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(550, 404);
+            this.MinimumSize = new System.Drawing.Size(814, 591);
             this.Name = "PageInfoPhotos";
             this.Text = "Informations";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageInfoPhotos_FormClosing);
+            this.Load += new System.EventHandler(this.PageInfoPhotos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IB_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

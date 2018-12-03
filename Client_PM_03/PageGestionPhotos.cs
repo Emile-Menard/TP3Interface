@@ -208,6 +208,10 @@ namespace Client_PM
         //----------------------------------------------------------------------------------
         private void PageGestionPhotos_Load(object sender, EventArgs e)
         {
+            if (!Properties.Settings.Default.LocationPageGestionPhoto.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationPageGestionPhoto;
+            }
             mValidationProvider.AddControlToValidate(TBX_Titre, Valider_TBX_Titre);
             mValidationProvider.AddControlToValidate(IB_Image, Valider_IB_Image);
         }
@@ -251,6 +255,10 @@ namespace Client_PM
            
         }
 
-
+        private void PageGestionPhotos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationPageGestionPhoto = this.Location;
+            Properties.Settings.Default.Save();
+        }
     }
 }

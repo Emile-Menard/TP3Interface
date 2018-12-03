@@ -27,5 +27,19 @@ namespace Client_PM
             CBX_Partager.Checked = photo.Shared;
             IB_Image.BackgroundImage = photo.GetOriginalImage();
         }
+
+        private void PageInfoPhotos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationPageInfoPhoto = this.Location;
+            Properties.Settings.Default.Save();
+        }
+
+        private void PageInfoPhotos_Load(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.LocationPageInfoPhoto.IsEmpty)
+            {
+                this.Location = Properties.Settings.Default.LocationPageInfoPhoto;
+            }
+        }
     }
 }

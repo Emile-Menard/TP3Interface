@@ -12,7 +12,7 @@ namespace Client_PM.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -258,6 +258,42 @@ namespace Client_PM.Properties {
             }
             set {
                 this["IntervalleCarousel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point LocationPageAide {
+            get {
+                return ((global::System.Drawing.Point)(this["LocationPageAide"]));
+            }
+            set {
+                this["LocationPageAide"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point LocationPageGestionPhoto {
+            get {
+                return ((global::System.Drawing.Point)(this["LocationPageGestionPhoto"]));
+            }
+            set {
+                this["LocationPageGestionPhoto"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point LocationPageInfoPhoto {
+            get {
+                return ((global::System.Drawing.Point)(this["LocationPageInfoPhoto"]));
+            }
+            set {
+                this["LocationPageInfoPhoto"] = value;
             }
         }
     }

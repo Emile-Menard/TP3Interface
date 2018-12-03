@@ -51,58 +51,52 @@
             // 
             // TBX_Titre
             // 
-            this.TBX_Titre.Location = new System.Drawing.Point(14, 28);
-            this.TBX_Titre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TBX_Titre.MinimumSize = new System.Drawing.Size(168, 20);
+            this.TBX_Titre.Location = new System.Drawing.Point(21, 43);
+            this.TBX_Titre.MinimumSize = new System.Drawing.Size(250, 20);
             this.TBX_Titre.Name = "TBX_Titre";
-            this.TBX_Titre.Size = new System.Drawing.Size(190, 20);
+            this.TBX_Titre.Size = new System.Drawing.Size(283, 26);
             this.TBX_Titre.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(16, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Titre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 57);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(16, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Date";
             // 
             // DTP_Date
             // 
-            this.DTP_Date.Location = new System.Drawing.Point(14, 72);
-            this.DTP_Date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTP_Date.Location = new System.Drawing.Point(21, 111);
             this.DTP_Date.Name = "DTP_Date";
-            this.DTP_Date.Size = new System.Drawing.Size(190, 20);
+            this.DTP_Date.Size = new System.Drawing.Size(283, 26);
             this.DTP_Date.TabIndex = 4;
             // 
             // RTB_Description
             // 
             this.RTB_Description.AcceptsTab = true;
-            this.RTB_Description.Location = new System.Drawing.Point(14, 116);
-            this.RTB_Description.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RTB_Description.Location = new System.Drawing.Point(21, 178);
             this.RTB_Description.Name = "RTB_Description";
-            this.RTB_Description.Size = new System.Drawing.Size(190, 66);
+            this.RTB_Description.Size = new System.Drawing.Size(283, 99);
             this.RTB_Description.TabIndex = 5;
             this.RTB_Description.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 101);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(16, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Description";
             // 
@@ -110,29 +104,26 @@
             // 
             this.TBX_MotsCles.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TBX_MotsCles.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.TBX_MotsCles.Location = new System.Drawing.Point(14, 231);
-            this.TBX_MotsCles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBX_MotsCles.Location = new System.Drawing.Point(21, 355);
             this.TBX_MotsCles.Name = "TBX_MotsCles";
-            this.TBX_MotsCles.Size = new System.Drawing.Size(190, 20);
+            this.TBX_MotsCles.Size = new System.Drawing.Size(283, 26);
             this.TBX_MotsCles.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 207);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(16, 318);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Mots-clés";
             // 
             // CBX_Partager
             // 
             this.CBX_Partager.AutoSize = true;
-            this.CBX_Partager.Location = new System.Drawing.Point(14, 349);
-            this.CBX_Partager.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBX_Partager.Location = new System.Drawing.Point(21, 537);
             this.CBX_Partager.Name = "CBX_Partager";
-            this.CBX_Partager.Size = new System.Drawing.Size(66, 17);
+            this.CBX_Partager.Size = new System.Drawing.Size(96, 24);
             this.CBX_Partager.TabIndex = 9;
             this.CBX_Partager.Text = "Partager";
             this.CBX_Partager.UseVisualStyleBackColor = true;
@@ -141,10 +132,9 @@
             // 
             this.BTN_Annuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Annuler.Location = new System.Drawing.Point(122, 387);
-            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Annuler.Location = new System.Drawing.Point(183, 595);
             this.BTN_Annuler.Name = "BTN_Annuler";
-            this.BTN_Annuler.Size = new System.Drawing.Size(82, 34);
+            this.BTN_Annuler.Size = new System.Drawing.Size(123, 52);
             this.BTN_Annuler.TabIndex = 11;
             this.BTN_Annuler.Text = "Annuler";
             this.BTN_Annuler.UseVisualStyleBackColor = true;
@@ -153,10 +143,9 @@
             // 
             this.BTN_Ajouter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ajouter.Location = new System.Drawing.Point(14, 387);
-            this.BTN_Ajouter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Ajouter.Location = new System.Drawing.Point(21, 595);
             this.BTN_Ajouter.Name = "BTN_Ajouter";
-            this.BTN_Ajouter.Size = new System.Drawing.Size(82, 34);
+            this.BTN_Ajouter.Size = new System.Drawing.Size(123, 52);
             this.BTN_Ajouter.TabIndex = 12;
             this.BTN_Ajouter.Text = "Ajouter";
             this.BTN_Ajouter.UseVisualStyleBackColor = true;
@@ -165,10 +154,10 @@
             // LBX_MotsCles
             // 
             this.LBX_MotsCles.FormattingEnabled = true;
-            this.LBX_MotsCles.Location = new System.Drawing.Point(14, 260);
-            this.LBX_MotsCles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LBX_MotsCles.ItemHeight = 20;
+            this.LBX_MotsCles.Location = new System.Drawing.Point(21, 400);
             this.LBX_MotsCles.Name = "LBX_MotsCles";
-            this.LBX_MotsCles.Size = new System.Drawing.Size(190, 69);
+            this.LBX_MotsCles.Size = new System.Drawing.Size(283, 104);
             this.LBX_MotsCles.TabIndex = 13;
             this.LBX_MotsCles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LBX_MotsCles_KeyPress);
             // 
@@ -180,11 +169,12 @@
             this.FBTN_EffacerMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FBTN_EffacerMotCle.DisabledImage = global::Client_PM.Properties.Resources.trash_disable;
             this.FBTN_EffacerMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EffacerMotCle.Image")));
-            this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(180, 201);
+            this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(270, 309);
+            this.FBTN_EffacerMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_EffacerMotCle.Name = "FBTN_EffacerMotCle";
             this.FBTN_EffacerMotCle.NeutralImage = global::Client_PM.Properties.Resources.trash;
             this.FBTN_EffacerMotCle.OverImage = global::Client_PM.Properties.Resources.trash_accept;
-            this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(24, 24);
+            this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(36, 37);
             this.FBTN_EffacerMotCle.TabIndex = 15;
             this.FBTN_EffacerMotCle.Text = "Effacer un mot-clé";
             this.FBTN_EffacerMotCle.UseVisualStyleBackColor = true;
@@ -198,11 +188,12 @@
             this.FBTN_AjouterMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FBTN_AjouterMotCle.DisabledImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Disable;
             this.FBTN_AjouterMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AjouterMotCle.Image")));
-            this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(143, 201);
+            this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(214, 309);
+            this.FBTN_AjouterMotCle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FBTN_AjouterMotCle.Name = "FBTN_AjouterMotCle";
             this.FBTN_AjouterMotCle.NeutralImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
             this.FBTN_AjouterMotCle.OverImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Over;
-            this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(24, 24);
+            this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(36, 37);
             this.FBTN_AjouterMotCle.TabIndex = 14;
             this.FBTN_AjouterMotCle.Text = "Ajouter un mot-clé";
             this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
@@ -216,12 +207,11 @@
             this.FTBN_Rotation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FTBN_Rotation.DisabledImage = null;
             this.FTBN_Rotation.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Rotation.Image")));
-            this.FTBN_Rotation.Location = new System.Drawing.Point(169, 339);
-            this.FTBN_Rotation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FTBN_Rotation.Location = new System.Drawing.Point(254, 522);
             this.FTBN_Rotation.Name = "FTBN_Rotation";
             this.FTBN_Rotation.NeutralImage = global::Client_PM.Properties.Resources.rotate;
             this.FTBN_Rotation.OverImage = global::Client_PM.Properties.Resources.rotate_accept;
-            this.FTBN_Rotation.Size = new System.Drawing.Size(35, 34);
+            this.FTBN_Rotation.Size = new System.Drawing.Size(52, 52);
             this.FTBN_Rotation.TabIndex = 10;
             this.FTBN_Rotation.Text = "Rotater l\'image";
             this.FTBN_Rotation.UseVisualStyleBackColor = true;
@@ -238,12 +228,12 @@
             this.IB_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
     "th context menu.";
             this.IB_Image.ImportImageText = "Import image from file...";
-            this.IB_Image.Location = new System.Drawing.Point(226, 13);
-            this.IB_Image.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
+            this.IB_Image.Location = new System.Drawing.Point(339, 20);
+            this.IB_Image.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.IB_Image.Name = "IB_Image";
             this.IB_Image.OpenFileDialogTitle = "Please choose image an file";
             this.IB_Image.PasteMenuText = "Paste image from clipboard";
-            this.IB_Image.Size = new System.Drawing.Size(410, 408);
+            this.IB_Image.Size = new System.Drawing.Size(614, 627);
             this.IB_Image.TabIndex = 0;
             this.IB_Image.TabStop = false;
             // 
@@ -251,10 +241,10 @@
             // 
             this.AcceptButton = this.BTN_Ajouter;
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Annuler;
-            this.ClientSize = new System.Drawing.Size(650, 433);
+            this.ClientSize = new System.Drawing.Size(975, 666);
             this.Controls.Add(this.FBTN_EffacerMotCle);
             this.Controls.Add(this.FBTN_AjouterMotCle);
             this.Controls.Add(this.LBX_MotsCles);
@@ -271,10 +261,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Titre);
             this.Controls.Add(this.IB_Image);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(650, 472);
+            this.MinimumSize = new System.Drawing.Size(964, 696);
             this.Name = "PageGestionPhotos";
             this.Text = "Ajouter une photo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageGestionPhotos_FormClosing);
             this.Load += new System.EventHandler(this.PageGestionPhotos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IB_Image)).EndInit();
             this.ResumeLayout(false);
