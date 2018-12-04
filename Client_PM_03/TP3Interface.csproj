@@ -88,12 +88,6 @@
     <Compile Include="PageConnexion.designer.cs">
       <DependentUpon>PageConnexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="PageCreation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageCreation.designer.cs">
-      <DependentUpon>PageCreation.cs</DependentUpon>
-    </Compile>
     <Compile Include="PageGestionUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageConnexion.resx">
       <DependentUpon>PageConnexion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageCreation.resx">
-      <DependentUpon>PageCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageGestionUser.resx">
       <DependentUpon>PageGestionUser.cs</DependentUpon>
