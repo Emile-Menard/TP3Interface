@@ -102,8 +102,7 @@
             this.àProposToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1311, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(874, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,28 +115,28 @@
             this.TLSTRIP_Deconnexion,
             this.TLSTRIP_Quitter});
             this.TLSTRIP_Compte.Name = "TLSTRIP_Compte";
-            this.TLSTRIP_Compte.Size = new System.Drawing.Size(175, 29);
+            this.TLSTRIP_Compte.Size = new System.Drawing.Size(119, 20);
             this.TLSTRIP_Compte.Text = "Gestion de compte";
             // 
             // TLSTRIP_Connexion
             // 
             this.TLSTRIP_Connexion.Name = "TLSTRIP_Connexion";
             this.TLSTRIP_Connexion.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.TLSTRIP_Connexion.Size = new System.Drawing.Size(258, 30);
+            this.TLSTRIP_Connexion.Size = new System.Drawing.Size(181, 22);
             this.TLSTRIP_Connexion.Text = "Connexion";
             this.TLSTRIP_Connexion.Click += new System.EventHandler(this.TLSTRIP_Connexion_Click);
             // 
             // TLSTRIP_Editer
             // 
             this.TLSTRIP_Editer.Name = "TLSTRIP_Editer";
-            this.TLSTRIP_Editer.Size = new System.Drawing.Size(258, 30);
+            this.TLSTRIP_Editer.Size = new System.Drawing.Size(181, 22);
             this.TLSTRIP_Editer.Text = "Éditer votre compte";
             this.TLSTRIP_Editer.Click += new System.EventHandler(this.TLSTRIP_Editer_Click);
             // 
             // TLSTRIP_Cree
             // 
             this.TLSTRIP_Cree.Name = "TLSTRIP_Cree";
-            this.TLSTRIP_Cree.Size = new System.Drawing.Size(258, 30);
+            this.TLSTRIP_Cree.Size = new System.Drawing.Size(181, 22);
             this.TLSTRIP_Cree.Text = "Créer un compte";
             this.TLSTRIP_Cree.Click += new System.EventHandler(this.TLSTRIP_Cree_Click);
             // 
@@ -145,7 +144,7 @@
             // 
             this.TLSTRIP_Deconnexion.Name = "TLSTRIP_Deconnexion";
             this.TLSTRIP_Deconnexion.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D)));
-            this.TLSTRIP_Deconnexion.Size = new System.Drawing.Size(258, 30);
+            this.TLSTRIP_Deconnexion.Size = new System.Drawing.Size(181, 22);
             this.TLSTRIP_Deconnexion.Text = "Déconnexion";
             this.TLSTRIP_Deconnexion.Click += new System.EventHandler(this.TLSTRIP_Deconnexion_Click);
             // 
@@ -153,7 +152,7 @@
             // 
             this.TLSTRIP_Quitter.Name = "TLSTRIP_Quitter";
             this.TLSTRIP_Quitter.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
-            this.TLSTRIP_Quitter.Size = new System.Drawing.Size(258, 30);
+            this.TLSTRIP_Quitter.Size = new System.Drawing.Size(181, 22);
             this.TLSTRIP_Quitter.Text = "Quitter";
             this.TLSTRIP_Quitter.Click += new System.EventHandler(this.TLSTRIP_Quitter_Click);
             // 
@@ -165,14 +164,14 @@
             this.effacerToolStripMenuItem,
             this.voirInformationsToolStripMenuItem});
             this.gestionDesPhotosToolStripMenuItem.Name = "gestionDesPhotosToolStripMenuItem";
-            this.gestionDesPhotosToolStripMenuItem.Size = new System.Drawing.Size(179, 29);
+            this.gestionDesPhotosToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.gestionDesPhotosToolStripMenuItem.Text = "Gestion des photos";
             // 
             // ajouterToolStripMenuItem
             // 
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
             this.ajouterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(290, 30);
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.ajouterToolStripMenuItem.Text = "Ajouter";
             this.ajouterToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
             // 
@@ -180,7 +179,7 @@
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
             this.modifierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(290, 30);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
@@ -188,7 +187,7 @@
             // 
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
             this.effacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(290, 30);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.effacerToolStripMenuItem.Text = "Effacer";
             this.effacerToolStripMenuItem.Click += new System.EventHandler(this.effacerToolStripMenuItem_Click);
             // 
@@ -196,7 +195,7 @@
             // 
             this.voirInformationsToolStripMenuItem.Name = "voirInformationsToolStripMenuItem";
             this.voirInformationsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.V)));
-            this.voirInformationsToolStripMenuItem.Size = new System.Drawing.Size(290, 30);
+            this.voirInformationsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.voirInformationsToolStripMenuItem.Text = "Voir informations";
             this.voirInformationsToolStripMenuItem.Click += new System.EventHandler(this.voirInformationsToolStripMenuItem_Click);
             // 
@@ -204,7 +203,7 @@
             // 
             this.listeNoireToolStripMenuItem.Name = "listeNoireToolStripMenuItem";
             this.listeNoireToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L)));
-            this.listeNoireToolStripMenuItem.Size = new System.Drawing.Size(104, 29);
+            this.listeNoireToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.listeNoireToolStripMenuItem.Text = "Liste noire";
             this.listeNoireToolStripMenuItem.Click += new System.EventHandler(this.listeNoireToolStripMenuItem_Click);
             // 
@@ -214,14 +213,14 @@
             this.visionnerToolStripMenuItem,
             this.éditerToolStripMenuItem});
             this.carouselToolStripMenuItem.Name = "carouselToolStripMenuItem";
-            this.carouselToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.carouselToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.carouselToolStripMenuItem.Text = "Carousel";
             // 
             // visionnerToolStripMenuItem
             // 
             this.visionnerToolStripMenuItem.Name = "visionnerToolStripMenuItem";
             this.visionnerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.visionnerToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
+            this.visionnerToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.visionnerToolStripMenuItem.Text = "Visionner";
             this.visionnerToolStripMenuItem.Click += new System.EventHandler(this.visionnerToolStripMenuItem_Click);
             // 
@@ -229,7 +228,7 @@
             // 
             this.éditerToolStripMenuItem.Name = "éditerToolStripMenuItem";
             this.éditerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
-            this.éditerToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
+            this.éditerToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.éditerToolStripMenuItem.Text = "Éditer";
             this.éditerToolStripMenuItem.Click += new System.EventHandler(this.éditerToolStripMenuItem_Click);
             // 
@@ -245,7 +244,7 @@
             // 
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
             this.aideToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.aideToolStripMenuItem.Text = "Aide";
             this.aideToolStripMenuItem.Click += new System.EventHandler(this.aideToolStripMenuItem_Click);
             // 
@@ -253,7 +252,7 @@
             // 
             this.àProposToolStripMenuItem.Name = "àProposToolStripMenuItem";
             this.àProposToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
-            this.àProposToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
+            this.àProposToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.àProposToolStripMenuItem.Text = "À propos";
             this.àProposToolStripMenuItem.Click += new System.EventHandler(this.àProposToolStripMenuItem_Click);
             // 
@@ -261,10 +260,9 @@
             // 
             this.CMB_UsersList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMB_UsersList.FormattingEnabled = true;
-            this.CMB_UsersList.Location = new System.Drawing.Point(15, 63);
-            this.CMB_UsersList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CMB_UsersList.Location = new System.Drawing.Point(10, 41);
             this.CMB_UsersList.Name = "CMB_UsersList";
-            this.CMB_UsersList.Size = new System.Drawing.Size(256, 28);
+            this.CMB_UsersList.Size = new System.Drawing.Size(172, 21);
             this.CMB_UsersList.TabIndex = 1;
             this.CMB_UsersList.SelectedIndexChanged += new System.EventHandler(this.CMB_UsersList_SelectedIndexChanged);
             // 
@@ -272,10 +270,9 @@
             // 
             this.TBX_MotsCles.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TBX_MotsCles.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.TBX_MotsCles.Location = new System.Drawing.Point(15, 75);
-            this.TBX_MotsCles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TBX_MotsCles.Location = new System.Drawing.Point(10, 49);
             this.TBX_MotsCles.Name = "TBX_MotsCles";
-            this.TBX_MotsCles.Size = new System.Drawing.Size(252, 26);
+            this.TBX_MotsCles.Size = new System.Drawing.Size(169, 20);
             this.TBX_MotsCles.TabIndex = 2;
             this.TBX_MotsCles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBX_MotsCles_KeyDown);
             // 
@@ -283,11 +280,9 @@
             // 
             this.groupBox1.Controls.Add(this.CBOX_NotMine);
             this.groupBox1.Controls.Add(this.CMB_UsersList);
-            this.groupBox1.Location = new System.Drawing.Point(20, 42);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(13, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(288, 111);
+            this.groupBox1.Size = new System.Drawing.Size(192, 72);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtre d\'utilisateurs";
@@ -295,10 +290,9 @@
             // CBOX_NotMine
             // 
             this.CBOX_NotMine.AutoSize = true;
-            this.CBOX_NotMine.Location = new System.Drawing.Point(15, 29);
-            this.CBOX_NotMine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CBOX_NotMine.Location = new System.Drawing.Point(10, 19);
             this.CBOX_NotMine.Name = "CBOX_NotMine";
-            this.CBOX_NotMine.Size = new System.Drawing.Size(174, 24);
+            this.CBOX_NotMine.Size = new System.Drawing.Size(118, 17);
             this.CBOX_NotMine.TabIndex = 2;
             this.CBOX_NotMine.Text = "Exclure mes photos";
             this.CBOX_NotMine.UseVisualStyleBackColor = true;
@@ -313,11 +307,9 @@
             this.groupBox2.Controls.Add(this.LBX_MotsCles);
             this.groupBox2.Controls.Add(this.CBX_MotsCles);
             this.groupBox2.Controls.Add(this.TBX_MotsCles);
-            this.groupBox2.Location = new System.Drawing.Point(20, 378);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(13, 246);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(288, 417);
+            this.groupBox2.Size = new System.Drawing.Size(192, 271);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtre de mots-clés";
@@ -363,22 +355,20 @@
             this.LBX_MotsCles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.LBX_MotsCles.FormattingEnabled = true;
-            this.LBX_MotsCles.ItemHeight = 20;
-            this.LBX_MotsCles.Location = new System.Drawing.Point(15, 111);
-            this.LBX_MotsCles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LBX_MotsCles.Location = new System.Drawing.Point(10, 72);
             this.LBX_MotsCles.Name = "LBX_MotsCles";
-            this.LBX_MotsCles.Size = new System.Drawing.Size(252, 284);
+            this.LBX_MotsCles.Size = new System.Drawing.Size(169, 186);
             this.LBX_MotsCles.TabIndex = 4;
             this.LBX_MotsCles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LBX_MotsCles_KeyPress);
             // 
             // CBX_MotsCles
             // 
             this.CBX_MotsCles.AutoSize = true;
-            this.CBX_MotsCles.Location = new System.Drawing.Point(15, 35);
-            this.CBX_MotsCles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CBX_MotsCles.Location = new System.Drawing.Point(10, 23);
             this.CBX_MotsCles.Name = "CBX_MotsCles";
-            this.CBX_MotsCles.Size = new System.Drawing.Size(22, 21);
+            this.CBX_MotsCles.Size = new System.Drawing.Size(96, 17);
             this.CBX_MotsCles.TabIndex = 3;
+            this.CBX_MotsCles.Text = "Activer ce filtre";
             this.CBX_MotsCles.UseVisualStyleBackColor = true;
             this.CBX_MotsCles.CheckedChanged += new System.EventHandler(this.CBX_MotsCles_CheckedChanged);
             // 
@@ -389,11 +379,9 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.DTP_Fin);
             this.groupBox3.Controls.Add(this.DTP_Debut);
-            this.groupBox3.Location = new System.Drawing.Point(20, 163);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Location = new System.Drawing.Point(13, 106);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(288, 208);
+            this.groupBox3.Size = new System.Drawing.Size(192, 135);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtre de date";
@@ -401,49 +389,45 @@
             // CBX_Date
             // 
             this.CBX_Date.AutoSize = true;
-            this.CBX_Date.Location = new System.Drawing.Point(14, 31);
-            this.CBX_Date.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CBX_Date.Location = new System.Drawing.Point(9, 20);
             this.CBX_Date.Name = "CBX_Date";
-            this.CBX_Date.Size = new System.Drawing.Size(22, 21);
+            this.CBX_Date.Size = new System.Drawing.Size(96, 17);
             this.CBX_Date.TabIndex = 10;
+            this.CBX_Date.Text = "Activer ce filtre";
             this.CBX_Date.UseVisualStyleBackColor = true;
             this.CBX_Date.CheckedChanged += new System.EventHandler(this.CBX_Date_CheckedChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 129);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(7, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Date fin";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 72);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Date début";
             // 
             // DTP_Fin
             // 
-            this.DTP_Fin.Location = new System.Drawing.Point(15, 154);
-            this.DTP_Fin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DTP_Fin.Location = new System.Drawing.Point(10, 100);
             this.DTP_Fin.Name = "DTP_Fin";
-            this.DTP_Fin.Size = new System.Drawing.Size(252, 26);
+            this.DTP_Fin.Size = new System.Drawing.Size(169, 20);
             this.DTP_Fin.TabIndex = 7;
             this.DTP_Fin.ValueChanged += new System.EventHandler(this.DTP_Fin_ValueChanged);
             // 
             // DTP_Debut
             // 
-            this.DTP_Debut.Location = new System.Drawing.Point(14, 98);
-            this.DTP_Debut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DTP_Debut.Location = new System.Drawing.Point(9, 64);
             this.DTP_Debut.Name = "DTP_Debut";
-            this.DTP_Debut.Size = new System.Drawing.Size(252, 26);
+            this.DTP_Debut.Size = new System.Drawing.Size(169, 20);
             this.DTP_Debut.TabIndex = 6;
             this.DTP_Debut.ValueChanged += new System.EventHandler(this.DTP_Debut_ValueChanged);
             // 
@@ -453,11 +437,9 @@
             this.groupBox4.Controls.Add(this.FBTN_Modifier);
             this.groupBox4.Controls.Add(this.FBTN_Ajouter);
             this.groupBox4.Controls.Add(this.FTBN_Effacer);
-            this.groupBox4.Location = new System.Drawing.Point(327, 48);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Location = new System.Drawing.Point(218, 31);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox4.Size = new System.Drawing.Size(340, 106);
+            this.groupBox4.Size = new System.Drawing.Size(227, 69);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Photo";
@@ -470,12 +452,11 @@
             this.FTBN_Info.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FTBN_Info.DisabledImage = global::Client_PM.Properties.Resources.Eye;
             this.FTBN_Info.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Info.Image")));
-            this.FTBN_Info.Location = new System.Drawing.Point(264, 29);
-            this.FTBN_Info.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FTBN_Info.Location = new System.Drawing.Point(176, 19);
             this.FTBN_Info.Name = "FTBN_Info";
             this.FTBN_Info.NeutralImage = global::Client_PM.Properties.Resources.Eye;
             this.FTBN_Info.OverImage = global::Client_PM.Properties.Resources.Eye_accept;
-            this.FTBN_Info.Size = new System.Drawing.Size(48, 48);
+            this.FTBN_Info.Size = new System.Drawing.Size(32, 32);
             this.FTBN_Info.TabIndex = 11;
             this.FTBN_Info.Text = "Informations sur la photo";
             this.FTBN_Info.UseVisualStyleBackColor = true;
@@ -489,12 +470,11 @@
             this.FBTN_Modifier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FBTN_Modifier.DisabledImage = global::Client_PM.Properties.Resources.edit_disable;
             this.FBTN_Modifier.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Modifier.Image")));
-            this.FBTN_Modifier.Location = new System.Drawing.Point(112, 29);
-            this.FBTN_Modifier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_Modifier.Location = new System.Drawing.Point(75, 19);
             this.FBTN_Modifier.Name = "FBTN_Modifier";
             this.FBTN_Modifier.NeutralImage = global::Client_PM.Properties.Resources.edit;
             this.FBTN_Modifier.OverImage = global::Client_PM.Properties.Resources.edit_accept;
-            this.FBTN_Modifier.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_Modifier.Size = new System.Drawing.Size(32, 32);
             this.FBTN_Modifier.TabIndex = 10;
             this.FBTN_Modifier.Text = "Éditer la photo sélectionnée";
             this.FBTN_Modifier.UseVisualStyleBackColor = true;
@@ -508,12 +488,11 @@
             this.FBTN_Ajouter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FBTN_Ajouter.DisabledImage = global::Client_PM.Properties.Resources.add_disable;
             this.FBTN_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Ajouter.Image")));
-            this.FBTN_Ajouter.Location = new System.Drawing.Point(34, 29);
-            this.FBTN_Ajouter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_Ajouter.Location = new System.Drawing.Point(23, 19);
             this.FBTN_Ajouter.Name = "FBTN_Ajouter";
             this.FBTN_Ajouter.NeutralImage = global::Client_PM.Properties.Resources.add;
             this.FBTN_Ajouter.OverImage = global::Client_PM.Properties.Resources.add_accept;
-            this.FBTN_Ajouter.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_Ajouter.Size = new System.Drawing.Size(32, 32);
             this.FBTN_Ajouter.TabIndex = 9;
             this.FBTN_Ajouter.Text = "Ajouter une photo";
             this.FBTN_Ajouter.UseVisualStyleBackColor = true;
@@ -527,12 +506,11 @@
             this.FTBN_Effacer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FTBN_Effacer.DisabledImage = global::Client_PM.Properties.Resources.trash_disable;
             this.FTBN_Effacer.Image = ((System.Drawing.Image)(resources.GetObject("FTBN_Effacer.Image")));
-            this.FTBN_Effacer.Location = new System.Drawing.Point(189, 26);
-            this.FTBN_Effacer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FTBN_Effacer.Location = new System.Drawing.Point(126, 17);
             this.FTBN_Effacer.Name = "FTBN_Effacer";
             this.FTBN_Effacer.NeutralImage = global::Client_PM.Properties.Resources.trash;
             this.FTBN_Effacer.OverImage = global::Client_PM.Properties.Resources.trash_accept;
-            this.FTBN_Effacer.Size = new System.Drawing.Size(48, 48);
+            this.FTBN_Effacer.Size = new System.Drawing.Size(32, 32);
             this.FTBN_Effacer.TabIndex = 8;
             this.FTBN_Effacer.Text = "Retirer la photo sélectionnée";
             this.FTBN_Effacer.UseVisualStyleBackColor = true;
@@ -542,9 +520,11 @@
             // 
             this.groupBox5.Controls.Add(this.FBTN_EditerCarousel);
             this.groupBox5.Controls.Add(this.FBTN_Carousel);
-            this.groupBox5.Location = new System.Drawing.Point(674, 48);
+            this.groupBox5.Location = new System.Drawing.Point(449, 31);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(180, 105);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(115, 68);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Carousel";
@@ -557,12 +537,12 @@
             this.FBTN_EditerCarousel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FBTN_EditerCarousel.DisabledImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
             this.FBTN_EditerCarousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EditerCarousel.Image")));
-            this.FBTN_EditerCarousel.Location = new System.Drawing.Point(104, 31);
-            this.FBTN_EditerCarousel.Margin = new System.Windows.Forms.Padding(2);
+            this.FBTN_EditerCarousel.Location = new System.Drawing.Point(69, 20);
+            this.FBTN_EditerCarousel.Margin = new System.Windows.Forms.Padding(1);
             this.FBTN_EditerCarousel.Name = "FBTN_EditerCarousel";
             this.FBTN_EditerCarousel.NeutralImage = global::Client_PM.Properties.Resources.carousel__editpng;
             this.FBTN_EditerCarousel.OverImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
-            this.FBTN_EditerCarousel.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_EditerCarousel.Size = new System.Drawing.Size(32, 32);
             this.FBTN_EditerCarousel.TabIndex = 0;
             this.FBTN_EditerCarousel.Text = "Éditer le carousel";
             this.FBTN_EditerCarousel.UseVisualStyleBackColor = true;
@@ -576,12 +556,12 @@
             this.FBTN_Carousel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FBTN_Carousel.DisabledImage = null;
             this.FBTN_Carousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Carousel.Image")));
-            this.FBTN_Carousel.Location = new System.Drawing.Point(20, 31);
-            this.FBTN_Carousel.Margin = new System.Windows.Forms.Padding(2);
+            this.FBTN_Carousel.Location = new System.Drawing.Point(13, 20);
+            this.FBTN_Carousel.Margin = new System.Windows.Forms.Padding(1);
             this.FBTN_Carousel.Name = "FBTN_Carousel";
             this.FBTN_Carousel.NeutralImage = global::Client_PM.Properties.Resources.carousel;
             this.FBTN_Carousel.OverImage = global::Client_PM.Properties.Resources.carousel_accept;
-            this.FBTN_Carousel.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_Carousel.Size = new System.Drawing.Size(32, 32);
             this.FBTN_Carousel.TabIndex = 0;
             this.FBTN_Carousel.Text = "Visionner le carousel";
             this.FBTN_Carousel.UseVisualStyleBackColor = true;
@@ -589,12 +569,12 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.FBTN_MiseEnPage);
-            this.groupBox8.Location = new System.Drawing.Point(1158, 49);
+            this.groupBox8.Location = new System.Drawing.Point(772, 32);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(132, 105);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox8.Size = new System.Drawing.Size(88, 68);
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Mise-en-page";
@@ -607,11 +587,12 @@
             this.FBTN_MiseEnPage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FBTN_MiseEnPage.DisabledImage = global::Client_PM.Properties.Resources.rotate;
             this.FBTN_MiseEnPage.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.Image")));
-            this.FBTN_MiseEnPage.Location = new System.Drawing.Point(40, 29);
+            this.FBTN_MiseEnPage.Location = new System.Drawing.Point(27, 19);
+            this.FBTN_MiseEnPage.Margin = new System.Windows.Forms.Padding(2);
             this.FBTN_MiseEnPage.Name = "FBTN_MiseEnPage";
             this.FBTN_MiseEnPage.NeutralImage = global::Client_PM.Properties.Resources.rotate;
             this.FBTN_MiseEnPage.OverImage = global::Client_PM.Properties.Resources.rotate_accept;
-            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(32, 31);
             this.FBTN_MiseEnPage.TabIndex = 7;
             this.FBTN_MiseEnPage.Text = "Changer la mise-en-page";
             this.FBTN_MiseEnPage.UseVisualStyleBackColor = true;
@@ -621,11 +602,11 @@
             // 
             this.groupBox6.Controls.Add(this.Username);
             this.groupBox6.Controls.Add(this.IMB_UserAvatar);
-            this.groupBox6.Location = new System.Drawing.Point(868, 48);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Location = new System.Drawing.Point(567, 31);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(284, 105);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBox6.Size = new System.Drawing.Size(201, 68);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Utilisateur";
@@ -633,10 +614,10 @@
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(86, 45);
-            this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Username.Location = new System.Drawing.Point(57, 29);
+            this.Username.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(197, 20);
+            this.Username.Size = new System.Drawing.Size(133, 13);
             this.Username.TabIndex = 1;
             this.Username.Text = "Aucun utilisateur connecté";
             // 
@@ -648,12 +629,12 @@
             this.IMB_UserAvatar.ControlToolTipText = "Éditer mon compte";
             this.IMB_UserAvatar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IMB_UserAvatar.ImportImageText = "Import image from file...";
-            this.IMB_UserAvatar.Location = new System.Drawing.Point(21, 31);
-            this.IMB_UserAvatar.Margin = new System.Windows.Forms.Padding(2);
+            this.IMB_UserAvatar.Location = new System.Drawing.Point(14, 20);
+            this.IMB_UserAvatar.Margin = new System.Windows.Forms.Padding(1);
             this.IMB_UserAvatar.Name = "IMB_UserAvatar";
             this.IMB_UserAvatar.OpenFileDialogTitle = "Please choose image an file";
             this.IMB_UserAvatar.PasteMenuText = "Paste image from clipboard";
-            this.IMB_UserAvatar.Size = new System.Drawing.Size(47, 47);
+            this.IMB_UserAvatar.Size = new System.Drawing.Size(32, 31);
             this.IMB_UserAvatar.TabIndex = 0;
             this.IMB_UserAvatar.TabStop = false;
             this.IMB_UserAvatar.Click += new System.EventHandler(this.IMB_UserAvatar_Click);
@@ -664,19 +645,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.photosBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.photosBrowser.Location = new System.Drawing.Point(327, 163);
-            this.photosBrowser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.photosBrowser.Location = new System.Drawing.Point(218, 106);
             this.photosBrowser.Name = "photosBrowser";
             this.photosBrowser.Placement = PhotoManagerClient.PhotoBrowserPlacement.Left;
             this.photosBrowser.SelectedPhoto = null;
-            this.photosBrowser.Size = new System.Drawing.Size(963, 632);
+            this.photosBrowser.Size = new System.Drawing.Size(642, 411);
             this.photosBrowser.TabIndex = 8;
             // 
             // PagePrincipale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 809);
+            this.ClientSize = new System.Drawing.Size(874, 526);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox5);
@@ -687,11 +667,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(1324, 839);
+            this.MinimumSize = new System.Drawing.Size(888, 559);
             this.Name = "PagePrincipale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Prototype";
+            this.Text = "Photo Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PagePrincipale_FormClosing);
             this.Load += new System.EventHandler(this.PagePrincipale_Load_1);
             this.menuStrip1.ResumeLayout(false);

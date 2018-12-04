@@ -11,28 +11,20 @@ namespace Client_PM
 {
     public partial class PageSlideShow : Form
     {
-        // Liste des id des photos incluses dans le diaporama
         public List<int> SlideShowList { get; set; }
 
-        // Liste des photos incluses dans le diaporama
         public List<Photo> PhotoPool { get; set; }
         private List<Photo> Slides;
 
-        // Liste des index de photo dans définissant l'ordre de passation
         private int[] PhotosOrder;
-        // Ordre aléatoire si vrai
         private bool RandomOrder = false;
-        // Plein écran si vrai
         private bool FullScreen = false;
 
-        // Index courrant de PhotosOrder 
         private int Current_PhotosOrder_Index = 0;
         public PageSlideShow()
         {
             InitializeComponent();
             
-
-            // Optimiser l'affichage
             this.DoubleBuffered = true;
             this.BackColor = Color.Black;
             this.BackgroundImageLayout = ImageLayout.Zoom;
@@ -41,26 +33,21 @@ namespace Client_PM
         }
         private void DLG_Slideshow_Shown(object sender, EventArgs e)
         {
-            WaitSplash.Show(this, "Loading slide show photos...");
+            WaitSplash.Show(this, "Chargement des photos...");
             Slides = new List<Photo>();
             foreach (int photoId in SlideShowList)
             {
-                // Obtenir la photo du service
                 Photo photo = DBPhotosWebServices.GetPhoto(photoId);
-                // Si la photo existe
                 if (photo != null)
                     Slides.Add(photo);
             }
-            // Nettoyer la liste des Id des photos (certaines ont pu être effacée d'une fois à l'autre)
             SlideShowList.Clear();
             foreach (Photo photo in Slides)
             {
                 SlideShowList.Add(photo.Id);
             }
             WaitSplash.Hide();
-            // Définir l'ordre des photos
             SetPhotosOrder();
-            // Démarrer l'horloge
             SlideshowTimer.Start();
             SlideshowTimer.Interval = Properties.Settings.Default.IntervalleCarousel;
             toolStripTextBox1.Enabled = false;
@@ -73,10 +60,7 @@ namespace Client_PM
 
             if (FullScreen)
             {
-                // Masquer la bordure et l'entête
                 this.FormBorderStyle = FormBorderStyle.None;
-                // Masquer la barre des menus
-                // Agrandir
                 this.WindowState = FormWindowState.Maximized;
             }
             else
@@ -105,20 +89,15 @@ namespace Client_PM
         {
             if (PhotosOrder.Count() > 0)
             {
-                // Régler l'image de fond avec la prochaine photo
                 this.BackgroundImage = Slides[PhotosOrder[Current_PhotosOrder_Index]].GetOriginalImage();
-                // Index de la prochaine photo. Si était la dernière, revenir à la première
                 Current_PhotosOrder_Index = Current_PhotosOrder_Index < Slides.Count - 1 ? Current_PhotosOrder_Index + 1 : 0;
             }
         }
         private void SlideshowTimer_Tick(object sender, EventArgs e)
         {
-            // passer à la prochaine photo
-            Console.Write("abc");
             Next();
         }
 
-        // Mélanger les photos aléatoirement
         private void ShufflePhotosOrder()
         {
             Random rnd = new Random(DateTime.Now.Second);
@@ -132,7 +111,6 @@ namespace Client_PM
             }
         }
 
-        // Définir l'ordre des photos
         private void SetPhotosOrder()
         {
             WaitSplash.Show(this, "Setting photo order...");
@@ -140,18 +118,15 @@ namespace Client_PM
 
             int nb_Photos = SlideShowList.Count;
             PhotosOrder = new int[nb_Photos];
-            // Ordre séquentiel
             for (int i = 0; i < nb_Photos; i++)
             {
                 PhotosOrder[i] = i;
             }
             if (RandomOrder)
             {
-                // Ordre aléatoire
                 ShufflePhotosOrder();
             }
             WaitSplash.Hide();
-            // Affichier la première photo
             Next();
         }
         private void ShowHelp()
@@ -230,7 +205,6 @@ namespace Client_PM
 
         private void PageSlideShow_FormClosing(object sender, FormClosingEventArgs e)
         {
-                 // Copy window size to app settings
                 if (this.WindowState == FormWindowState.Normal)
                 {
                 Properties.Settings.Default.DimensionCarousel = this.Size;
@@ -242,8 +216,6 @@ namespace Client_PM
 
 
             Properties.Settings.Default.LocationCarousel = this.Location;
-
-            // Save settings
             Properties.Settings.Default.Save();
             
         }
