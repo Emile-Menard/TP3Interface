@@ -193,9 +193,17 @@ namespace Client_PM
         {
             if (TBX_MotsCles.Text != "")
             {
-                LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
-                TBX_MotsCles.Clear();
-                Update_PhotoFilter_And_PhotoBrowser();
+               if (LoggedUser.Exists())
+                    {
+                        LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
+                        TBX_MotsCles.Clear();
+                        Update_PhotoFilter_And_PhotoBrowser();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veuillez vous connecter!");
+                    }
+             
             }
 
         }
@@ -227,7 +235,12 @@ namespace Client_PM
 
         private void CBX_MotsCles_CheckedChanged(object sender, EventArgs e)
         {
+            if(LoggedUser.Exists())
             Update_PhotoFilter_And_PhotoBrowser();
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
         }
         private void Update_PhotoFilter_And_PhotoBrowser()
         {
@@ -244,7 +257,12 @@ namespace Client_PM
 
         private void CBX_Date_CheckedChanged(object sender, EventArgs e)
         {
+            if(LoggedUser.Exists())
             Update_DateFilter();
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
+            }
         }
 
 
@@ -632,6 +650,10 @@ namespace Client_PM
                 Properties.Settings.Default.Save();
                 updateSelectedUser();
                 Update_Photo_Browser();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour effectuer cette opération!");
             }
         }
 

@@ -71,5 +71,11 @@
     <Setting Name="LocationPageInfoPhoto" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
+    <Setting Name="DimensionPageInfoPhoto" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">823, 618</Value>
+    </Setting>
+    <Setting Name="DimensionPageGestionPhoto" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">997, 722</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
