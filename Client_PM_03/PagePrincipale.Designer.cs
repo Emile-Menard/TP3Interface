@@ -54,6 +54,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CBOX_NotMine = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FBTN_EffacerMotCle = new PhotoManagerClient.FlashButton();
+            this.FBTN_AjouterMotCle = new PhotoManagerClient.FlashButton();
             this.LBX_MotsCles = new System.Windows.Forms.ListBox();
             this.CBX_MotsCles = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -63,21 +65,19 @@
             this.DTP_Fin = new System.Windows.Forms.DateTimePicker();
             this.DTP_Debut = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.Username = new System.Windows.Forms.Label();
-            this.IMB_UserAvatar = new PhotoManagerClient.ImageBox();
-            this.FBTN_MiseEnPage = new PhotoManagerClient.FlashButton();
-            this.FBTN_EditerCarousel = new PhotoManagerClient.FlashButton();
-            this.FBTN_Carousel = new PhotoManagerClient.FlashButton();
             this.FTBN_Info = new PhotoManagerClient.FlashButton();
             this.FBTN_Modifier = new PhotoManagerClient.FlashButton();
             this.FBTN_Ajouter = new PhotoManagerClient.FlashButton();
             this.FTBN_Effacer = new PhotoManagerClient.FlashButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.FBTN_EditerCarousel = new PhotoManagerClient.FlashButton();
+            this.FBTN_Carousel = new PhotoManagerClient.FlashButton();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.FBTN_MiseEnPage = new PhotoManagerClient.FlashButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Username = new System.Windows.Forms.Label();
+            this.IMB_UserAvatar = new PhotoManagerClient.ImageBox();
             this.photosBrowser = new PhotoManagerClient.PhotosBrowser();
-            this.FBTN_EffacerMotCle = new PhotoManagerClient.FlashButton();
-            this.FBTN_AjouterMotCle = new PhotoManagerClient.FlashButton();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -237,8 +237,8 @@
             // 
             this.rotationToolStripMenuItem.Name = "rotationToolStripMenuItem";
             this.rotationToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
-            this.rotationToolStripMenuItem.Size = new System.Drawing.Size(134, 29);
-            this.rotationToolStripMenuItem.Text = "Mise-en-page";
+            this.rotationToolStripMenuItem.Size = new System.Drawing.Size(223, 29);
+            this.rotationToolStripMenuItem.Text = "Changer la mise-en-page";
             this.rotationToolStripMenuItem.Click += new System.EventHandler(this.rotationToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem
@@ -277,6 +277,7 @@
             this.TBX_MotsCles.Name = "TBX_MotsCles";
             this.TBX_MotsCles.Size = new System.Drawing.Size(252, 26);
             this.TBX_MotsCles.TabIndex = 2;
+            this.TBX_MotsCles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBX_MotsCles_KeyDown);
             // 
             // groupBox1
             // 
@@ -289,7 +290,7 @@
             this.groupBox1.Size = new System.Drawing.Size(288, 111);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Utilisateurs";
+            this.groupBox1.Text = "Filtre d\'utilisateurs";
             // 
             // CBOX_NotMine
             // 
@@ -319,7 +320,43 @@
             this.groupBox2.Size = new System.Drawing.Size(288, 417);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Mots-clés";
+            this.groupBox2.Text = "Filtre de mots-clés";
+            // 
+            // FBTN_EffacerMotCle
+            // 
+            this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.trash;
+            this.FBTN_EffacerMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_EffacerMotCle.ClickedImage = global::Client_PM.Properties.Resources.trash_accept;
+            this.FBTN_EffacerMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_EffacerMotCle.DisabledImage = global::Client_PM.Properties.Resources.trash_disable;
+            this.FBTN_EffacerMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EffacerMotCle.Image")));
+            this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(219, 15);
+            this.FBTN_EffacerMotCle.Name = "FBTN_EffacerMotCle";
+            this.FBTN_EffacerMotCle.NeutralImage = global::Client_PM.Properties.Resources.trash;
+            this.FBTN_EffacerMotCle.OverImage = global::Client_PM.Properties.Resources.trash_accept;
+            this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_EffacerMotCle.TabIndex = 10;
+            this.FBTN_EffacerMotCle.Text = "Retirer un mot-clé";
+            this.FBTN_EffacerMotCle.UseVisualStyleBackColor = true;
+            this.FBTN_EffacerMotCle.Click += new System.EventHandler(this.FBTN_EffacerMotCle_Click);
+            // 
+            // FBTN_AjouterMotCle
+            // 
+            this.FBTN_AjouterMotCle.BackgroundImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
+            this.FBTN_AjouterMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_AjouterMotCle.ClickedImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Click;
+            this.FBTN_AjouterMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_AjouterMotCle.DisabledImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Disable;
+            this.FBTN_AjouterMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AjouterMotCle.Image")));
+            this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(165, 15);
+            this.FBTN_AjouterMotCle.Name = "FBTN_AjouterMotCle";
+            this.FBTN_AjouterMotCle.NeutralImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
+            this.FBTN_AjouterMotCle.OverImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Over;
+            this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_AjouterMotCle.TabIndex = 9;
+            this.FBTN_AjouterMotCle.Text = "Ajouter un mot-clé";
+            this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
+            this.FBTN_AjouterMotCle.Click += new System.EventHandler(this.FBTN_Ajouter_MotCle_Click);
             // 
             // LBX_MotsCles
             // 
@@ -332,6 +369,7 @@
             this.LBX_MotsCles.Name = "LBX_MotsCles";
             this.LBX_MotsCles.Size = new System.Drawing.Size(252, 284);
             this.LBX_MotsCles.TabIndex = 4;
+            this.LBX_MotsCles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LBX_MotsCles_KeyPress);
             // 
             // CBX_MotsCles
             // 
@@ -358,7 +396,7 @@
             this.groupBox3.Size = new System.Drawing.Size(288, 208);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Date";
+            this.groupBox3.Text = "Filtre de date";
             // 
             // CBX_Date
             // 
@@ -423,126 +461,6 @@
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Photo";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.FBTN_EditerCarousel);
-            this.groupBox5.Controls.Add(this.FBTN_Carousel);
-            this.groupBox5.Location = new System.Drawing.Point(674, 48);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(180, 105);
-            this.groupBox5.TabIndex = 10;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Carousel";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox8.Controls.Add(this.FBTN_MiseEnPage);
-            this.groupBox8.Location = new System.Drawing.Point(1158, 49);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(132, 105);
-            this.groupBox8.TabIndex = 13;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Mise-en-page";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.Username);
-            this.groupBox6.Controls.Add(this.IMB_UserAvatar);
-            this.groupBox6.Location = new System.Drawing.Point(868, 48);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(284, 105);
-            this.groupBox6.TabIndex = 14;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Utilisateur";
-            // 
-            // Username
-            // 
-            this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(86, 45);
-            this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(197, 20);
-            this.Username.TabIndex = 1;
-            this.Username.Text = "Aucun utilisateur connecté";
-            // 
-            // IMB_UserAvatar
-            // 
-            this.IMB_UserAvatar.AllowDrop = true;
-            this.IMB_UserAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.IMB_UserAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMB_UserAvatar.ControlToolTipText = "Éditer mon compte";
-            this.IMB_UserAvatar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IMB_UserAvatar.ImportImageText = "Import image from file...";
-            this.IMB_UserAvatar.Location = new System.Drawing.Point(21, 31);
-            this.IMB_UserAvatar.Margin = new System.Windows.Forms.Padding(2);
-            this.IMB_UserAvatar.Name = "IMB_UserAvatar";
-            this.IMB_UserAvatar.OpenFileDialogTitle = "Please choose image an file";
-            this.IMB_UserAvatar.PasteMenuText = "Paste image from clipboard";
-            this.IMB_UserAvatar.Size = new System.Drawing.Size(47, 47);
-            this.IMB_UserAvatar.TabIndex = 0;
-            this.IMB_UserAvatar.TabStop = false;
-            this.IMB_UserAvatar.Click += new System.EventHandler(this.IMB_UserAvatar_Click);
-            // 
-            // FBTN_MiseEnPage
-            // 
-            this.FBTN_MiseEnPage.BackgroundImage = global::Client_PM.Properties.Resources.rotate;
-            this.FBTN_MiseEnPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_MiseEnPage.ClickedImage = global::Client_PM.Properties.Resources.rotate_accept;
-            this.FBTN_MiseEnPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FBTN_MiseEnPage.DisabledImage = global::Client_PM.Properties.Resources.rotate;
-            this.FBTN_MiseEnPage.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.Image")));
-            this.FBTN_MiseEnPage.Location = new System.Drawing.Point(40, 29);
-            this.FBTN_MiseEnPage.Name = "FBTN_MiseEnPage";
-            this.FBTN_MiseEnPage.NeutralImage = global::Client_PM.Properties.Resources.rotate;
-            this.FBTN_MiseEnPage.OverImage = global::Client_PM.Properties.Resources.rotate_accept;
-            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(48, 48);
-            this.FBTN_MiseEnPage.TabIndex = 7;
-            this.FBTN_MiseEnPage.Text = "Changer la mise-en-page";
-            this.FBTN_MiseEnPage.UseVisualStyleBackColor = true;
-            this.FBTN_MiseEnPage.Click += new System.EventHandler(this.FBTN_MiseEnPage_Click);
-            // 
-            // FBTN_EditerCarousel
-            // 
-            this.FBTN_EditerCarousel.BackgroundImage = global::Client_PM.Properties.Resources.carousel__editpng;
-            this.FBTN_EditerCarousel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_EditerCarousel.ClickedImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
-            this.FBTN_EditerCarousel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FBTN_EditerCarousel.DisabledImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
-            this.FBTN_EditerCarousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EditerCarousel.Image")));
-            this.FBTN_EditerCarousel.Location = new System.Drawing.Point(104, 31);
-            this.FBTN_EditerCarousel.Margin = new System.Windows.Forms.Padding(2);
-            this.FBTN_EditerCarousel.Name = "FBTN_EditerCarousel";
-            this.FBTN_EditerCarousel.NeutralImage = global::Client_PM.Properties.Resources.carousel__editpng;
-            this.FBTN_EditerCarousel.OverImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
-            this.FBTN_EditerCarousel.Size = new System.Drawing.Size(48, 48);
-            this.FBTN_EditerCarousel.TabIndex = 0;
-            this.FBTN_EditerCarousel.Text = "Éditer le carousel";
-            this.FBTN_EditerCarousel.UseVisualStyleBackColor = true;
-            this.FBTN_EditerCarousel.Click += new System.EventHandler(this.FBTN_EditCarousel_Click);
-            // 
-            // FBTN_Carousel
-            // 
-            this.FBTN_Carousel.BackgroundImage = global::Client_PM.Properties.Resources.carousel;
-            this.FBTN_Carousel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_Carousel.ClickedImage = global::Client_PM.Properties.Resources.carousel_accept;
-            this.FBTN_Carousel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FBTN_Carousel.DisabledImage = null;
-            this.FBTN_Carousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Carousel.Image")));
-            this.FBTN_Carousel.Location = new System.Drawing.Point(20, 31);
-            this.FBTN_Carousel.Margin = new System.Windows.Forms.Padding(2);
-            this.FBTN_Carousel.Name = "FBTN_Carousel";
-            this.FBTN_Carousel.NeutralImage = global::Client_PM.Properties.Resources.carousel;
-            this.FBTN_Carousel.OverImage = global::Client_PM.Properties.Resources.carousel_accept;
-            this.FBTN_Carousel.Size = new System.Drawing.Size(48, 48);
-            this.FBTN_Carousel.TabIndex = 0;
-            this.FBTN_Carousel.Text = "Visionner le carousel";
-            this.FBTN_Carousel.UseVisualStyleBackColor = true;
-            this.FBTN_Carousel.Click += new System.EventHandler(this.FBTN_Carousel_Click);
             // 
             // FTBN_Info
             // 
@@ -620,6 +538,126 @@
             this.FTBN_Effacer.UseVisualStyleBackColor = true;
             this.FTBN_Effacer.Click += new System.EventHandler(this.FTBN_Effacer_Click);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.FBTN_EditerCarousel);
+            this.groupBox5.Controls.Add(this.FBTN_Carousel);
+            this.groupBox5.Location = new System.Drawing.Point(674, 48);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(180, 105);
+            this.groupBox5.TabIndex = 10;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Carousel";
+            // 
+            // FBTN_EditerCarousel
+            // 
+            this.FBTN_EditerCarousel.BackgroundImage = global::Client_PM.Properties.Resources.carousel__editpng;
+            this.FBTN_EditerCarousel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_EditerCarousel.ClickedImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
+            this.FBTN_EditerCarousel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_EditerCarousel.DisabledImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
+            this.FBTN_EditerCarousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EditerCarousel.Image")));
+            this.FBTN_EditerCarousel.Location = new System.Drawing.Point(104, 31);
+            this.FBTN_EditerCarousel.Margin = new System.Windows.Forms.Padding(2);
+            this.FBTN_EditerCarousel.Name = "FBTN_EditerCarousel";
+            this.FBTN_EditerCarousel.NeutralImage = global::Client_PM.Properties.Resources.carousel__editpng;
+            this.FBTN_EditerCarousel.OverImage = global::Client_PM.Properties.Resources.carousel_edit_accept;
+            this.FBTN_EditerCarousel.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_EditerCarousel.TabIndex = 0;
+            this.FBTN_EditerCarousel.Text = "Éditer le carousel";
+            this.FBTN_EditerCarousel.UseVisualStyleBackColor = true;
+            this.FBTN_EditerCarousel.Click += new System.EventHandler(this.FBTN_EditCarousel_Click);
+            // 
+            // FBTN_Carousel
+            // 
+            this.FBTN_Carousel.BackgroundImage = global::Client_PM.Properties.Resources.carousel;
+            this.FBTN_Carousel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_Carousel.ClickedImage = global::Client_PM.Properties.Resources.carousel_accept;
+            this.FBTN_Carousel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_Carousel.DisabledImage = null;
+            this.FBTN_Carousel.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_Carousel.Image")));
+            this.FBTN_Carousel.Location = new System.Drawing.Point(20, 31);
+            this.FBTN_Carousel.Margin = new System.Windows.Forms.Padding(2);
+            this.FBTN_Carousel.Name = "FBTN_Carousel";
+            this.FBTN_Carousel.NeutralImage = global::Client_PM.Properties.Resources.carousel;
+            this.FBTN_Carousel.OverImage = global::Client_PM.Properties.Resources.carousel_accept;
+            this.FBTN_Carousel.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_Carousel.TabIndex = 0;
+            this.FBTN_Carousel.Text = "Visionner le carousel";
+            this.FBTN_Carousel.UseVisualStyleBackColor = true;
+            this.FBTN_Carousel.Click += new System.EventHandler(this.FBTN_Carousel_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Controls.Add(this.FBTN_MiseEnPage);
+            this.groupBox8.Location = new System.Drawing.Point(1158, 49);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(132, 105);
+            this.groupBox8.TabIndex = 13;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Mise-en-page";
+            // 
+            // FBTN_MiseEnPage
+            // 
+            this.FBTN_MiseEnPage.BackgroundImage = global::Client_PM.Properties.Resources.rotate;
+            this.FBTN_MiseEnPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FBTN_MiseEnPage.ClickedImage = global::Client_PM.Properties.Resources.rotate_accept;
+            this.FBTN_MiseEnPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FBTN_MiseEnPage.DisabledImage = global::Client_PM.Properties.Resources.rotate;
+            this.FBTN_MiseEnPage.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_MiseEnPage.Image")));
+            this.FBTN_MiseEnPage.Location = new System.Drawing.Point(40, 29);
+            this.FBTN_MiseEnPage.Name = "FBTN_MiseEnPage";
+            this.FBTN_MiseEnPage.NeutralImage = global::Client_PM.Properties.Resources.rotate;
+            this.FBTN_MiseEnPage.OverImage = global::Client_PM.Properties.Resources.rotate_accept;
+            this.FBTN_MiseEnPage.Size = new System.Drawing.Size(48, 48);
+            this.FBTN_MiseEnPage.TabIndex = 7;
+            this.FBTN_MiseEnPage.Text = "Changer la mise-en-page";
+            this.FBTN_MiseEnPage.UseVisualStyleBackColor = true;
+            this.FBTN_MiseEnPage.Click += new System.EventHandler(this.FBTN_MiseEnPage_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.Username);
+            this.groupBox6.Controls.Add(this.IMB_UserAvatar);
+            this.groupBox6.Location = new System.Drawing.Point(868, 48);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Size = new System.Drawing.Size(284, 105);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Utilisateur";
+            // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.Location = new System.Drawing.Point(86, 45);
+            this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(197, 20);
+            this.Username.TabIndex = 1;
+            this.Username.Text = "Aucun utilisateur connecté";
+            // 
+            // IMB_UserAvatar
+            // 
+            this.IMB_UserAvatar.AllowDrop = true;
+            this.IMB_UserAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.IMB_UserAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMB_UserAvatar.ControlToolTipText = "Éditer mon compte";
+            this.IMB_UserAvatar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IMB_UserAvatar.ImportImageText = "Import image from file...";
+            this.IMB_UserAvatar.Location = new System.Drawing.Point(21, 31);
+            this.IMB_UserAvatar.Margin = new System.Windows.Forms.Padding(2);
+            this.IMB_UserAvatar.Name = "IMB_UserAvatar";
+            this.IMB_UserAvatar.OpenFileDialogTitle = "Please choose image an file";
+            this.IMB_UserAvatar.PasteMenuText = "Paste image from clipboard";
+            this.IMB_UserAvatar.Size = new System.Drawing.Size(47, 47);
+            this.IMB_UserAvatar.TabIndex = 0;
+            this.IMB_UserAvatar.TabStop = false;
+            this.IMB_UserAvatar.Click += new System.EventHandler(this.IMB_UserAvatar_Click);
+            // 
             // photosBrowser
             // 
             this.photosBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -633,42 +671,6 @@
             this.photosBrowser.SelectedPhoto = null;
             this.photosBrowser.Size = new System.Drawing.Size(963, 632);
             this.photosBrowser.TabIndex = 8;
-            // 
-            // FBTN_EffacerMotCle
-            // 
-            this.FBTN_EffacerMotCle.BackgroundImage = global::Client_PM.Properties.Resources.trash;
-            this.FBTN_EffacerMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_EffacerMotCle.ClickedImage = global::Client_PM.Properties.Resources.trash_accept;
-            this.FBTN_EffacerMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FBTN_EffacerMotCle.DisabledImage = global::Client_PM.Properties.Resources.trash_disable;
-            this.FBTN_EffacerMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_EffacerMotCle.Image")));
-            this.FBTN_EffacerMotCle.Location = new System.Drawing.Point(219, 15);
-            this.FBTN_EffacerMotCle.Name = "FBTN_EffacerMotCle";
-            this.FBTN_EffacerMotCle.NeutralImage = global::Client_PM.Properties.Resources.trash;
-            this.FBTN_EffacerMotCle.OverImage = global::Client_PM.Properties.Resources.trash_accept;
-            this.FBTN_EffacerMotCle.Size = new System.Drawing.Size(48, 48);
-            this.FBTN_EffacerMotCle.TabIndex = 10;
-            this.FBTN_EffacerMotCle.Text = "Retirer un mot-clé";
-            this.FBTN_EffacerMotCle.UseVisualStyleBackColor = true;
-            this.FBTN_EffacerMotCle.Click += new System.EventHandler(this.FBTN_EffacerMotCle_Click);
-            // 
-            // FBTN_AjouterMotCle
-            // 
-            this.FBTN_AjouterMotCle.BackgroundImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
-            this.FBTN_AjouterMotCle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FBTN_AjouterMotCle.ClickedImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Click;
-            this.FBTN_AjouterMotCle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FBTN_AjouterMotCle.DisabledImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Disable;
-            this.FBTN_AjouterMotCle.Image = ((System.Drawing.Image)(resources.GetObject("FBTN_AjouterMotCle.Image")));
-            this.FBTN_AjouterMotCle.Location = new System.Drawing.Point(165, 15);
-            this.FBTN_AjouterMotCle.Name = "FBTN_AjouterMotCle";
-            this.FBTN_AjouterMotCle.NeutralImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Neutral;
-            this.FBTN_AjouterMotCle.OverImage = global::Client_PM.Properties.Resources.ICON_Ajouter_Over;
-            this.FBTN_AjouterMotCle.Size = new System.Drawing.Size(48, 48);
-            this.FBTN_AjouterMotCle.TabIndex = 9;
-            this.FBTN_AjouterMotCle.Text = "Ajouter un mot-clé";
-            this.FBTN_AjouterMotCle.UseVisualStyleBackColor = true;
-            this.FBTN_AjouterMotCle.Click += new System.EventHandler(this.FBTN_Ajouter_MotCle_Click);
             // 
             // PagePrincipale
             // 

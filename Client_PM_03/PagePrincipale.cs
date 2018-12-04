@@ -191,26 +191,55 @@ namespace Client_PM
 
         private void FBTN_Ajouter_MotCle_Click(object sender, EventArgs e)
         {
+
+            AjouterMotCle();
+        }
+
+        private void TBX_MotsCles_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AjouterMotCle();
+            }
+                
+        }
+
+        private void AjouterMotCle()
+        {
             if (TBX_MotsCles.Text != "")
             {
-               if (LoggedUser.Exists())
-                    {
-                        LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
-                        TBX_MotsCles.Clear();
-                        Update_PhotoFilter_And_PhotoBrowser();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Veuillez vous connecter!");
-                    }
-             
-            }
+                if (LoggedUser.Exists())
+                {
+                    LBX_MotsCles.Items.Add(TBX_MotsCles.Text);
+                    TBX_MotsCles.Clear();
+                    Update_PhotoFilter_And_PhotoBrowser();
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez vous connecter!");
+                }
 
+            }
         }
 
         private void FBTN_EffacerMotCle_Click(object sender, EventArgs e)
         {
-            if(LBX_MotsCles.SelectedItem != null)
+          
+            EffacerMotCle();            
+        }
+
+        private void LBX_MotsCles_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                 EffacerMotCle();
+            }
+               
+        }
+
+        private void EffacerMotCle()
+        {
+            if (LBX_MotsCles.SelectedItem != null)
             {
                 LBX_MotsCles.Items.Remove(LBX_MotsCles.SelectedItem);
                 Update_PhotoFilter_And_PhotoBrowser();
@@ -219,8 +248,6 @@ namespace Client_PM
             {
                 MessageBox.Show("Aucun mot-clé n'est sélectionné");
             }
-           
-            
         }
 
         private void UserComboBox()
@@ -831,26 +858,26 @@ namespace Client_PM
         private void aideToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PageAideOuAPropos pa = new PageAideOuAPropos(
-                "Aide: Alt + I" + '\n' +
+                "Aide:" + '\t' + '\t' + " Alt + I" + '\n' +
                 '\n' +
-                "Connexion: Alt + C" + '\n' +
-                "Déconnexion: Alt + D" + '\n' +
+                "Connexion:" + '\t' + " Alt + C" + '\n' +
+                "Déconnexion:" + '\t' + " Alt + D" + '\n' +
                 '\n' +
-                "Ajouter photo: Alt + A" + '\n' +
-                "Modifier photo: Alt + M" + '\n' +
-                "Effacer photo: Alt + E" + '\n' +
-                "Voir infos photo: Alt + V" + '\n' +
+                "Ajouter photo:" + '\t' + " Alt + A" + '\n' +
+                "Modifier photo:" + '\t' + " Alt + M" + '\n' +
+                "Effacer photo:" + '\t' + " Alt + E" + '\n' +
+                "Voir infos photo:" + '\t' + " Alt + V" + '\n' +
                 '\n' +
-                "Liste noire: Alt + L" + '\n' +
+                "Liste noire:" + '\t' + " Alt + L" + '\n' +
                 '\n' +
-                "Visionner carousel: Alt + S" + '\n' +
-                "Éditer carousel: Alt + B" + '\n' +
+                "Visionner carousel:" + '\t' + " Alt + S" + '\n' +
+                "Éditer carousel:" + '\t' + " Alt + B" + '\n' +
                 '\n' +
-                "Mise-en-page: Alt + R" + '\n' +
+                "Mise-en-page:" + '\t' + " Alt + R" + '\n' +
                 '\n' +
-                "À propos: Alt + P" + '\n' +
+                "À propos:" + '\t' + '\t' + " Alt + P" + '\n' +
                 '\n' +
-                "Quitter: Alt + Q" + '\n', "Aide");
+                "Quitter:" + '\t' +'\t' + " Alt + Q" + '\n', "Aide");
             pa.Show();
         }
 
@@ -859,11 +886,14 @@ namespace Client_PM
             PageAideOuAPropos pa = new PageAideOuAPropos(
                "Travail pratique 3" + '\n' + '\n' +
                "Réalisé par " + '\n' + '\n' +
-               "Vincent Falardeau," + '\n' +
+               "Vincent Falardeau" + '\n' +
                "Émile Ménard" + '\n' +
                "Dominic Vachon" + '\n' + '\n' +
-                "Pour le cours de développement d'interfaces", "À propos");
+               "Pour le cours de développement d'interfaces" + '\n' +
+               "Le 5 décembre 2018", "À propos");
             pa.Show();
         }
+
+      
     }
 }
