@@ -62,6 +62,9 @@ namespace Client_PM
             SetPhotosOrder();
             // Démarrer l'horloge
             SlideshowTimer.Start();
+            SlideshowTimer.Interval = Properties.Settings.Default.IntervalleCarousel;
+            toolStripTextBox1.Enabled = false;
+            toolStripTextBox1.Text = Properties.Settings.Default.IntervalleCarousel.ToString();
         }
 
         private void Toggle_FullScreen()

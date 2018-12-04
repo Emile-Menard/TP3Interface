@@ -186,8 +186,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Titre);
             this.Controls.Add(this.IB_Image);
-            this.MinimumSize = new System.Drawing.Size(814, 591);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimumSize = new System.Drawing.Size(823, 618);
             this.Name = "PageInfoPhotos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informations";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageInfoPhotos_FormClosing);
             this.Load += new System.EventHandler(this.PageInfoPhotos_Load);

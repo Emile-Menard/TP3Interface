@@ -261,7 +261,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Titre);
             this.Controls.Add(this.IB_Image);
-            this.MinimumSize = new System.Drawing.Size(964, 696);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimumSize = new System.Drawing.Size(997, 722);
             this.Name = "PageGestionPhotos";
             this.Text = "Ajouter une photo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageGestionPhotos_FormClosing);

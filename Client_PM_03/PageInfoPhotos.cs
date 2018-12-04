@@ -36,10 +36,10 @@ namespace Client_PM
 
         private void PageInfoPhotos_Load(object sender, EventArgs e)
         {
-            if (!Properties.Settings.Default.LocationPageInfoPhoto.IsEmpty)
-            {
-                this.Location = Properties.Settings.Default.LocationPageInfoPhoto;
-            }
+
+         
+            this.Location = Properties.Settings.Default.LocationPageInfoPhoto;
+            
         }
     }
 }
